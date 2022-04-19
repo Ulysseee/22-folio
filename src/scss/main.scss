@@ -1,0 +1,27 @@
+@import '@scss/utils/_fonts';
+@import '@scss/utils/_var';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overscroll-behavior: none;
+}
+
+#app {
+	width: 100vw;
+	height: 100vh;
+}
+
+.webgl {
+	position: fixed;
+	top: 0;
+	left: 0;
+	outline: none;
+	z-index: 0;
+}
