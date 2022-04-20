@@ -4,12 +4,34 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vite App</title>
+		<title>FOLIO 22'</title>
 	</head>
 	<body>
 		<div id="app">
 			<canvas class="webgl"></canvas>
 		</div>
+
+		<svg
+			class="cursor cursor--1"
+			width="12"
+			height="12"
+			viewBox="0 0 12 12"
+			data-scale-enter="0"
+			data-opacity-enter="0"
+		>
+			<circle class="cursor__inner" cx="6" cy="6" r="3"></circle>
+		</svg>
+		<svg
+			class="cursor cursor--2"
+			width="72"
+			height="72"
+			viewBox="0 0 72 72"
+			data-scale-enter="2"
+			data-opacity-enter=".5"
+			data-amt="0.15"
+		>
+			<circle class="cursor__inner" cx="36" cy="36" r="18"></circle>
+		</svg>
 		<script type="module" src="/src/app.js"></script>
 	</body>
 </html>

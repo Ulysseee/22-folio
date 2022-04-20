@@ -10,6 +10,8 @@ import Renderer from '@js/Renderer'
 
 import World from './World/World'
 
+import Cursor from '@js/Cursor'
+
 export default class MainScene {
 	constructor(_canvas) {
 		if (MainScene._instance) {
@@ -19,6 +21,8 @@ export default class MainScene {
 		MainScene._instance = this
 
 		this.canvas = _canvas
+
+		this.cursor = new Cursor(document.querySelectorAll('.cursor'))
 
 		this.sizes = new Sizes()
 		this.time = new Time()
