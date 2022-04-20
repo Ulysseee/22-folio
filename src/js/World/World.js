@@ -1,7 +1,7 @@
 import MainScene from '../MainScene'
 
-import Cube from './Cube'
-
+import Shades from './Shades'
+import Lens from './Lens'
 export default class World {
 	constructor() {
 		this.MainScene = new MainScene()
@@ -9,11 +9,13 @@ export default class World {
 		this.resources = this.MainScene.resources
 		this.camera = this.MainScene.camera
 
-		this.cube = new Cube()
+		this.shades = new Shades()
+		this.sphere = new Lens()
 	}
 
 	update() {
-		if (this.cube) this.cube.update()
+		if (this.shades) this.shades.update()
+		if (this.sphere) this.sphere.update()
 	}
 
 	destroy() {}
