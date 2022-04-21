@@ -35,7 +35,7 @@ export default class Shades {
 	}
 
 	update() {
-		this.time += 0.005
+		this.time += 0.004
 
 		this.material.uniforms.time.value = this.time
 	}

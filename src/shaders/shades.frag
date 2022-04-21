@@ -51,15 +51,15 @@ float lines(vec2 uv, float offset) {
 
 void main() {
     float n = noise(vPosition + time);
-    vec3 baseFirst = vec3(120./255., 158./255., 113./255.);
-    vec3 accent = vec3(0.,0.,0);
-    vec3 baseSecond = vec3(224./255., 148./255., 66./255.);
-    vec3 baseThird = vec3(232./255., 201./255., 73./255.);
+    // vec3 baseFirst = vec3(120./255., 158./255., 113./255.);
+    // vec3 accent = vec3(0.,0.,0);
+    // vec3 baseSecond = vec3(224./255., 148./255., 66./255.);
+    // // vec3 baseThird = vec3(232./255., 201./255., 73./255.);
 
-	// vec3 baseFirst = vec3(0.173,0.243,0.51);
-    // vec3 accent = vec3(0.027,0.031,0.063);
-    // vec3 baseSecond = vec3(0.059,0.059,0.318);
-    // vec3 baseThird = vec3(232/255., 201/255., 73/255.);
+    vec3 baseFirst = vec3(152./255., 165./255., 218./255.);
+    vec3 accent = vec3(17./255., 45./255., 158./255.);
+    vec3 baseSecond = vec3(147./255., 159./255., 214./255.);
+    // vec3 baseThird = vec3(232./255., 201./255., 73./255.);
 
     vec2 baseUv = rotate2D(n) * vPosition.xy * 0.1;
     float basePattern = lines(baseUv, 0.5);

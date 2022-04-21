@@ -1,1 +1,21 @@
 @import '@scss/utils/_mixins';
+
+@include font-face(
+	'Roslindale',
+	fonts/Roslindale-DisplayCondensedLight-Edu,
+	300,
+	null,
+	woff
+);
+@include font-face(
+	'Roslindale',
+	fonts/Roslindale-DisplayCondensedLight-Edu,
+	300,
+	null,
+	woff2
+);
+
+@include font-face('Panamera', fonts/Panamera-Light, 300, null, woff);
+@include font-face('Panamera', fonts/Panamera-Light, 300, null, woff2);
+@include font-face('Panamera', fonts/Panamera-Regular, normal, null, woff);
+@include font-face('Panamera', fonts/Panamera-Regular, normal, null, woff2);

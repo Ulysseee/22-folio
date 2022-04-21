@@ -20,9 +20,8 @@ export default class Lens {
 		})
 
 		this.cubeCamera = new THREE.CubeCamera(0.1, 10, this.cubeRenderTarget)
-		// this.scene.add(this.cubeCamera)
 
-		this.geometry = new THREE.SphereBufferGeometry(0.4, 32, 32)
+		this.geometry = new THREE.SphereBufferGeometry(0.5, 36, 36)
 		this.material = new THREE.ShaderMaterial({
 			uniforms: {
 				uTime: { value: 0 },
@@ -35,6 +34,7 @@ export default class Lens {
 			fragmentShader: lensFrag
 		})
 		this.lens = new THREE.Mesh(this.geometry, this.material)
+		this.satelitte = new THREE.Mesh(this.satGeometry, this.material)
 
 		this.scene.add(this.lens)
 	}
