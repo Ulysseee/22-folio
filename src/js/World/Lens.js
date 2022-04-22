@@ -11,6 +11,14 @@ export default class Lens {
 		this.MainScene = new MainScene()
 		this.scene = this.MainScene.scene
 		this.renderer = this.MainScene.renderer
+		this.debug = this.MainScene.debug
+
+		this.settings = {
+			mRefractionRatio: 1.02,
+			mFresnelBias: 0.1,
+			mFresnelScale: 4,
+			mFresnelPower: 2
+		}
 
 		this.cubeRenderTarget = new THREE.WebGLCubeRenderTarget(256, {
 			format: THREE.RGBAFormat,
@@ -25,7 +33,11 @@ export default class Lens {
 		this.material = new THREE.ShaderMaterial({
 			uniforms: {
 				uTime: { value: 0 },
-				tCube: { value: 0 }
+				tCube: { value: 0 },
+				mRefractionRatio: { value: this.settings.mRefractionRatio },
+				mFresnelBias: { value: this.settings.mFresnelBias },
+				mFresnelScale: { value: this.settings.mFresnelScale },
+				mFresnelPower: { value: this.settings.mFresnelPower }
 			},
 			defines: {
 				PI: Math.PI
@@ -37,6 +49,40 @@ export default class Lens {
 		this.satelitte = new THREE.Mesh(this.satGeometry, this.material)
 
 		this.scene.add(this.lens)
+
+		if (this.debug) this.setDebug()
+	}
+
+	setDebug() {
+		const f = this.debug.gui.addFolder({
+			title: 'Fresnel',
+			expanded: true
+		})
+
+		f.addInput(this.settings, 'mRefractionRatio', {
+			min: 0,
+			max: 3,
+			step: 0.1
+		})
+		f.addInput(this.settings, 'mFresnelScale', {
+			min: 0,
+			max: 6,
+			step: 0.1
+		})
+		f.addInput(this.settings, 'mFresnelPower', {
+			min: 0,
+			max: 3,
+			step: 0.1
+		})
+
+		f.on('change', ({ presetKey }) => {
+			this.setUniforms(presetKey)
+		})
+	}
+
+	setUniforms(key) {
+		const { uniforms } = this.material
+		uniforms[key].value = this.settings[key]
 	}
 
 	update() {

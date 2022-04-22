@@ -31,6 +31,7 @@ body {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 1;
+
 		// mix-blend-mode: exclusion;
 
 		width: 75rem;
@@ -38,13 +39,13 @@ body {
 		font-size: 11rem;
 		color: #fff;
 		text-transform: uppercase;
-		letter-spacing: 1.5px;
 		text-align: center;
 		line-height: 0.9;
 
-		// span {
-		// 	color: #f7fa01;
-		// }
+		span {
+			// color: #f7fa01;
+			font-style: italic;
+		}
 	}
 
 	.webgl {

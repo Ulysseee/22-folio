@@ -10,6 +10,23 @@ export default class Shades {
 
 		this.MainScene = new MainScene()
 		this.scene = this.MainScene.scene
+		this.debug = this.MainScene.debug
+
+		this.settings = {
+			uBaseFirst: '#98a5da',
+			uBaseSecond: '#939fd6',
+			uAccent: '#112d9e'
+		}
+
+		this.tCol = {
+			baseFirst: new THREE.Color(),
+			baseSecond: new THREE.Color(),
+			accent: new THREE.Color()
+		}
+
+		console.log(this.settings.baseFirst)
+		const color2 = new THREE.Color(this.settings.baseFirst)
+		console.log(color2)
 
 		this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32)
 		this.material = new THREE.ShaderMaterial({
@@ -19,10 +36,13 @@ export default class Shades {
 			side: THREE.DoubleSide,
 			uniforms: {
 				time: { type: 'f', value: 0 },
-				resolution: { type: 'v4', value: new THREE.Vector4() },
-				uvRate1: {
-					value: new THREE.Vector2(1, 1)
-				}
+				uBaseFirst: {
+					value: this.tCol.baseFirst.set(this.settings.uBaseFirst)
+				},
+				uBaseSecond: {
+					value: this.tCol.baseSecond.set(this.settings.uBaseSecond)
+				},
+				uAccent: { value: this.tCol.accent.set(this.settings.uAccent) }
 			},
 			vertexShader: shadesVert,
 			fragmentShader: shadesFrag,
@@ -32,6 +52,30 @@ export default class Shades {
 		this.shades = new THREE.Mesh(this.geometry, this.material)
 
 		this.scene.add(this.shades)
+
+		if (this.debug) this.setDebug()
+	}
+
+	setDebug() {
+		const f = this.debug.gui.addFolder({
+			title: 'Shades colors',
+			expanded: true
+		})
+
+		for (const _colorName in this.settings) {
+			f.addInput(this.settings, _colorName, {
+				label: `${_colorName}`,
+				view: 'color'
+			}).on('change', ({ presetKey }) => {
+				this.setUniforms(presetKey)
+			})
+		}
+	}
+
+	setUniforms(key) {
+		const { uniforms } = this.material
+
+		uniforms[key].value = new THREE.Color(this.settings[key])
 	}
 
 	update() {

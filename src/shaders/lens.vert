@@ -1,13 +1,12 @@
 varying vec3 vReflect;
 varying vec3 vRefract[3];
 varying float vReflectionFactor;
+uniform float mRefractionRatio;
+uniform float mFresnelBias;
+uniform float mFresnelScale;
+uniform float mFresnelPower;
 
 void main() {
-
-    float mRefractionRatio = 1.02;
-    float mFresnelBias = 0.1;
-    float mFresnelScale = 4.;
-    float mFresnelPower = 2.;
 
     vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
     vec4 worldPosition = modelMatrix * vec4( position, 1.0 );

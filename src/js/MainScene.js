@@ -26,11 +26,11 @@ export default class MainScene {
 
 		this.sizes = new Sizes()
 		this.time = new Time()
+		this.setDebug()
 		this.scene = new THREE.Scene()
 		this.camera = new Camera()
 		this.renderer = new Renderer()
 		this.world = new World()
-		this.setDebug()
 
 		this.sizes.on('resize', () => {
 			this.resize()

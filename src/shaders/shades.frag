@@ -1,8 +1,8 @@
 
 uniform float time;
-uniform float progress;
-uniform sampler2D texture1;
-uniform vec4 resolution;
+uniform vec3 uBaseFirst;
+uniform vec3 uBaseSecond;
+uniform vec3 uAccent;
 varying vec2 vUv;
 varying vec3 vPosition;
 
@@ -56,17 +56,20 @@ void main() {
     // vec3 baseSecond = vec3(224./255., 148./255., 66./255.);
     // // vec3 baseThird = vec3(232./255., 201./255., 73./255.);
 
-    vec3 baseFirst = vec3(152./255., 165./255., 218./255.);
-    vec3 accent = vec3(17./255., 45./255., 158./255.);
-    vec3 baseSecond = vec3(147./255., 159./255., 214./255.);
-    // vec3 baseThird = vec3(232./255., 201./255., 73./255.);
+    // vec3 baseFirst = vec3(uBaseFirst);
+    // vec3 baseSecond = vec3(uBaseSecond);
+    // vec3 accent = vec3(uAccent);
+
+	// vec3 baseFirst = vec3(152./255., 165./255., 218./255.);
+    // vec3 baseSecond = vec3(147./255., 159./255., 214./255.);
+    // vec3 accent = vec3(17./255., 45./255., 158./255.);
 
     vec2 baseUv = rotate2D(n) * vPosition.xy * 0.1;
     float basePattern = lines(baseUv, 0.5);
     float secondPattern = lines(baseUv, 0.1);
 
-    vec3 baseColor = mix(baseSecond, baseFirst, basePattern);
-    vec3 secondBaseColor = mix(baseColor, accent, secondPattern);
+    vec3 baseColor = mix(uBaseSecond, uBaseFirst, basePattern);
+    vec3 secondBaseColor = mix(baseColor, uAccent, secondPattern);
 
     gl_FragColor = vec4(vec3(secondBaseColor), 1.);
 }

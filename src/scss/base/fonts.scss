@@ -13,6 +13,21 @@
 	woff2
 );
 
+@include font-face(
+	'Roslindale',
+	fonts/Roslindale-DisplayCondensedLightItalic-Edu,
+	300,
+	italic,
+	woff
+);
+@include font-face(
+	'Roslindale',
+	fonts/Roslindale-DisplayCondensedLightItalic-Edu,
+	300,
+	italic,
+	woff2
+);
+
 @include font-face('Panamera', fonts/Panamera-Light, 300, null, woff);
 @include font-face('Panamera', fonts/Panamera-Light, 300, null, woff2);
 @include font-face('Panamera', fonts/Panamera-Regular, normal, null, woff);
