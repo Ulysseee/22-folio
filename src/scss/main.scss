@@ -4,55 +4,10 @@
 @import '@scss/base/fonts';
 @import '@scss/base/reset';
 
-@import '@scss/layout/nav';
 @import '@scss/layout/cursor';
-
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	padding: 0;
-	overscroll-behavior: none;
-}
+@import '@scss/layout/loader';
+@import '@scss/layout/nav';
+@import '@scss/layout/landing';
 
 #app {
-	width: 100vw;
-	height: 100vh;
-
-	h1 {
-		font-family: 'Roslindale';
-		font-weight: 300;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1;
-
-		// mix-blend-mode: exclusion;
-
-		width: 75rem;
-		margin: 0;
-		font-size: 11rem;
-		color: #fff;
-		text-transform: uppercase;
-		text-align: center;
-		line-height: 0.9;
-
-		span {
-			// color: #f7fa01;
-			font-style: italic;
-		}
-	}
-
-	.webgl {
-		position: fixed;
-		top: 0;
-		left: 0;
-		outline: none;
-		z-index: 0;
-	}
 }

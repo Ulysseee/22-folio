@@ -1,11 +1,11 @@
-nav {
+header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 999;
+	z-index: 1;
 	transition: transform 0.375s;
-	font-family: 'Panamera';
+	font-family: 'Neue Montreal';
 	font-weight: 300;
 
 	.nav-w {
@@ -13,7 +13,7 @@ nav {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin: 0 3.625vw;
+		margin: 0 5.625vw;
 		height: 5vw;
 		overflow: hidden;
 

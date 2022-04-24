@@ -14,8 +14,11 @@ export default class Shades {
 
 		this.settings = {
 			uBaseFirst: '#98a5da',
-			uBaseSecond: '#939fd6',
+			uBaseSecond: '#5a6491',
 			uAccent: '#112d9e'
+			// uBaseFirst: '#ffe0d9',
+			// uBaseSecond: '#fe3301',
+			// uAccent: '#f19c87'
 		}
 
 		this.tCol = {
@@ -24,9 +27,7 @@ export default class Shades {
 			accent: new THREE.Color()
 		}
 
-		console.log(this.settings.baseFirst)
 		const color2 = new THREE.Color(this.settings.baseFirst)
-		console.log(color2)
 
 		this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32)
 		this.material = new THREE.ShaderMaterial({

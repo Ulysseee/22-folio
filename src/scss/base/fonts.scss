@@ -32,3 +32,21 @@
 @include font-face('Panamera', fonts/Panamera-Light, 300, null, woff2);
 @include font-face('Panamera', fonts/Panamera-Regular, normal, null, woff);
 @include font-face('Panamera', fonts/Panamera-Regular, normal, null, woff2);
+
+@include font-face(
+	'Orelo',
+	fonts/Orelo-SemiCondensedDemiBold,
+	null,
+	null,
+	woff
+);
+@include font-face(
+	'Orelo',
+	fonts/Orelo-SemiCondensedDemiBold,
+	null,
+	null,
+	woff2
+);
+
+@include font-face('Neue Montreal', fonts/NeueMontreal, 450, null, woff);
+@include font-face('Neue Montreal', fonts/NeueMontreal, 450, null, woff2);

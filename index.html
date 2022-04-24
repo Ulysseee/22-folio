@@ -8,8 +8,38 @@
 	</head>
 	<body>
 		<div id="app">
-			<!-- <nav class="nav">
-				<div class="nav-w">
+			<div class="loader">
+				<h2 class="loader__title">
+					<span class="loader__letter">H</span>
+					<span class="loader__letter">e</span>
+					<span class="loader__letter">l</span>
+					<span class="loader__letter">l</span>
+					<span class="loader__letter">o</span>
+					<span class="loader__letter loader__space"></span>
+					<span class="loader__letter">t</span>
+					<span class="loader__letter">h</span>
+					<span class="loader__letter">e</span>
+					<span class="loader__letter">r</span>
+					<span class="loader__letter">e</span>
+				</h2>
+				<svg
+					class="loader__overlay"
+					width="100%"
+					height="100%"
+					viewBox="0 0 100 100"
+					preserveAspectRatio="none"
+				>
+					<path
+						fill="#fff"
+						class="overlay__path"
+						vector-effect="non-scaling-stroke"
+						d="M 0 0 V 100 Q 50 100 100 100 V 0 z"
+					/>
+				</svg>
+			</div>
+
+			<header class="nav">
+				<nav class="nav-w">
 					<a class="nav-w__logo" href="#">Ulysse Gravier</a>
 					<div class="nav-w__menu">
 						<a href="#">Works</a>
@@ -20,33 +50,42 @@
 						<div class="nav-w__state-off"></div>
 						<div class="nav-w__state-on"></div>
 					</div>
-				</div>
-			</nav> -->
-			<!-- <h1>Creative <span>front end</span> developer</h1> -->
-			<canvas class="webgl"></canvas>
+				</nav>
+			</header>
+
+			<main>
+				<section class="landing">
+					<div class="landing__scroll-indicator"></div>
+					<h1 class="landing__title">
+						Creative <span>front end</span> developer
+					</h1>
+					<canvas class="webgl"></canvas>
+				</section>
+			</main>
+
+			<svg
+				class="cursor cursor--1"
+				width="12"
+				height="12"
+				viewBox="0 0 12 12"
+				data-scale-enter="0"
+				data-opacity-enter="0"
+			>
+				<circle class="cursor__inner" cx="6" cy="6" r="3"></circle>
+			</svg>
+			<svg
+				class="cursor cursor--2"
+				width="72"
+				height="72"
+				viewBox="0 0 72 72"
+				data-scale-enter="2"
+				data-opacity-enter=".5"
+				data-amt="0.15"
+			>
+				<circle class="cursor__inner" cx="36" cy="36" r="18"></circle>
+			</svg>
 		</div>
 
-		<svg
-			class="cursor cursor--1"
-			width="12"
-			height="12"
-			viewBox="0 0 12 12"
-			data-scale-enter="0"
-			data-opacity-enter="0"
-		>
-			<circle class="cursor__inner" cx="6" cy="6" r="3"></circle>
-		</svg>
-		<svg
-			class="cursor cursor--2"
-			width="72"
-			height="72"
-			viewBox="0 0 72 72"
-			data-scale-enter="2"
-			data-opacity-enter=".5"
-			data-amt="0.15"
-		>
-			<circle class="cursor__inner" cx="36" cy="36" r="18"></circle>
-		</svg>
 		<script type="module" src="/src/app.js"></script>
 	</body>
 </html>

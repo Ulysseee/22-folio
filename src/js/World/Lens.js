@@ -64,6 +64,11 @@ export default class Lens {
 			max: 3,
 			step: 0.1
 		})
+		f.addInput(this.settings, 'mFresnelBias', {
+			min: 0,
+			max: 1,
+			step: 0.1
+		})
 		f.addInput(this.settings, 'mFresnelScale', {
 			min: 0,
 			max: 6,
