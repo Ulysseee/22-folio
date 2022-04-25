@@ -9,7 +9,6 @@
 
 	.loader__title {
 		font-family: 'Neue Montreal';
-		// font-family: 'Orelo';
 		text-transform: uppercase;
 		position: absolute;
 		z-index: 2;
@@ -21,13 +20,13 @@
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
+		will-change: transform;
 
-		.loader__letter {
-			display: inline-block;
+		.char {
 			will-change: transform;
 		}
 
-		.loader__space {
+		.char:nth-child(5) {
 			padding-right: 2rem;
 		}
 	}

@@ -28,25 +28,48 @@ section.landing {
 	h1.landing__title {
 		font-family: 'Orelo';
 		font-weight: 300;
+		z-index: 1;
 		position: absolute;
+		transform: translate(-50%, -50%);
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1;
-
 		// mix-blend-mode: exclusion;
 
-		width: 75rem;
+		width: 100%;
 		margin: 0;
-		font-size: 11rem;
+		font-size: 10vw;
 		color: #fff;
 		text-transform: uppercase;
 		text-align: center;
-		line-height: 1;
+		line-height: 0.9;
+		display: flex;
+		flex-direction: column;
 
 		span {
 			// color: #f7fa01;
+			display: block;
+			overflow: hidden;
+			will-change: transform;
+
+			div {
+				will-change: transform;
+			}
+		}
+
+		span:first-child {
+			transform: translateX(20px);
+		}
+
+		span:nth-child(2n) {
+			// color: #f7fa01;
 			// font-style: italic;
+			transform: translateX(-180px);
+		}
+
+		span:last-child {
+			// color: #f7fa01;
+			// font-style: italic;
+			transform: translateX(90px);
 		}
 	}
 
