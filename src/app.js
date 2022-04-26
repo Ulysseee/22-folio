@@ -5,7 +5,7 @@ import '@scss/main.scss'
 window.addEventListener('DOMContentLoaded', startApp)
 
 function startApp() {
-	console.log('Powered with Vite.js')
+	console.log('Proudly enhanced with Vite!')
 
 	const app = document.querySelector('#app')
 

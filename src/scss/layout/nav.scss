@@ -13,7 +13,8 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin: 0 5.625vw;
+		margin: 0 3vw;
+		padding: 0 0.635vw;
 		height: 5vw;
 		overflow: hidden;
 
@@ -36,7 +37,7 @@ header {
 				line-height: 1rem;
 				color: white;
 				text-decoration: none;
-				// letter-spacing: 1px;
+				overflow: hidden;
 
 				&:nth-last-of-type(1) {
 					margin-right: 0;
@@ -51,6 +52,14 @@ header {
 				border-radius: 100%;
 				background: #fff;
 			}
+		}
+
+		.nav-w__logo__bottom,
+		.nav-w__works__bottom,
+		.nav-w__contact__bottom {
+			position: absolute;
+			left: 0;
+			top: 100%;
 		}
 
 		.nav-w__state {
