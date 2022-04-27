@@ -18,14 +18,14 @@ header {
 		height: 5vw;
 		overflow: hidden;
 
-		.nav-w__logo {
+		&__logo {
 			color: white;
 			text-decoration: none;
 			font-size: 1rem;
 			overflow: hidden;
 		}
 
-		.nav-w__menu {
+		&__menu {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
@@ -55,15 +55,15 @@ header {
 			}
 		}
 
-		.nav-w__logo__bottom,
-		.nav-w__works__bottom,
-		.nav-w__contact__bottom {
+		&__logo__bottom,
+		&__works__bottom,
+		&__contact__bottom {
 			position: absolute;
 			left: 0;
 			top: 100%;
 		}
 
-		.nav-w__state {
+		&__state {
 			position: absolute;
 			bottom: 0;
 			left: 0;

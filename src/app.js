@@ -1,5 +1,3 @@
-import LocomotiveScroll from 'locomotive-scroll'
-
 import MainScene from '@js/MainScene'
 import Cursor from '@js/Cursor'
 

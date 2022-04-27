@@ -34,7 +34,7 @@ export default class MainScene {
 			limit: 0,
 			hard: 0,
 			soft: 0,
-			ease: 0.075
+			ease: 0.085
 		}
 
 		this.smoothScroll = new SmoothScroll({

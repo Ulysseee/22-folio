@@ -7,14 +7,13 @@
 	height: 100vh;
 	pointer-events: none;
 
-	.loader__title {
+	&__title {
 		font-family: 'Neue Montreal';
 		text-transform: uppercase;
 		position: absolute;
 		z-index: 2;
 		color: #000;
 		font-size: 12rem;
-		margin: 0;
 		width: 100%;
 		text-align: center;
 		overflow: hidden;
@@ -26,7 +25,7 @@
 		}
 	}
 
-	.loader__overlay {
+	&__overlay {
 		position: absolute;
 		pointer-events: none;
 		width: 100%;

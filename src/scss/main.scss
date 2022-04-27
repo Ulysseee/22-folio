@@ -1,18 +1,14 @@
-@import '@scss/utils/_mixins';
-@import '@scss/utils/_var';
+@import '@scss/utils/mixins';
+@import '@scss/utils/var';
+@import '@scss/utils/responsive';
 
 @import '@scss/base/fonts';
 @import '@scss/base/reset';
+@import '@scss/base/base';
 
 @import '@scss/layout/cursor';
-@import '@scss/layout/loader';
 @import '@scss/layout/nav';
 @import '@scss/layout/landing';
 @import '@scss/layout/me';
 
-#app {
-	.char,
-	.word {
-		will-change: transform;
-	}
-}
+@import '@scss/components/loader';
