@@ -7,7 +7,7 @@
 		<title>FOLIO 22'</title>
 	</head>
 	<body>
-		<div id="app">
+		<div id="app" data-scroll-container>
 			<div class="loader">
 				<h2 class="loader__title" data-animation="loader">
 					Hello there
@@ -31,17 +31,32 @@
 			<header class="nav">
 				<nav class="nav-w">
 					<a class="nav-w__logo" href="#">
-						<span class="nav-w__logo__top">Ulysse Gravier</span>
+						<span
+							class="nav-w__logo__top"
+							data-animation="menuItem"
+							data-animation-delay="3.8"
+							>Ulysse Gravier</span
+						>
 						<span class="nav-w__logo__bottom">Ulysse Gravier</span>
 					</a>
 					<div class="nav-w__menu">
 						<a href="#">
-							<span class="nav-w__works__top">Works</span>
+							<span
+								class="nav-w__works__top"
+								data-animation="menuItem"
+								data-animation-delay="3.9"
+								>Works</span
+							>
 							<span class="nav-w__works__bottom">Works</span>
 						</a>
 						<span class="nav-w__sep"></span>
 						<a href="#">
-							<span class="nav-w__contact__top">Contact</span>
+							<span
+								class="nav-w__contact__top"
+								data-animation="menuItem"
+								data-animation-delay="4"
+								>Contact</span
+							>
 							<span class="nav-w__contact__bottom">Contact</span>
 						</a>
 					</div>
@@ -52,25 +67,46 @@
 				</nav>
 			</header>
 
-			<main>
-				<section class="landing">
-					<div class="landing__scroll-indicator"></div>
-					<!-- <h1 class="landing__title">
-						Creative <span>front end</span> developer
-					</h1> -->
-					<h1 class="landing__title">
-						<span class="title__first__el" data-animation="title"
-							>Creative</span
-						>
-						<span class="title__second__el" data-animation="title"
-							>front-end</span
-						>
-						<span class="title__third__el" data-animation="title"
-							>web developer</span
-						>
-					</h1>
-					<canvas class="webgl"></canvas>
-				</section>
+			<main class="scroll__stage">
+				<div class="scroll__content">
+					<section class="landing">
+						<div class="landing__scroll-indicator"></div>
+						<!-- <h1 class="landing__title">
+							Creative <span>front end</span> developer
+						</h1> -->
+						<h1 class="landing__title">
+							<span
+								class="title__first__el"
+								data-animation="title"
+								data-animation-delay="3.3"
+								>Interactive</span
+							>
+							<span
+								class="title__second__el"
+								data-animation="title"
+								data-animation-delay="3.3"
+								>front-end</span
+							>
+							<span
+								class="title__third__el"
+								data-animation="title"
+								data-animation-delay="3.3"
+								>web developer</span
+							>
+						</h1>
+						<canvas class="webgl"></canvas>
+					</section>
+
+					<section class="me">
+						<p class="me__infos" data-animation="paragraph">
+							Hi I'm Ulysse, a front-end and creative developer
+							based in Paris, focus on interaction who loves fancy
+							websites & experiences. I'm searching for an
+							apprenticeship for 2022-2023 for my Master degree at
+							@Goeblins!
+						</p>
+					</section>
+				</div>
 			</main>
 
 			<svg
@@ -88,11 +124,11 @@
 				width="72"
 				height="72"
 				viewBox="0 0 72 72"
-				data-scale-enter="1.35"
+				data-scale-enter="0.75"
 				data-opacity-enter="0"
 				data-amt="0.15"
 			>
-				<circle class="cursor__inner" cx="36" cy="36" r="14"></circle>
+				<circle class="cursor__inner" cx="36" cy="36" r="16"></circle>
 			</svg>
 		</div>
 

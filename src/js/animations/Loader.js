@@ -42,7 +42,7 @@ export default class extends Animation {
 				delay: 0.8,
 				ease: Power3.easeInOut
 			})
-		gsap.timeline({ delay: 2.8 })
+		gsap.timeline({ delay: 2.7 })
 			.to('.loader__overlay path', {
 				duration: 0.7,
 				ease: Power2.easeIn,

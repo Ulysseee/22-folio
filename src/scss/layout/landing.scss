@@ -49,15 +49,10 @@ section.landing {
 			// color: #f7fa01;
 			display: block;
 			overflow: hidden;
-			will-change: transform;
-
-			div {
-				will-change: transform;
-			}
 		}
 
 		span:first-child {
-			transform: translateX(20px);
+			transform: translateX(40px);
 		}
 
 		span:nth-child(2n) {

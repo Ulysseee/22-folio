@@ -8,6 +8,11 @@
 @import '@scss/layout/loader';
 @import '@scss/layout/nav';
 @import '@scss/layout/landing';
+@import '@scss/layout/me';
 
 #app {
+	.char,
+	.word {
+		will-change: transform;
+	}
 }

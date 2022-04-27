@@ -1,9 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import gsap, { Power2, Power3 } from 'gsap'
-import SplitType from 'split-type'
-
 import config from '@utils/config'
 import Debug from '@utils/Debug'
 import Sizes from '@utils/Sizes'
@@ -12,10 +9,7 @@ import Camera from '@js/Camera'
 import Renderer from '@js/Renderer'
 import World from '@js/World/World'
 
-import Cursor from '@js/Cursor'
-
-import Loader from '@js/animations/Loader'
-import Title from '@js/animations/Title'
+import SmoothScroll from '@js/SmoothScroll'
 
 export default class MainScene {
 	constructor(_canvas) {
@@ -26,18 +20,6 @@ export default class MainScene {
 		MainScene._instance = this
 
 		this.canvas = _canvas
-		this.dom = {
-			loader: document.querySelectorAll('[data-animation="loader"]'),
-			title: document.querySelectorAll('[data-animation="title"]')
-		}
-
-		const createAnimations = () => {
-			this.dom.loader.forEach((element) => new Loader({ element }))
-			this.dom.title.forEach((element) => new Title({ element }))
-		}
-		createAnimations()
-
-		this.cursor = new Cursor(document.querySelectorAll('.cursor'))
 
 		this.sizes = new Sizes()
 		this.time = new Time()
@@ -46,6 +28,23 @@ export default class MainScene {
 		this.camera = new Camera()
 		this.renderer = new Renderer()
 		this.world = new World()
+
+		this.scroll = {
+			height: 0,
+			limit: 0,
+			hard: 0,
+			soft: 0,
+			ease: 0.075
+		}
+
+		this.smoothScroll = new SmoothScroll({
+			element: document.querySelector('[data-scroll-container]'),
+			viewport: {
+				width: this.sizes.width,
+				height: this.sizes.height
+			},
+			scroll: this.scroll
+		})
 
 		this.sizes.on('resize', () => {
 			this.resize()
@@ -61,6 +60,7 @@ export default class MainScene {
 	}
 
 	update() {
+		this.smoothScroll.update()
 		this.camera.update()
 
 		if (this.world) this.world.update()
@@ -75,6 +75,7 @@ export default class MainScene {
 	}
 
 	resize() {
+		this.smoothScroll.onResize()
 		this.camera.resize()
 		this.renderer.resize()
 	}

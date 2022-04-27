@@ -1,5 +1,5 @@
 .loader {
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 	top: 0;
 	left: 0;
@@ -20,11 +20,6 @@
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
-		will-change: transform;
-
-		.char {
-			will-change: transform;
-		}
 
 		.char:nth-child(5) {
 			padding-right: 2rem;
