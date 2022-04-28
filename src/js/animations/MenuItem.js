@@ -7,14 +7,27 @@ export default class extends Animation {
 		super({ element })
 
 		this.splitText()
+
+		element.parentNode.addEventListener('mouseenter', () => this.enter())
+		element.parentNode.addEventListener('mouseleave', () => this.leave())
 	}
 
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
-			types: 'words'
+			types: 'words, chars'
 		})
+		this.spliteClonedElement = new SplitType(
+			this.element.nextElementSibling,
+			{
+				types: 'words, chars'
+			}
+		)
 		gsap.set(this.splitedElement.words, {
 			y: '100%'
+		})
+		gsap.set(this.spliteClonedElement.chars, {
+			y: '100%',
+			opacity: 0
 		})
 	}
 
@@ -26,5 +39,45 @@ export default class extends Animation {
 			delay: this.delay ? this.delay : 0,
 			ease: Power3.easeInOut
 		})
+	}
+
+	enter() {
+		gsap.timeline()
+			.to(this.splitedElement.chars, {
+				y: '-100%',
+				rotationX: -90,
+				duration: 0.5,
+				opacity: 0,
+				stagger: 0.025,
+				ease: Power2
+			})
+			.to(this.spliteClonedElement.chars, {
+				y: 0,
+				opacity: 1,
+				stagger: 0.025,
+				delay: -0.6,
+				duration: 0.5,
+				ease: Power2
+			})
+	}
+
+	leave() {
+		gsap.timeline()
+			.to(this.splitedElement.chars, {
+				y: 0,
+				rotationX: 0,
+				duration: 0.5,
+				opacity: 1,
+				stagger: 0.025,
+				ease: Power2
+			})
+			.to(this.spliteClonedElement.chars, {
+				y: '100%',
+				opacity: 0,
+				stagger: 0.025,
+				delay: -0.6,
+				duration: 0.5,
+				ease: Power2
+			})
 	}
 }

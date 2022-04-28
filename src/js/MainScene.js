@@ -1,6 +1,8 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
+import gsap from 'gsap'
+
 import config from '@utils/config'
 import Debug from '@utils/Debug'
 import Sizes from '@utils/Sizes'
@@ -34,7 +36,14 @@ export default class MainScene {
 			limit: 0,
 			hard: 0,
 			soft: 0,
-			ease: 0.085
+			ease: 0.1,
+			normalized: 0,
+			running: false
+		}
+
+		this.scrollEl = {
+			header: document.querySelector('header'),
+			line: document.querySelector('.nav-w__state-on')
 		}
 
 		this.smoothScroll = new SmoothScroll({
@@ -50,7 +59,32 @@ export default class MainScene {
 			this.resize()
 		})
 
+		window.addEventListener('scroll', this.onScroll.bind(this))
+
 		this.update()
+	}
+
+	onScroll() {
+		if (!this.scroll.running) {
+			this.scroll.running = true
+		}
+	}
+
+	scrollLineUpdate() {
+		this.scroll.running = false
+		this.scroll.normalized = (this.scroll.hard / this.scroll.limit).toFixed(
+			1
+		)
+
+		if (this.scroll.hard !== 0) this.scrollEl.header.classList.add('hide')
+		else this.scrollEl.header.classList.remove('hide')
+
+		gsap.to(this.scrollEl.line, {
+			scaleX: this.scroll.normalized,
+			transformOrigin: 'left',
+			duration: 0.85,
+			ease: 'ease'
+		})
 	}
 
 	setDebug() {
@@ -61,6 +95,8 @@ export default class MainScene {
 
 	update() {
 		this.smoothScroll.update()
+		if (this.scroll.running) this.scrollLineUpdate()
+
 		this.camera.update()
 
 		if (this.world) this.world.update()
