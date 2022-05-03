@@ -1,18 +1,23 @@
 .me {
 	width: 100%;
 	height: auto;
-	padding: 20rem 0;
-	font-family: 'Neue Montreal';
+	padding: 15rem 0;
 
 	&__infos {
 		width: 100%;
-		line-height: 1.5;
-		font-size: 1.75rem;
-		text-align: center;
+		line-height: 1.1;
+		font-size: 3.5rem;
 		padding: 0 3rem;
 
 		div {
 			overflow: hidden;
+			display: block;
+		}
+
+		div:nth-child(3) {
+			-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+			-webkit-text-stroke-width: 2px;
+			-webkit-text-stroke-color: #000;
 		}
 	}
 }

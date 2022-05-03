@@ -29,8 +29,6 @@ export default class Time extends EventEmitter {
 	 * Tick
 	 */
 	tick() {
-		this.ticker = window.requestAnimationFrame(this.tick)
-
 		const current = Date.now()
 
 		this.delta = current - this.current

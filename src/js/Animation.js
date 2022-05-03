@@ -9,12 +9,16 @@ export default class {
 	}
 
 	createObserver() {
-		this.observer = new window.IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					this.animateIn()
-				}
-			})
-		}).observe(this.element)
+		this.observer = new IntersectionObserver(this.onIntersection)
+		this.observer.observe(this.element)
+	}
+
+	onIntersection = (entries) => {
+		for (const entry of entries) {
+			if (entry.isIntersecting) {
+				this.animateIn()
+				this.observer.unobserve(this.element)
+			}
+		}
 	}
 }

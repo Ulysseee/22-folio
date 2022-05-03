@@ -1,5 +1,4 @@
 import MainScene from '@js/MainScene'
-import Cursor from '@js/Cursor'
 
 import Loader from '@js/animations/Loader'
 import Title from '@js/animations/Title'
@@ -27,7 +26,6 @@ class App {
 		console.log('Proudly enhanced with Vite!')
 
 		const app = document.querySelector('#app')
-		const cursor = new Cursor(document.querySelectorAll('.cursor'))
 
 		new MainScene(document.querySelector('canvas.webgl'))
 		this.setAnimations()

@@ -14,12 +14,14 @@ export default class extends Animation {
 
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
-			types: 'words, chars'
+			types: 'words, chars',
+			tagName: 'span'
 		})
 		this.spliteClonedElement = new SplitType(
 			this.element.nextElementSibling,
 			{
-				types: 'words, chars'
+				types: 'words, chars',
+				tagName: 'span'
 			}
 		)
 		gsap.set(this.splitedElement.words, {

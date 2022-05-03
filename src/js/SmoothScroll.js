@@ -14,10 +14,14 @@ export default class {
 	}
 
 	setSizes() {
+		// console.log(this.elements.scrollContent.getBoundingClientRect())
 		this.scroll.height =
 			this.elements.scrollContent.getBoundingClientRect().height
 		this.scroll.limit =
 			this.elements.scrollContent.clientHeight - this.viewport.height
+
+		// console.log(this.scroll.height)
+		// console.log(this.scroll.limit)
 
 		document.body.style.height = `${this.scroll.height}px`
 	}
@@ -43,7 +47,7 @@ export default class {
 			.soft}px)`
 	}
 
-	onResize() {
+	resize() {
 		this.viewport = {
 			width: window.innerWidth,
 			height: window.innerHeight

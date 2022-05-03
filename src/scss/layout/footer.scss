@@ -1,0 +1,46 @@
+.footer {
+	width: auto;
+	// height: 300px;
+	// padding: 5rem 0 0 0;
+	margin: 0 3vw;
+
+	&__contact {
+		padding-bottom: 1rem;
+
+		&__item {
+			font-size: 12.5vw;
+			font-family: 'Orelo';
+			font-weight: 300;
+			text-transform: uppercase;
+			color: #000;
+
+			a {
+				text-decoration: none;
+				color: #5a6491;
+			}
+		}
+	}
+
+	&__copyrighhts {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3vh 0;
+		// height: 6vh;
+		overflow: hidden;
+		border-top: solid 1px #000;
+		color: #000;
+
+		ul {
+			width: 170px;
+			display: flex;
+			justify-content: space-between;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+	}
+}

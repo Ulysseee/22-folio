@@ -135,8 +135,6 @@ class CursorElement {
 				cursor.y - this.bounds.height / 2
 			// Show it
 			this.DOM.el.style.opacity = 1
-			// Start rAF loop
-			requestAnimationFrame(() => this.render())
 			// Remove the initial mousemove event
 			window.removeEventListener('mousemove', onMouseMoveEv)
 		}
@@ -181,8 +179,5 @@ class CursorElement {
 		// Apply interpolated values (smooth effect)
 		this.DOM.el.style.transform = `translateX(${this.renderedStyles['tx'].previous}px) translateY(${this.renderedStyles['ty'].previous}px) scale(${this.renderedStyles['scale'].previous})`
 		this.DOM.el.style.opacity = this.renderedStyles['opacity'].previous
-
-		// loop...
-		requestAnimationFrame(() => this.render())
 	}
 }

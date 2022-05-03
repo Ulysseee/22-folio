@@ -11,16 +11,19 @@ export default class extends Animation {
 
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
-			types: 'line, words'
+			types: 'words'
+			// tagName: 'span'
 		})
 		gsap.set(this.splitedElement.words, {
-			y: '100%'
+			y: '105%',
+			opacity: 0
 		})
 	}
 
 	animateIn() {
 		gsap.to(this.splitedElement.words, {
 			y: 0,
+			opacity: 1,
 			duration: 0.8,
 			stagger: 0.02,
 			delay: this.delay ? this.delay : 0,

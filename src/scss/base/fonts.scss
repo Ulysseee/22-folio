@@ -45,3 +45,11 @@
 
 @include font-face('Neue Montreal', fonts/NeueMontreal, 300, null, woff);
 @include font-face('Neue Montreal', fonts/NeueMontreal, 300, null, woff2);
+@include font-face('Neue Montreal', fonts/NeueMontreal-Medium, 400, null, woff);
+@include font-face(
+	'Neue Montreal',
+	fonts/NeueMontreal-Medium,
+	400,
+	null,
+	woff2
+);

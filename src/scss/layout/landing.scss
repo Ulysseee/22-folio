@@ -44,23 +44,22 @@
 		display: flex;
 		flex-direction: column;
 
-		span {
+		div {
 			// color: #f7fa01;
-			display: block;
 			overflow: hidden;
 		}
 
-		span:first-child {
+		div:first-child {
 			transform: translateX(40px);
 		}
 
-		span:nth-child(2n) {
+		div:nth-child(2n) {
 			// color: #f7fa01;
 			// font-style: italic;
 			transform: translateX(-180px);
 		}
 
-		span:last-child {
+		div:last-child {
 			// color: #f7fa01;
 			// font-style: italic;
 			transform: translateX(90px);

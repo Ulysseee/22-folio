@@ -11,7 +11,8 @@ export default class extends Animation {
 
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
-			types: 'chars'
+			types: 'chars',
+			tagName: 'span'
 		})
 
 		// gsap.set(this.splitedElement.chars, {

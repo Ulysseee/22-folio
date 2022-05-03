@@ -6,11 +6,10 @@ import shadesVert from '@shaders/shades.vert'
 
 export default class Shades {
 	constructor() {
-		this.time = 0
-
 		this.MainScene = new MainScene()
 		this.scene = this.MainScene.scene
 		this.debug = this.MainScene.debug
+		this.time = this.MainScene.time
 
 		this.settings = {
 			uBaseFirst: '#98a5da',
@@ -80,8 +79,6 @@ export default class Shades {
 	}
 
 	update() {
-		this.time += 0.004
-
-		this.material.uniforms.time.value = this.time
+		this.material.uniforms.time.value = this.time.elapsed / 4000
 	}
 }

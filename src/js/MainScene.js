@@ -1,4 +1,4 @@
-import * as THREE from 'three'
+import { Scene } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import gsap from 'gsap'
@@ -11,6 +11,7 @@ import Camera from '@js/Camera'
 import Renderer from '@js/Renderer'
 import World from '@js/World/World'
 
+import Cursor from '@js/Cursor'
 import SmoothScroll from '@js/SmoothScroll'
 
 export default class MainScene {
@@ -26,10 +27,12 @@ export default class MainScene {
 		this.sizes = new Sizes()
 		this.time = new Time()
 		this.setDebug()
-		this.scene = new THREE.Scene()
+
+		this.scene = new Scene()
 		this.camera = new Camera()
 		this.renderer = new Renderer()
 		this.world = new World()
+		this.cursor = new Cursor(document.querySelectorAll('.cursor'))
 
 		this.scroll = {
 			height: 0,
@@ -49,8 +52,8 @@ export default class MainScene {
 		this.smoothScroll = new SmoothScroll({
 			element: document.querySelector('[data-scroll-container]'),
 			viewport: {
-				width: this.sizes.width,
-				height: this.sizes.height
+				width: window.innerWidth,
+				height: window.innerHeight
 			},
 			scroll: this.scroll
 		})
@@ -59,8 +62,9 @@ export default class MainScene {
 			this.resize()
 		})
 
-		window.addEventListener('scroll', this.onScroll.bind(this))
+		// window.addEventListener('mousewheel', this.onScroll.bind(this))
 
+		this.smoothScroll.resize()
 		this.update()
 	}
 
@@ -94,15 +98,16 @@ export default class MainScene {
 	}
 
 	update() {
+		this.time.tick()
+
+		this.cursor.cursorElements.forEach((el) => el.render())
+
 		this.smoothScroll.update()
 		if (this.scroll.running) this.scrollLineUpdate()
 
 		this.camera.update()
-
 		if (this.world) this.world.update()
-
 		if (this.renderer) this.renderer.update()
-
 		if (this.debug) this.debug.stats.update()
 
 		window.requestAnimationFrame(() => {
@@ -111,9 +116,9 @@ export default class MainScene {
 	}
 
 	resize() {
-		this.smoothScroll.onResize()
 		this.camera.resize()
 		this.renderer.resize()
+		this.smoothScroll.resize()
 	}
 
 	destroy() {}
