@@ -64,7 +64,6 @@ export default class MainScene {
 
 		// window.addEventListener('mousewheel', this.onScroll.bind(this))
 
-		this.smoothScroll.resize()
 		this.update()
 	}
 

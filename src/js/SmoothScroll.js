@@ -10,18 +10,16 @@ export default class {
 			scrollContent: this.element.querySelector('.scroll__content')
 		}
 
-		this.setSizes()
+		setTimeout(() => {
+			this.resize()
+		}, 200)
 	}
 
 	setSizes() {
-		// console.log(this.elements.scrollContent.getBoundingClientRect())
 		this.scroll.height =
 			this.elements.scrollContent.getBoundingClientRect().height
 		this.scroll.limit =
 			this.elements.scrollContent.clientHeight - this.viewport.height
-
-		// console.log(this.scroll.height)
-		// console.log(this.scroll.limit)
 
 		document.body.style.height = `${this.scroll.height}px`
 	}
