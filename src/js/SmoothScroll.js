@@ -1,7 +1,10 @@
+import EventEmitter from '@utils/EventEmitter'
 import gsap from 'gsap'
 
-export default class {
+export default class SmoothScroll extends EventEmitter {
 	constructor({ element, viewport, scroll }) {
+		super()
+
 		this.element = element
 		this.viewport = viewport
 		this.scroll = scroll
@@ -9,6 +12,10 @@ export default class {
 		this.elements = {
 			scrollContent: this.element.querySelector('.scroll__content')
 		}
+
+		window.addEventListener('mousewheel', () => {
+			this.trigger('scroll')
+		})
 
 		setTimeout(() => {
 			this.resize()
