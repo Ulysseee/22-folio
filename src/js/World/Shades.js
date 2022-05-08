@@ -12,12 +12,18 @@ export default class Shades {
 		this.time = this.MainScene.time
 
 		this.settings = {
-			uBaseFirst: '#98a5da',
-			uBaseSecond: '#5a6491',
-			uAccent: '#112d9e'
+			// uBaseFirst: '#98a5da',
+			// uBaseSecond: '#5a6491',
+			// uAccent: '#112d9e'
+			// #463733,
+			// #6c7e86,
+			// #86716c
 			// uBaseFirst: '#ffe0d9',
 			// uBaseSecond: '#fe3301',
-			// uAccent: '#f19c87'
+			// uAccent: '#f19c87',
+			uBaseFirst: '#f7efe3',
+			uBaseSecond: '#fe3301',
+			uAccent: '#5c6c73'
 		}
 
 		this.tCol = {

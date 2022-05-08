@@ -1,9 +1,11 @@
 export default class {
 	constructor({ element }) {
-		const { animationDelay } = element.dataset
+		const { animationDelay, me } = element.dataset
 
 		this.element = element
 		this.delay = animationDelay
+		if (me === 'true') this.me = true
+		// if (me === 'true') console.log(me)
 
 		this.createObserver()
 	}

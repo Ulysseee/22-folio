@@ -1,0 +1,23 @@
+.skills {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 6rem;
+
+	&__title {
+		@extend %sectionTitle;
+	}
+
+	span {
+		display: block;
+		font-size: 10rem;
+		text-transform: uppercase;
+		font-family: 'Orelo';
+		font-weight: 300;
+		// color: #112d9e;
+		color: #fe3301;
+
+		will-change: transform;
+	}
+}

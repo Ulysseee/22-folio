@@ -1,0 +1,9 @@
+.projects {
+	width: 100%;
+	height: auto;
+	padding: 10rem 2vw;
+
+	&__title {
+		@extend %sectionTitle;
+	}
+}

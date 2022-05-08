@@ -1,7 +1,7 @@
 import { Scene } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import gsap from 'gsap'
+import gsap, { Power3 } from 'gsap'
 
 import config from '@utils/config'
 import Debug from '@utils/Debug'
@@ -46,7 +46,11 @@ export default class MainScene {
 
 		this.scrollEl = {
 			header: document.querySelector('header'),
-			line: document.querySelector('.nav-w__state-on')
+			line: document.querySelector('.nav-w__state-on'),
+			headLocomotive: document.querySelector('[data-head-locomotive]'),
+			tailLocomotive: document.querySelector('[data-tail-locomotive]'),
+			star: document.querySelector('.star'),
+			scrollDiv: document.querySelector('.scroll')
 		}
 
 		this.smoothScroll = new SmoothScroll({
@@ -87,7 +91,12 @@ export default class MainScene {
 			scaleX: this.scroll.normalized,
 			transformOrigin: 'left',
 			duration: 0.85,
-			ease: 'ease'
+			ease: Power3.ease
+		})
+		gsap.to([this.scrollEl.star, this.scrollEl.scrollDiv], {
+			rotate: this.scroll.soft * 0.5,
+			duration: 0.85,
+			ease: Power3.ease
 		})
 	}
 

@@ -24,7 +24,7 @@ export default class extends Animation {
 		gsap.timeline()
 			.from(this.splitedElement.chars, {
 				y: '100%',
-				skewX: 20,
+				rotate: -20,
 				duration: 0.8,
 				stagger: {
 					each: 0.02,
@@ -35,6 +35,7 @@ export default class extends Animation {
 			})
 			.to(this.splitedElement.chars, {
 				y: '-120%',
+				rotate: 0,
 				duration: 0.8,
 				stagger: {
 					each: 0.02,

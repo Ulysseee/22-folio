@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="img/star.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>FOLIO 22'</title>
 	</head>
@@ -70,29 +70,32 @@
 					</nav>
 				</header>
 
+				<img class="star" src="img/star.svg" alt="" />
+				<div class="scroll">(Scroll)</div>
+
 				<div class="scroll__content">
 					<main>
 						<section class="landing">
-							<div class="landing__scroll-indicator"></div>
+							<!-- <div class="landing__scroll-indicator"></div> -->
 							<h1 class="landing__title">
 								<div
 									class="title__first__el"
 									data-animation="title"
-									data-animation-delay="3.3"
+									data-animation-delay="3.4"
 								>
 									Interactive
 								</div>
 								<div
 									class="title__second__el"
 									data-animation="title"
-									data-animation-delay="3.3"
+									data-animation-delay="3.5"
 								>
 									front-end
 								</div>
 								<div
 									class="title__third__el"
 									data-animation="title"
-									data-animation-delay="3.3"
+									data-animation-delay="3.6"
 								>
 									web developer
 								</div>
@@ -105,28 +108,58 @@
 						</section>
 
 						<section class="me">
+							<h2 class="me__title">Who I'm I</h2>
+							<p
+								class="me__infos me"
+								data-animation="paragraph"
+								data-me="true"
+								data-animation-delay="0.3"
+							>
+								Hi I'm <span>Ulysse</span>, a twenty years old
+								interactive front-end developer based in Paris.
+								I love working at the intersection of creativity
+								and user friendly interfaces. I'm looking for an
+								apprenticeship for 2022-2025 for my Master
+								degree at @Goeblins!
+							</p>
+
 							<p
 								class="me__infos"
 								data-animation="paragraph"
 								data-animation-delay="0.3"
 							>
-								Hi I'm Ulysse, a front-end developer based in
-								Paris, focus on interaction who loves fancy
-								websites & experiences. I'm looking for an
-								apprenticeship for 2022-2023 for my Master
-								degree at @Goeblins!
+								When I'm not building or exploring new web
+								experiences, I'm probably playing games or
+								watching films.
 							</p>
+						</section>
+
+						<section class="skills">
+							<span data-head-locomotive>React*Vue*Three.js</span>
+							<span data-tail-locomotive
+								>INTERACTION*PERFORMANCE*TEAMWORK*CREATIVITYa</span
+							>
+						</section>
+
+						<section class="projects">
+							<h2 class="projects__title">
+								Some projects I've made
+							</h2>
+						</section>
+
+						<section class="passions">
+							<h2 class="passions__title">Stuff I like</h2>
 						</section>
 					</main>
 
 					<footer class="footer">
 						<div class="footer__contact">
-							<span class="footer__contact__item"
-								>Drop me an <br />
+							<span>Drop me an email</span>
+							<div class="footer__contact__item">
 								<a href="mailto:gravier.ulysse@gmail.com"
-									>email</a
-								></span
-							>
+									>ulysse@gmail.com</a
+								>
+							</div>
 						</div>
 
 						<div class="footer__copyrighhts">
@@ -167,7 +200,7 @@
 				data-opacity-enter="0"
 				data-amt="0.15"
 			>
-				<circle class="cursor__inner" cx="36" cy="36" r="16"></circle>
+				<circle class="cursor__inner" cx="36" cy="36" r="18"></circle>
 			</svg>
 		</div>
 

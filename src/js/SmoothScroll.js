@@ -19,7 +19,7 @@ export default class SmoothScroll extends EventEmitter {
 
 		setTimeout(() => {
 			this.resize()
-		}, 200)
+		}, 300)
 	}
 
 	setSizes() {

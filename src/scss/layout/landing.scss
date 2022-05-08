@@ -50,13 +50,13 @@
 		}
 
 		div:first-child {
-			transform: translateX(40px);
+			transform: translateX(80px);
 		}
 
 		div:nth-child(2n) {
 			// color: #f7fa01;
 			// font-style: italic;
-			transform: translateX(-180px);
+			transform: translateX(-215px);
 		}
 
 		div:last-child {
@@ -70,8 +70,8 @@
 		z-index: 1;
 		position: absolute;
 		bottom: 1rem;
-		right: 2rem;
-
+		right: 50%;
+		transform: translateX(50%);
 		font-size: 0.75rem;
 		color: #fff;
 		text-transform: uppercase;

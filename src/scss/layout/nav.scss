@@ -14,7 +14,7 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin: 0 3vw;
+		margin: 0 2vw;
 		padding: 0 0.635vw;
 		height: 5vw;
 		overflow: hidden;
@@ -71,6 +71,7 @@ header {
 			left: 0;
 			width: 100%;
 			height: 1px;
+			transition: height ease;
 
 			&-off {
 				position: absolute;
@@ -98,5 +99,10 @@ header {
 }
 
 .hide {
-	transform: translateY(calc(-5vw + 1px));
+	transform: translateY(calc(-5vw + 2px));
+
+	.nav-w__state {
+		transition-delay: 0;
+		height: 2px;
+	}
 }

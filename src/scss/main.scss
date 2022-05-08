@@ -2,6 +2,8 @@
 @import '@scss/utils/var';
 @import '@scss/utils/responsive';
 
+@import '@scss/shared/sectionTitle';
+
 @import '@scss/base/fonts';
 @import '@scss/base/reset';
 @import '@scss/base/base';
@@ -10,6 +12,9 @@
 @import '@scss/layout/nav';
 @import '@scss/layout/landing';
 @import '@scss/layout/me';
+@import '@scss/layout/skills';
+@import '@scss/layout/projects';
+@import '@scss/layout/passions';
 @import '@scss/layout/footer';
 
 @import '@scss/components/loader';
