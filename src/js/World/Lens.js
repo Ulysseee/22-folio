@@ -11,6 +11,9 @@ export default class Lens {
 		this.time = this.MainScene.time
 		this.renderer = this.MainScene.renderer
 		this.debug = this.MainScene.debug
+		this.camera = this.MainScene.camera.instance
+
+		console.log(this.camera)
 
 		this.settings = {
 			mRefractionRatio: 1.02,
@@ -49,10 +52,15 @@ export default class Lens {
 
 		this.scene.add(this.lens)
 
+		// this.camera.lookAt(this.lens.position)
+
 		if (this.debug) this.setDebug()
 	}
 
 	setDebug() {
+		const axesHelper = new THREE.AxesHelper(1)
+		this.scene.add(axesHelper)
+
 		const f = this.debug.gui.addFolder({
 			title: 'Fresnel',
 			expanded: true

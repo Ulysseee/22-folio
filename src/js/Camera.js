@@ -10,6 +10,7 @@ export default class Camera {
 		this.sizes = this.MainScene.sizes
 		this.scene = this.MainScene.scene
 		this.canvas = this.MainScene.canvas
+		this.mouse = this.MainScene.mouse
 
 		this.setInstance()
 		this.setControls()
@@ -41,5 +42,12 @@ export default class Camera {
 
 	update() {
 		this.controls.update()
+
+		// const rangeX = this.mouse.delayedMousePos.x < 0 ? 0.5 : -0.5
+
+		this.instance.position.x = this.mouse.delayedMousePos.x * 0.25
+		this.instance.position.y = -this.mouse.delayedMousePos.y * 0.25
+
+		// console.log(this.mouse.delayedMousePos.x)
 	}
 }

@@ -1,5 +1,3 @@
-import { gsap } from 'gsap'
-// import MenuItem from './menuItem'
 import MotionTrail from './MotionTrail'
 
 export default class Motion {
@@ -23,6 +21,5 @@ export default class Motion {
 				new MotionTrail(item, pos, this.animatableProperties)
 			)
 		})
-		console.log('HERE', this.menuItems)
 	}
 }

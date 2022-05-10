@@ -1,5 +1,5 @@
-import { gsap } from 'gsap'
-import { map, lerp, clamp, getMousePos } from '@utils/utils'
+import { gsap, Power2, Sine } from 'gsap'
+import { map, lerp, clamp, getMousePos } from '@utils/Maths'
 // const images = Object.entries(require('/public/img/1.jpeg'))
 
 import images from '/img/IMG_4645.jpg'
@@ -20,16 +20,12 @@ export default class MotionTrail {
 	constructor(el, inMenuPosition, animatableProperties) {
 		// el is the <a> with class "menu__item"
 		this.DOM = { el: el }
-		console.log('DOM', this.DOM)
 		// position in the Menu
 		this.inMenuPosition = inMenuPosition
-		// console.log('inMenuPosition', this.inMenuPosition)
 		// menu item properties that will animate as we move the mouse around the menu
 		this.animatableProperties = animatableProperties
-		// console.log('animatableProperties', this.animatableProperties)
 		// the item text
 		this.DOM.textInner = this.DOM.el.querySelector('.menu__item-textinner')
-		// console.log('textInner', this.DOM.textInner)
 		// create the image structure
 		this.layout()
 		// initialize some events
@@ -103,7 +99,8 @@ export default class MotionTrail {
 			// animate the image wrap
 			.to(this.DOM.revealInner, {
 				duration: 0.2,
-				ease: 'Sine.easeOut',
+				ease: Sine.easeOut,
+				// ease: Power2.easeOut,
 				startAt: { x: direction.x < 0 ? '-100%' : '100%' },
 				x: '0%'
 			})
@@ -112,7 +109,8 @@ export default class MotionTrail {
 				this.DOM.revealImage,
 				{
 					duration: 0.2,
-					ease: 'Sine.easeOut',
+					ease: Sine.easeOut,
+					// ease: Power2.easeOut,
 					startAt: { x: direction.x < 0 ? '100%' : '-100%' },
 					x: '0%'
 				},

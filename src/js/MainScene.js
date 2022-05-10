@@ -14,6 +14,8 @@ import World from '@js/World/World'
 import Cursor from '@js/Cursor'
 import SmoothScroll from '@js/SmoothScroll'
 
+import Mouse from '@utils/Mouse'
+
 export default class MainScene {
 	constructor(_canvas) {
 		if (MainScene._instance) {
@@ -26,6 +28,7 @@ export default class MainScene {
 
 		this.sizes = new Sizes()
 		this.time = new Time()
+		this.mouse = new Mouse()
 		this.setDebug()
 
 		this.scene = new Scene()
@@ -94,7 +97,7 @@ export default class MainScene {
 			ease: Power3.ease
 		})
 		gsap.to([this.scrollEl.star, this.scrollEl.scrollDiv], {
-			rotate: this.scroll.soft * 0.5,
+			rotate: this.scroll.hard * 0.5,
 			duration: 0.85,
 			ease: Power3.ease
 		})
@@ -114,6 +117,7 @@ export default class MainScene {
 		this.smoothScroll.update()
 		if (this.scroll.running) this.scrollLineUpdate()
 
+		this.mouse.update()
 		this.camera.update()
 		if (this.world) this.world.update()
 		if (this.renderer) this.renderer.update()

@@ -3,6 +3,7 @@ uniform float time;
 uniform vec3 uBaseFirst;
 uniform vec3 uBaseSecond;
 uniform vec3 uAccent;
+uniform vec2 uMouse;
 varying vec2 vUv;
 varying vec3 vPosition;
 
@@ -50,11 +51,9 @@ float lines(vec2 uv, float offset) {
 }
 
 void main() {
+	vec2 mouse = uMouse;
+
     float n = noise(vPosition + time);
-    // vec3 baseFirst = vec3(120./255., 158./255., 113./255.);
-    // vec3 accent = vec3(0.,0.,0);
-    // vec3 baseSecond = vec3(224./255., 148./255., 66./255.);
-    // // vec3 baseThird = vec3(232./255., 201./255., 73./255.);
 
     // vec3 baseFirst = vec3(uBaseFirst);
     // vec3 baseSecond = vec3(uBaseSecond);
@@ -64,6 +63,7 @@ void main() {
     // vec3 baseSecond = vec3(147./255., 159./255., 214./255.);
     // vec3 accent = vec3(17./255., 45./255., 158./255.);
 
+    // vec2 baseUv = rotate2D(n) * vPosition.xy * 0.1;
     vec2 baseUv = rotate2D(n) * vPosition.xy * 0.1;
     float basePattern = lines(baseUv, 0.5);
     float secondPattern = lines(baseUv, 0.1);

@@ -3,7 +3,7 @@
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 6rem;
+	padding: 6rem 0;
 
 	&__title {
 		@extend %sectionTitle;

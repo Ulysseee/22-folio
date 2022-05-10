@@ -10,6 +10,9 @@ export default class Shades {
 		this.scene = this.MainScene.scene
 		this.debug = this.MainScene.debug
 		this.time = this.MainScene.time
+		this.mouse = this.MainScene.mouse
+
+		console.log(this.mouse)
 
 		this.settings = {
 			// uBaseFirst: '#98a5da',
@@ -32,8 +35,6 @@ export default class Shades {
 			accent: new THREE.Color()
 		}
 
-		const color2 = new THREE.Color(this.settings.baseFirst)
-
 		this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32)
 		this.material = new THREE.ShaderMaterial({
 			extensions: {
@@ -48,7 +49,8 @@ export default class Shades {
 				uBaseSecond: {
 					value: this.tCol.baseSecond.set(this.settings.uBaseSecond)
 				},
-				uAccent: { value: this.tCol.accent.set(this.settings.uAccent) }
+				uAccent: { value: this.tCol.accent.set(this.settings.uAccent) },
+				uMouse: { value: [0, 0] }
 			},
 			vertexShader: shadesVert,
 			fragmentShader: shadesFrag,
@@ -86,5 +88,10 @@ export default class Shades {
 
 	update() {
 		this.material.uniforms.time.value = this.time.elapsed / 4000
+
+		this.material.uniforms.uMouse.value = [
+			this.mouse.delayedMousePos.x,
+			this.mouse.delayedMousePos.y
+		]
 	}
 }

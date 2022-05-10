@@ -4,8 +4,8 @@ export default class {
 
 		this.element = element
 		this.delay = animationDelay
+
 		if (me === 'true') this.me = true
-		// if (me === 'true') console.log(me)
 
 		this.createObserver()
 	}

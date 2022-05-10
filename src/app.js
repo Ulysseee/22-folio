@@ -4,6 +4,7 @@ import Loader from '@js/animations/Loader'
 import Title from '@js/animations/Title'
 import MenuItem from '@js/animations/MenuItem'
 import Paragraph from '@js/animations/Paragraph'
+import Links from '@js/animations/Links'
 
 import '@scss/main.scss'
 
@@ -18,7 +19,10 @@ class App {
 			loader: document.querySelectorAll('[data-animation="loader"]'),
 			title: document.querySelectorAll('[data-animation="title"]'),
 			menuItem: document.querySelectorAll('[data-animation="menuItem"]'),
-			paragraph: document.querySelectorAll('[data-animation="paragraph"]')
+			paragraph: document.querySelectorAll(
+				'[data-animation="paragraph"]'
+			),
+			links: document.querySelectorAll('[data-animation="link"]')
 		}
 	}
 
@@ -36,5 +40,6 @@ class App {
 		this.dom.title.forEach((element) => new Title({ element }))
 		this.dom.menuItem.forEach((element) => new MenuItem({ element }))
 		this.dom.paragraph.forEach((element) => new Paragraph({ element }))
+		this.dom.links.forEach((element) => new Links({ element }))
 	}
 }
