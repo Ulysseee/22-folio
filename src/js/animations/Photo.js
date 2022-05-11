@@ -1,9 +1,8 @@
-import MotionTrail from './MotionTrail'
+import PhotoTrail from './PhotoTrail'
 
-export default class Motion {
+export default class Photo {
 	constructor(el) {
 		this.menuItemsList = document.querySelectorAll('.menu__item')
-
 		this.animatableProperties = {
 			// translationX
 			tx: { previous: 0, current: 0, amt: 0.08 },
@@ -18,7 +17,7 @@ export default class Motion {
 		this.menuItems = []
 		;[...this.menuItemsList].forEach((item, pos) => {
 			this.menuItems.push(
-				new MotionTrail(item, pos, this.animatableProperties)
+				new PhotoTrail(item, pos, this.animatableProperties)
 			)
 		})
 	}

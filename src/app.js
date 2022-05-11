@@ -1,10 +1,14 @@
 import MainScene from '@js/MainScene'
 
-import Loader from '@js/animations/Loader'
-import Title from '@js/animations/Title'
-import MenuItem from '@js/animations/MenuItem'
-import Paragraph from '@js/animations/Paragraph'
-import Links from '@js/animations/Links'
+import Loader from '@js/animations/semantic/Loader'
+import Title from '@js/animations/semantic/Title'
+import MenuItem from '@js/animations/semantic/MenuItem'
+import Paragraph from '@js/animations/semantic/Paragraph'
+import Links from '@js/animations/semantic/Links'
+import SectionTitle from '@js/animations/semantic/SectionTitle'
+import ListItem from '@js/animations/semantic/ListItem'
+
+import Passions from '@js/animations/Passions'
 
 import '@scss/main.scss'
 
@@ -22,7 +26,11 @@ class App {
 			paragraph: document.querySelectorAll(
 				'[data-animation="paragraph"]'
 			),
-			links: document.querySelectorAll('[data-animation="link"]')
+			links: document.querySelectorAll('[data-animation="link"]'),
+			sectionTitle: document.querySelectorAll(
+				'[data-animation="sectionTitle"]'
+			),
+			listItem: document.querySelectorAll('[data-animation="listItem"]')
 		}
 	}
 
@@ -32,6 +40,7 @@ class App {
 		const app = document.querySelector('#app')
 
 		new MainScene(document.querySelector('canvas.webgl'))
+		new Passions()
 		this.setAnimations()
 	}
 
@@ -40,6 +49,10 @@ class App {
 		this.dom.title.forEach((element) => new Title({ element }))
 		this.dom.menuItem.forEach((element) => new MenuItem({ element }))
 		this.dom.paragraph.forEach((element) => new Paragraph({ element }))
-		this.dom.links.forEach((element) => new Links({ element }))
+		this.dom.links.forEach((element) => new Links({ element })),
+			this.dom.sectionTitle.forEach(
+				(element) => new SectionTitle({ element })
+			),
+			this.dom.listItem.forEach((element) => new ListItem({ element }))
 	}
 }

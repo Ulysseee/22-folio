@@ -8,10 +8,12 @@ export default class extends Animation {
 
 		this.splitText()
 
-		// console.log(this.splitedElement)
-
-		element.parentNode.addEventListener('mouseenter', () => this.enter())
-		element.parentNode.addEventListener('mouseleave', () => this.leave())
+		this.element.parentNode.addEventListener('mouseenter', () =>
+			this.enter()
+		)
+		this.element.parentNode.addEventListener('mouseleave', () =>
+			this.leave()
+		)
 	}
 
 	animateIn() {}

@@ -20,7 +20,7 @@
 					preserveAspectRatio="none"
 				>
 					<path
-						fill="#fff"
+						fill="#f7efe3"
 						class="overlay__path"
 						vector-effect="non-scaling-stroke"
 						d="M 0 0 V 100 Q 50 100 100 100 V 0 z"
@@ -108,7 +108,10 @@
 						</section>
 
 						<section class="me">
-							<h2 class="me__title">Who I'm I</h2>
+							<h2 class="me__title" data-animation="sectionTitle">
+								<span>Who am I</span>
+								<div class="title__border"></div>
+							</h2>
 							<p
 								class="me__infos me"
 								data-animation="paragraph"
@@ -126,7 +129,7 @@
 							<p
 								class="me__infos"
 								data-animation="paragraph"
-								data-animation-delay="0.5"
+								data-animation-delay="0.4"
 							>
 								When I'm not building or exploring new web
 								experiences, I'm probably playing games or
@@ -139,9 +142,6 @@
 										class="textcircle"
 										viewBox="0 0 500 500"
 									>
-										<title>
-											Projects & client work 2020
-										</title>
 										<!-- d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z" -->
 										<!-- d="M 212.5 340 a 127.5 127.5 90 0 1 0 -255 a 127.5 127.5 90 0 1 0 255 Z" -->
 										<!-- d="M 187.5 300 a 112.5 112.5 90 0 1 0 -225 a 112.5 112.5 90 0 1 0 225 Z" -->
@@ -217,13 +217,95 @@
 						</section>
 
 						<section class="projects">
-							<h2 class="projects__title">
-								Some projects I've made
+							<h2
+								class="projects__title"
+								data-animation="sectionTitle"
+							>
+								<span>Recent work</span>
+								<div class="title__border"></div>
 							</h2>
 						</section>
 
 						<section class="passions">
-							<h2 class="passions__title">Stuff I like</h2>
+							<h2
+								class="passions__title"
+								data-animation="sectionTitle"
+							>
+								<span>Stuff I like</span>
+								<div class="title__border"></div>
+							</h2>
+
+							<div class="passions__wrapper">
+								<ul class="passions__list">
+									<li class="passions__item">
+										<span class="passions__item-text"
+											><span
+												class="passions__item-textinner"
+												data-animation="listItem"
+												data-animation-delay="0.2"
+												>Films</span
+											></span
+										>
+										<span class="passions__item-sub"
+											>Theatres are my second home</span
+										>
+									</li>
+									<li class="passions__item">
+										<span class="passions__item-text"
+											><span
+												class="passions__item-textinner"
+												data-animation="listItem"
+												data-animation-delay="0.2"
+												>Music</span
+											></span
+										>
+										<span class="passions__item-sub"
+											>All kinds, especially hip-hop and
+											rock</span
+										>
+									</li>
+									<li class="passions__item">
+										<span class="passions__item-text"
+											><span
+												class="passions__item-textinner"
+												data-animation="listItem"
+												data-animation-delay="0.2"
+												>Photography</span
+											></span
+										>
+										<span class="passions__item-sub"
+											>Cinematographically speaking</span
+										>
+									</li>
+									<li class="passions__item">
+										<span class="passions__item-text"
+											><span
+												class="passions__item-textinner"
+												data-animation="listItem"
+												data-animation-delay="0.2"
+												>Museum exhibit</span
+											></span
+										>
+										<span class="passions__item-sub"
+											>Any time you want for a date
+											:)</span
+										>
+									</li>
+									<li class="passions__item">
+										<span class="passions__item-text"
+											><span
+												class="passions__item-textinner"
+												data-animation="listItem"
+												data-animation-delay="0.2"
+												>Video games</span
+											></span
+										>
+										<span class="passions__item-sub"
+											>Especially when I win</span
+										>
+									</li>
+								</ul>
+							</div>
 						</section>
 					</main>
 

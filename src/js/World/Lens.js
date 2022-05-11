@@ -13,8 +13,6 @@ export default class Lens {
 		this.debug = this.MainScene.debug
 		this.camera = this.MainScene.camera.instance
 
-		console.log(this.camera)
-
 		this.settings = {
 			mRefractionRatio: 1.02,
 			mFresnelBias: 0.1,

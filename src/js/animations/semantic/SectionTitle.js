@@ -1,0 +1,46 @@
+import Animation from '@js/Animation'
+import gsap, { Power3, Power2 } from 'gsap'
+import SplitType from 'split-type'
+
+export default class extends Animation {
+	constructor({ element }) {
+		super({ element })
+
+		this.splitText()
+	}
+
+	splitText() {
+		this.splitedElement = new SplitType(this.element.firstElementChild, {
+			types: 'words',
+			tagName: 'span'
+		})
+
+		gsap.set(this.splitedElement.words, {
+			y: '150%'
+		})
+		gsap.set(this.splitedElement.words, {
+			y: '150%'
+		})
+		gsap.to(this.element.lastElementChild, {
+			scaleX: 0,
+			transformOrigin: 'left'
+		})
+	}
+
+	animateIn() {
+		gsap.timeline()
+			.to(this.element.lastElementChild, {
+				scaleX: 1,
+				transformOrigin: 'left',
+				duration: 0.85,
+				delay: 0.3,
+				ease: Power3.easeInOut
+			})
+			.to(this.splitedElement.words, {
+				y: 0,
+				stagger: 0.1,
+				delay: this.delay ? this.delay : -0.5,
+				ease: Power3.inOut
+			})
+	}
+}
