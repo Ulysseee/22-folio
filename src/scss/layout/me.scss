@@ -13,24 +13,20 @@
 		font-size: 3.5rem;
 		font-weight: 300;
 		color: #000;
-		padding: 8rem 0 4rem 0;
+		padding: 4rem 0 8rem;
 		margin-left: auto;
-
-		// &:last-child {
-		// 	padding: 0 0 8rem 0;
-		// }
 
 		div {
 			overflow: hidden;
 		}
 	}
 
-	.me {
-		padding: 8rem 0 0 0;
+	&__infos-me {
+		padding: 8rem 0 4rem 0;
 
 		div:nth-child(3) {
 			overflow: visible;
-			top: -14px;
+			top: -12px;
 			z-index: 100;
 		}
 	}
@@ -91,9 +87,6 @@
 		}
 	}
 
-	/* Made with the help of Mary Lou's article, huge shout out:
-	https://tympanus.net/codrops/2021/02/17/ideas-for-css-button-hover-animations/ */
-
 	.me__cta {
 		width: 77%;
 		margin-left: auto;
@@ -126,9 +119,9 @@
 				-webkit-clip-path: circle(40% at 50% 50%);
 				clip-path: circle(40% at 50% 50%);
 
-				&:hover .textcircle {
-					animation: rotateIt 7s linear infinite;
-				}
+				// &:hover .textcircle {
+				// 	animation: rotateIt 7s linear infinite;
+				// }
 
 				&:hover .eye__lashes-up,
 				&:hover .eye__inner,

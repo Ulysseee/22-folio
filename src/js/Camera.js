@@ -17,11 +17,18 @@ export default class Camera {
 	}
 
 	setInstance() {
+		const perspective = 500
+		const fov =
+			(180 * (2 * Math.atan(this.sizes.height / 2 / perspective))) /
+			Math.PI
+
+		console.log(fov)
+
 		this.instance = new PerspectiveCamera(
-			75,
+			fov,
 			this.sizes.width / this.sizes.height,
 			0.1,
-			100
+			1000
 		)
 		this.instance.position.set(0, 0, 1.5)
 		this.scene.add(this.instance)
@@ -43,11 +50,7 @@ export default class Camera {
 	update() {
 		this.controls.update()
 
-		// const rangeX = this.mouse.delayedMousePos.x < 0 ? 0.5 : -0.5
-
 		this.instance.position.x = this.mouse.delayedMousePos.x * 0.25
 		this.instance.position.y = -this.mouse.delayedMousePos.y * 0.25
-
-		// console.log(this.mouse.delayedMousePos.x)
 	}
 }

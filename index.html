@@ -28,6 +28,8 @@
 				</svg>
 			</div>
 
+			<canvas class="webgl"></canvas>
+
 			<div class="scroll__stage">
 				<header class="nav">
 					<nav class="nav-w">
@@ -36,12 +38,14 @@
 								class="nav-w__logo__top"
 								data-animation="menuItem"
 								data-animation-delay="3.8"
-								>©Ulysse</span
+								>Ulysse Gravier</span
 							>
-							<span class="nav-w__logo__bottom">©Ulysse</span>
+							<span class="nav-w__logo__bottom"
+								>Ulysse Gravier</span
+							>
 						</a>
 						<div class="nav-w__menu">
-							<a href="#">
+							<a href="#projects">
 								<span
 									class="nav-w__works__top"
 									data-animation="menuItem"
@@ -51,7 +55,7 @@
 								<span class="nav-w__works__bottom">Works</span>
 							</a>
 							<span class="nav-w__sep"></span>
-							<a href="#">
+							<a href="#contact">
 								<span
 									class="nav-w__contact__top"
 									data-animation="menuItem"
@@ -70,32 +74,30 @@
 					</nav>
 				</header>
 
-				<img class="star" src="img/star.svg" alt="" />
-				<div class="scroll">(Scroll)</div>
+				<img class="star" src="img/star.svg" alt="" draggable="false" />
 
 				<div class="scroll__content">
 					<main>
 						<section class="landing">
-							<!-- <div class="landing__scroll-indicator"></div> -->
 							<h1 class="landing__title">
 								<div
 									class="title__first__el"
 									data-animation="title"
-									data-animation-delay="3.4"
+									data-animation-delay="3.5"
 								>
 									Interactive
 								</div>
 								<div
 									class="title__second__el"
 									data-animation="title"
-									data-animation-delay="3.5"
+									data-animation-delay="3.8"
 								>
 									front-end
 								</div>
 								<div
 									class="title__third__el"
 									data-animation="title"
-									data-animation-delay="3.6"
+									data-animation-delay="4.1"
 								>
 									web developer
 								</div>
@@ -104,16 +106,15 @@
 								Welcome to <span>my</span> 2022
 								<span>portfolio</span>.
 							</h2>
-							<canvas class="webgl"></canvas>
 						</section>
 
 						<section class="me">
 							<h2 class="me__title" data-animation="sectionTitle">
-								<span>Who am I</span>
+								<span>Who's talking?</span>
 								<div class="title__border"></div>
 							</h2>
 							<p
-								class="me__infos me"
+								class="me__infos me__infos-me"
 								data-animation="paragraph"
 								data-me="true"
 								data-animation-delay="0.5"
@@ -122,18 +123,8 @@
 								interactive front-end developer based in Paris.
 								I love working at the intersection of creativity
 								and user friendly interfaces. I'm looking for an
-								apprenticeship for 2022-2025 for my Master
-								degree at @Goeblins!
-							</p>
-
-							<p
-								class="me__infos"
-								data-animation="paragraph"
-								data-animation-delay="0.4"
-							>
-								When I'm not building or exploring new web
-								experiences, I'm probably playing games or
-								watching films.
+								apprenticeship for 2022-2024 for my Master
+								degree at @Gobelins!
 							</p>
 
 							<div class="me__cta">
@@ -207,23 +198,335 @@
 									>
 								</a>
 							</div>
+
+							<p
+								class="me__infos"
+								data-animation="paragraph"
+								data-animation-delay="0.4"
+							>
+								When I'm not building or exploring new web
+								experiences, I'm probably playing games or
+								watching films.
+							</p>
 						</section>
 
-						<section class="skills">
+						<!-- <section class="skills">
 							<span data-head-locomotive>React*Vue*Three.js</span>
 							<span data-tail-locomotive
 								>INTERACTION*PERFORMANCE*TEAMWORK*CREATIVITYa</span
 							>
-						</section>
+						</section> -->
 
-						<section class="projects">
+						<section id="projects" class="projects">
 							<h2
 								class="projects__title"
 								data-animation="sectionTitle"
 							>
-								<span>Recent work</span>
+								<span>Recent works</span>
 								<div class="title__border"></div>
 							</h2>
+
+							<p
+								class="projects__infos"
+								data-animation="paragraph"
+								data-animation-delay="0.4"
+							>
+								The selected works are the result of my activity
+								during the last 10 months or so. It's a mix
+								between projects and experiments (lab), and
+								their level of achievement is not equal; however
+								I found it interesting to expose them as a
+								sample of what I can produce and what drives me.
+							</p>
+
+							<div class="content">
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Queen of
+											</span></span
+										><span class="oh"
+											><span class="oh__inner"
+												>the Sea</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Osaka, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>Hidesato felt very sorry for
+												the Dragon King on hearing his
+												story, and readily promised to
+												do what he could to help
+												him.</span
+											>
+										</p>
+									</div>
+								</div>
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Hinata's</span
+											></span
+										><span class="oh"
+											><span class="oh__inner"
+												>Trouble</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Kyoto, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>His power was immense, for he
+												was the ruler of all sea
+												creatures both great and small,
+												and in his keeping were the
+												Jewels of the Ebb and Flow of
+												the Tide.</span
+											>
+										</p>
+									</div>
+								</div>
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Dragon's</span
+											></span
+										><span class="oh"
+											><span class="oh__inner"
+												>Journey</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Nagoya, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>Calling all his fish retainers
+												together, he chose several of
+												them as ambassadors to go
+												through the sea and seek for a
+												young Dragon Princess who would
+												be his bride.</span
+											>
+										</p>
+									</div>
+								</div>
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Prince</span
+											></span
+										><span class="oh"
+											><span class="oh__inner"
+												>Yamato</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Tokyo, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>The King fell in love with her
+												at once, and the wedding
+												ceremony was celebrated with
+												great splendor.
+											</span>
+										</p>
+									</div>
+								</div>
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Kumaso</span
+											></span
+										><span class="oh"
+											><span class="oh__inner"
+												>&amp; Haru</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Sapporo, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>When the hare heard these kind
+												words he felt very grateful to
+												the man, and encouraged by his
+												gentle manner the hare told him
+												all that had befallen him.</span
+											>
+										</p>
+									</div>
+								</div>
+								<div class="content__item">
+									<h2 class="content__item-title">
+										<span class="oh"
+											><span class="oh__inner"
+												>Botan's</span
+											></span
+										><span class="oh"
+											><span class="oh__inner"
+												>Dream</span
+											></span
+										>
+									</h2>
+									<div class="content__item-description">
+										<p class="oh">
+											<strong class="oh__inner"
+												>Sendai, 1986</strong
+											>
+										</p>
+										<p class="oh">
+											<span class="oh__inner"
+												>Okuni-nushi-no-Mikoto is
+												worshiped by the people in some
+												parts of Japan, as a god, and
+												the hare has become famous as
+												“The White Hare of Inaba”.
+											</span>
+										</p>
+									</div>
+								</div>
+
+								<button class="content__back unbutton">
+									<svg
+										aria-hidden="true"
+										width="16px"
+										height="16px"
+										viewBox="0 0 24 24"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M11.4939 20.5644C11.1821 20.8372 10.7083 20.8056 10.4356 20.4939L3.43557 12.4939C3.18814 12.2111 3.18814 11.7889 3.43557 11.5061L10.4356 3.50613C10.7083 3.1944 11.1822 3.16281 11.4939 3.43557C11.8056 3.70834 11.8372 4.18216 11.5644 4.49388L5.65283 11.25L20 11.25C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75L5.65283 12.75L11.5644 19.5061C11.8372 19.8179 11.8056 20.2917 11.4939 20.5644Z"
+										/>
+									</svg>
+									<span class="oh__inner">Back</span>
+								</button>
+								<nav class="content__nav-wrap">
+									<button
+										class="content__nav content__nav--prev unbutton"
+									>
+										<svg
+											width="100"
+											height="267"
+											viewBox="0 0 100 267"
+										>
+											<path
+												d="M49.894 2.766v262.979"
+												stroke-linecap="square"
+											/>
+											<path
+												fill="none"
+												d="M99.75 76.596C73.902 76.596 52.62 43.07 49.895 0 47.168 43.07 25.886 76.596.036 76.596"
+											/>
+										</svg>
+									</button>
+									<button
+										class="content__nav content__nav--next unbutton"
+									>
+										<svg
+											width="100"
+											height="267"
+											viewBox="0 0 100 267"
+										>
+											<path
+												d="M49.894 2.766v262.979"
+												stroke-linecap="square"
+											/>
+											<path
+												fill="none"
+												d="M99.75 76.596C73.902 76.596 52.62 43.07 49.895 0 47.168 43.07 25.886 76.596.036 76.596"
+											/>
+										</svg>
+									</button>
+								</nav>
+							</div>
+							<div class="slides"></div>
+							<div class="stack-wrap">
+								<div class="stack">
+									<div
+										class="stack__item stack__item--empty"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/2.jpg);
+										"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/4.jpg);
+										"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/5.jpg);
+										"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/6.jpg);
+										"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/7.jpg);
+										"
+									></div>
+									<div
+										data-animation="stackItem"
+										class="stack__item"
+										style="
+											background-image: url(/img/8.jpg);
+										"
+									></div>
+									<div
+										class="stack__item stack__item--empty"
+									></div>
+								</div>
+
+								<span class="stack-wrap__sub">
+									Projects <span>&</span> Labs
+								</span>
+							</div>
 						</section>
 
 						<section class="passions">
@@ -231,7 +534,7 @@
 								class="passions__title"
 								data-animation="sectionTitle"
 							>
-								<span>Stuff I like</span>
+								<span>My passions</span>
 								<div class="title__border"></div>
 							</h2>
 
@@ -309,29 +612,51 @@
 						</section>
 					</main>
 
-					<footer class="footer">
-						<div class="footer__contact">
+					<footer id="contact" class="footer">
+						<h2 class="footer__title" data-animation="sectionTitle">
 							<span>Drop me an email</span>
+							<div class="title__border"></div>
+						</h2>
+						<div class="footer__contact">
+							<!-- <span>Drop me an email</span> -->
 							<div class="footer__contact__item">
 								<a href="mailto:gravier.ulysse@gmail.com"
-									>ulysse@gmail.com</a
+									>ulysse.gravier@gmail.com</a
 								>
 							</div>
 						</div>
 
 						<div class="footer__copyrighhts">
 							<div class="footer__copyrighhts__item">
-								<span>Paris, 2022 © Ulysse Gravier</span>
+								Paris, 2022 © Ulysse Gravier
 							</div>
 							<div class="footer__copyrighhts__item">
 								<ul>
-									<li><a href="">Twitter</a></li>
-									<li><a href="">Github</a></li>
-									<li><a href="">LinkedIn</a></li>
+									<li>
+										<a
+											href="https://twitter.com/ulyssedev"
+											target="_blank"
+											>Twitter</a
+										>
+									</li>
+									<li>
+										<a
+											href="https://github.com/ulysseee/"
+											target="_blank"
+											>Github</a
+										>
+									</li>
+									<li>
+										<a
+											href="https://www.linkedin.com/in/ulysse-gravier/"
+											target="_blank"
+											>LinkedIn</a
+										>
+									</li>
 								</ul>
 							</div>
 							<div class="footer__copyrighhts__item">
-								<span>Back to top ↑</span>
+								<button id="toTop">Back to top ↑</button>
 							</div>
 						</div>
 					</footer>

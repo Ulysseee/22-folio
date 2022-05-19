@@ -1,7 +1,7 @@
-import image01 from '/img/1.jpeg'
-import image02 from '/img/10.jpeg'
-import image03 from '/img/11.jpeg'
-import image04 from '/img/12.jpeg'
-import image05 from '/img/13.jpeg'
+import image01 from '/img/2.jpg'
+import image02 from '/img/3.jpg'
+import image03 from '/img/4.jpg'
+import image04 from '/img/5.jpg'
+import image05 from '/img/6.jpg'
 
 export default [image01, image02, image03, image04, image05]

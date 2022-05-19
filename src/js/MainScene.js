@@ -35,7 +35,11 @@ export default class MainScene {
 		this.camera = new Camera()
 		this.renderer = new Renderer()
 		this.world = new World()
-		this.cursor = new Cursor(document.querySelectorAll('.cursor'))
+
+		this.cursor = new Cursor(document.querySelectorAll('.cursor'), [
+			'a',
+			'.stack__item'
+		])
 
 		this.scroll = {
 			height: 0,
@@ -50,10 +54,8 @@ export default class MainScene {
 		this.scrollEl = {
 			header: document.querySelector('header'),
 			line: document.querySelector('.nav-w__state-on'),
-			headLocomotive: document.querySelector('[data-head-locomotive]'),
-			tailLocomotive: document.querySelector('[data-tail-locomotive]'),
 			star: document.querySelector('.star'),
-			scrollDiv: document.querySelector('.scroll')
+			textcircle: document.querySelector('.textcircle')
 		}
 
 		this.smoothScroll = new SmoothScroll({
@@ -69,19 +71,23 @@ export default class MainScene {
 			this.resize()
 		})
 		this.smoothScroll.on('scroll', () => {
-			this.onScroll()
+			if (!this.scroll.running) this.scroll.running = true
+		})
+		const toTop = document.querySelector('#toTop')
+		toTop.addEventListener('click', () => {
+			this.scroll.hard = 0
+			this.scroll.soft = 0
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			})
+			this.scrollUpdate()
 		})
 
 		this.update()
 	}
 
-	onScroll() {
-		if (!this.scroll.running) {
-			this.scroll.running = true
-		}
-	}
-
-	scrollLineUpdate() {
+	scrollUpdate() {
 		this.scroll.running = false
 		this.scroll.normalized = (this.scroll.hard / this.scroll.limit).toFixed(
 			1
@@ -96,7 +102,7 @@ export default class MainScene {
 			duration: 0.85,
 			ease: Power3.ease
 		})
-		gsap.to([this.scrollEl.star, this.scrollEl.scrollDiv], {
+		gsap.to([this.scrollEl.star, this.scrollEl.textcircle], {
 			rotate: this.scroll.hard * 0.5,
 			duration: 0.85,
 			ease: Power3.ease
@@ -110,15 +116,18 @@ export default class MainScene {
 	}
 
 	update() {
+		// TIME
 		this.time.tick()
 
+		// DOM
 		this.cursor.cursorElements.forEach((el) => el.render())
 
+		// SMOOTH SCROLL
 		this.smoothScroll.update()
-		if (this.scroll.running) this.scrollLineUpdate()
+		if (this.scroll.running) this.scrollUpdate()
 
-		this.mouse.update()
-		this.camera.update()
+		// WEBGL
+		if (this.camera) this.camera.update()
 		if (this.world) this.world.update()
 		if (this.renderer) this.renderer.update()
 		if (this.debug) this.debug.stats.update()

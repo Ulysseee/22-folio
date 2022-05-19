@@ -18,6 +18,9 @@ export default class extends Animation {
 		// gsap.set(this.splitedElement.chars, {
 		// 	y: '100%'
 		// })
+		gsap.set('.nav-w__state-off', {
+			scaleX: 0
+		})
 	}
 
 	animateIn() {
@@ -27,7 +30,7 @@ export default class extends Animation {
 				rotate: -20,
 				duration: 0.8,
 				stagger: {
-					each: 0.02,
+					each: 0.04,
 					from: 'start'
 				},
 				delay: 0.9,
@@ -44,7 +47,7 @@ export default class extends Animation {
 				delay: 0.8,
 				ease: Power3.easeInOut
 			})
-		gsap.timeline({ delay: 2.7 })
+		gsap.timeline({ delay: 2.8 })
 			.to('.loader__overlay path', {
 				duration: 0.7,
 				ease: Power2.easeIn,
@@ -55,5 +58,10 @@ export default class extends Animation {
 				ease: Power2.easeOut,
 				attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z' }
 			})
+		gsap.timeline({ delay: 3.9 }).to('.nav-w__state-off', {
+			scaleX: 1,
+			duration: 1,
+			ease: Power3.easeInOut
+		})
 	}
 }

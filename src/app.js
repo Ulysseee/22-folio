@@ -7,8 +7,10 @@ import Paragraph from '@js/animations/semantic/Paragraph'
 import Links from '@js/animations/semantic/Links'
 import SectionTitle from '@js/animations/semantic/SectionTitle'
 import ListItem from '@js/animations/semantic/ListItem'
+import StackItem from '@js/animations/semantic/StackItem'
 
 import Passions from '@js/animations/Passions'
+import { Slideshow } from '@js/animations/SlideShow'
 
 import '@scss/main.scss'
 
@@ -30,6 +32,7 @@ class App {
 			sectionTitle: document.querySelectorAll(
 				'[data-animation="sectionTitle"]'
 			),
+			stackItem: document.querySelectorAll('[data-animation="stackItem'),
 			listItem: document.querySelectorAll('[data-animation="listItem"]')
 		}
 	}
@@ -40,7 +43,6 @@ class App {
 		const app = document.querySelector('#app')
 
 		new MainScene(document.querySelector('canvas.webgl'))
-		new Passions()
 		this.setAnimations()
 	}
 
@@ -53,6 +55,10 @@ class App {
 			this.dom.sectionTitle.forEach(
 				(element) => new SectionTitle({ element })
 			),
-			this.dom.listItem.forEach((element) => new ListItem({ element }))
+			this.dom.stackItem.forEach((element) => new StackItem({ element }))
+		this.dom.listItem.forEach((element) => new ListItem({ element }))
+
+		const passions = new Passions()
+		const slideshow = new Slideshow(document.querySelector('.stack'))
 	}
 }

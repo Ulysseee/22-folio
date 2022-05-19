@@ -44,7 +44,6 @@ export default class extends Animation {
 	}
 
 	enter() {
-		console.log(this.spliteClonedElement.chars.length * 0.06)
 		gsap.timeline()
 			.to(this.splitedElement.chars, {
 				y: '-100%',
@@ -62,17 +61,17 @@ export default class extends Animation {
 
 	leave() {
 		gsap.timeline()
-			.to(this.splitedElement.chars, {
-				y: 0,
-				rotationX: 0,
+			.to(this.spliteClonedElement.chars, {
+				y: '100%',
 				stagger: {
 					each: 0.02,
 					from: 'end'
 				},
 				ease: Power2.easeOut
 			})
-			.to(this.spliteClonedElement.chars, {
-				y: '100%',
+			.to(this.splitedElement.chars, {
+				y: 0,
+				rotationX: 0,
 				stagger: {
 					each: 0.02,
 					from: 'end'

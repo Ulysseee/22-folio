@@ -10,16 +10,15 @@
 		display: block;
 		pointer-events: none;
 		z-index: 10000;
+		shape-rendering: geometricPrecision;
 	}
 
 	.cursor--1 .cursor__inner {
-		// fill: #fff;
-		fill: #000;
+		fill: #fe3301;
 	}
 
 	.cursor--2 .cursor__inner {
 		fill: none;
-		// stroke: #fff;
 		stroke: #000;
 		stroke-width: 1px;
 	}

@@ -15,17 +15,24 @@
 		// margin-left: auto;
 	}
 
+	/* Made with the help of Mary Lou's article, huge shout out:
+	https://tympanus.net/codrops/2021/02/17/ideas-for-css-button-hover-animations/ */
+
 	&__item {
 		padding: 3.75vh 0;
 		font-family: 'Orelo';
 		font-weight: 300;
 		text-transform: uppercase;
-		border-bottom: solid 1px #000;
+		border-top: solid 1px #000;
 
 		flex: none;
 		display: flex;
 		justify-content: initial;
 		position: relative;
+
+		&:first-child {
+			border: none;
+		}
 
 		&:hover .passions__item-textinner {
 			// color: yellow;

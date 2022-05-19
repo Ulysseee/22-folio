@@ -30,9 +30,9 @@ export default class Renderer {
 	setInstance() {
 		this.instance = new WebGLRenderer({
 			canvas: this.canvas,
-			antialias: true,
-			logarithmicDepthBuffer: true
+			alpha: true
 		})
+		this.instance.setClearAlpha(0)
 		this.instance.xr.enabled = false
 		this.instance.debug.checkShaderErrors = true
 		this.instance.setSize(this.sizes.width, this.sizes.height)

@@ -29,7 +29,7 @@ export default class Lens {
 
 		this.cubeCamera = new THREE.CubeCamera(0.1, 10, this.cubeRenderTarget)
 
-		this.geometry = new THREE.SphereBufferGeometry(0.5, 36, 36)
+		this.geometry = new THREE.SphereBufferGeometry(0.6, 36, 36)
 		this.material = new THREE.ShaderMaterial({
 			uniforms: {
 				uTime: { value: 0 },

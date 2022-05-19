@@ -21,9 +21,8 @@ export default class extends Animation {
 		gsap.set(this.splitedElement.words, {
 			y: '150%'
 		})
-		gsap.to(this.element.lastElementChild, {
-			scaleX: 0,
-			transformOrigin: 'left'
+		gsap.set(this.element.lastElementChild, {
+			scaleX: 0
 		})
 	}
 
@@ -31,7 +30,6 @@ export default class extends Animation {
 		gsap.timeline()
 			.to(this.element.lastElementChild, {
 				scaleX: 1,
-				transformOrigin: 'left',
 				duration: 0.85,
 				delay: 0.3,
 				ease: Power3.easeInOut
