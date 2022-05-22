@@ -1,5 +1,7 @@
 import '@scss/main.scss'
 
+import luge from '@waaark/luge'
+
 import MainScene from '@js/MainScene'
 
 import Loader from '@js/animations/semantic/Loader'
@@ -37,9 +39,10 @@ class App {
 	}
 
 	start() {
-		console.log('Proudly enhanced with Vite!')
-
-		const app = document.querySelector('#app')
+		console.log(
+			'%c Proudly enhanced with Vite!',
+			'background: #f7efe3; color: #000; padding: 5px 2px;'
+		)
 
 		new MainScene(document.querySelector('canvas.webgl'))
 		this.setAnimations()

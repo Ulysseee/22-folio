@@ -42,9 +42,6 @@ export default class Cursor {
 	constructor(Dom_elems, triggerSelector = 'a') {
 		const [linkSelector, ...allSelector] = triggerSelector
 
-		console.log(linkSelector)
-		console.log(allSelector)
-
 		this.DOM.elements = Dom_elems
 		;[...this.DOM.elements].forEach((el) =>
 			this.cursorElements.push(new CursorElement(el))

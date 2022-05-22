@@ -8,8 +8,7 @@ export default class extends Animation {
 
 		this.title = element.querySelector('.works__heading > h3')
 		this.description = element.querySelector('.works__description')
-
-		console.log(this.title)
+		this.soon = element.querySelector('.works__soon')
 
 		this.splitText()
 	}
@@ -30,10 +29,16 @@ export default class extends Animation {
 			y: '105%',
 			opacity: 0
 		})
+		if (this.soon)
+			gsap.set(this.soon, {
+				opacity: 0,
+				scale: 0
+			})
 	}
 
 	animateIn() {
-		gsap.timeline({ delay: this.delay ? this.delay : 0 })
+		let timeline = gsap.timeline({ delay: this.delay ? this.delay : 0 })
+		timeline
 			.to(this.splitedTitle.words, {
 				y: 0,
 				opacity: 1,
@@ -44,8 +49,16 @@ export default class extends Animation {
 				y: 0,
 				opacity: 1,
 				stagger: 0.015,
-				// delay: 0.25,
 				ease: Power3.inOut
+			})
+
+		if (this.soon)
+			timeline.to(this.soon, {
+				opacity: 1,
+				scale: 1,
+				duration: 0.4,
+				ease: Power3.inOut,
+				delay: -1.3
 			})
 	}
 }

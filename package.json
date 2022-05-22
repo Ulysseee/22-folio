@@ -12,6 +12,7 @@
 		"vite": "^2.8.0"
 	},
 	"dependencies": {
+		"@waaark/luge": "^0.6.9-beta",
 		"dayjs": "^1.11.1",
 		"event-emitter": "^0.3.5",
 		"gl-matrix": "^3.4.3",

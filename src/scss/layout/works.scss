@@ -1,3 +1,17 @@
+@keyframes float-text {
+	0% {
+		left: -0%;
+	}
+
+	50% {
+		left: -100%;
+	}
+
+	100% {
+		left: -0%;
+	}
+}
+
 .works {
 	width: 100%;
 	height: auto;
@@ -87,6 +101,7 @@
 	// }
 
 	&__heading {
+		position: relative;
 		h3 {
 			font-family: 'Orelo';
 			font-size: 6vw;
@@ -103,9 +118,27 @@
 			font-weight: 300;
 			font-size: 3vw;
 			font-style: italic;
-			// transform: translateY(-68%);
-			// position: absolute;
-			top: 0;
+		}
+	}
+
+	&__soon {
+		position: absolute;
+		top: 2rem;
+		left: -1rem;
+		transform: rotate(-27.5deg);
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 1rem;
+		background: #000;
+		color: #fff;
+		width: 8rem;
+		height: 1rem;
+		overflow: hidden;
+
+		div {
+			white-space: nowrap;
+			position: absolute;
+			animation: float-text 30s linear infinite;
 		}
 	}
 

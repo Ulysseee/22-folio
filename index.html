@@ -7,7 +7,7 @@
 		<title>Ulysse Gravier - Interactive developer</title>
 	</head>
 	<body>
-		<div id="app" data-scroll-container>
+		<div id="app">
 			<div class="loader">
 				<h2 class="loader__title" data-animation="loader">
 					Hello there
@@ -28,482 +28,469 @@
 				</svg>
 			</div>
 
-			<div class="scroll__stage">
-				<header class="nav">
-					<nav class="nav-w">
-						<a class="nav-w__logo" href="#">
+			<header class="nav">
+				<nav class="nav-w">
+					<a class="nav-w__logo" href="#">
+						<span
+							class="nav-w__logo__top"
+							data-animation="menuItem"
+							data-animation-delay="3.8"
+							>Ulysse Gravier</span
+						>
+						<span class="nav-w__logo__bottom">Ulysse Gravier</span>
+					</a>
+					<div class="nav-w__menu">
+						<a href="#projects">
 							<span
-								class="nav-w__logo__top"
+								class="nav-w__works__top"
 								data-animation="menuItem"
-								data-animation-delay="3.8"
-								>Ulysse Gravier</span
+								data-animation-delay="3.9"
+								>Works</span
 							>
-							<span class="nav-w__logo__bottom"
-								>Ulysse Gravier</span
-							>
+							<span class="nav-w__works__bottom">Works</span>
 						</a>
-						<div class="nav-w__menu">
-							<a href="#projects">
-								<span
-									class="nav-w__works__top"
-									data-animation="menuItem"
-									data-animation-delay="3.9"
-									>Works</span
-								>
-								<span class="nav-w__works__bottom">Works</span>
-							</a>
-							<span class="nav-w__sep"></span>
-							<a href="#contact">
-								<span
-									class="nav-w__contact__top"
-									data-animation="menuItem"
-									data-animation-delay="4"
-									>Contact</span
-								>
-								<span class="nav-w__contact__bottom"
-									>Contact</span
-								>
-							</a>
-						</div>
-						<div class="nav-w__state">
-							<div class="nav-w__state-off"></div>
-							<div class="nav-w__state-on"></div>
-						</div>
-					</nav>
-				</header>
-
-				<img class="star" src="img/star.svg" alt="" draggable="false" />
-
-				<div class="scroll__content">
-					<main>
-						<section class="landing">
-							<h1 class="landing__title">
-								<div
-									class="title__first__el"
-									data-animation="title"
-									data-animation-delay="3.5"
-								>
-									Interactive
-								</div>
-								<div
-									class="title__second__el"
-									data-animation="title"
-									data-animation-delay="3.8"
-								>
-									front—end
-								</div>
-								<div
-									class="title__third__el"
-									data-animation="title"
-									data-animation-delay="4.1"
-								>
-									developer
-								</div>
-							</h1>
-							<h2 class="landing__subtitle">
-								Welcome to <span>my</span> 2022
-								<span>portfolio</span>.
-							</h2>
-							<canvas class="webgl"></canvas>
-						</section>
-
-						<section class="me">
-							<h2 class="me__title" data-animation="sectionTitle">
-								<span>Who's talking?</span>
-								<div class="title__border"></div>
-							</h2>
-							<p
-								class="me__infos me__infos-me"
-								data-animation="paragraph"
-								data-me="true"
-								data-animation-delay="0.5"
+						<span class="nav-w__sep"></span>
+						<a href="#contact">
+							<span
+								class="nav-w__contact__top"
+								data-animation="menuItem"
+								data-animation-delay="4"
+								>Contact</span
 							>
-								Hi I'm <span>Ulysse</span>, a twenty-year-old
-								interactive front-end developer based in Paris.
-								I love working at the intersection of creativity
-								and user friendly interfaces. I'm looking for an
-								apprenticeship for 2022-2024 for my Master
-								degree at @Gobelins!
-							</p>
+							<span class="nav-w__contact__bottom">Contact</span>
+						</a>
+					</div>
+					<div class="nav-w__state">
+						<div class="nav-w__state-off"></div>
+						<div class="nav-w__state-on"></div>
+					</div>
+				</nav>
+			</header>
 
-							<div class="me__cta">
-								<div class="cta cta--surtur">
-									<svg
-										class="textcircle"
-										viewBox="0 0 500 500"
-									>
-										<defs>
-											<path
-												id="textcircle"
-												d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
-											/>
-										</defs>
-										<text>
-											<textPath
-												xlink:href="#textcircle"
-												aria-label="Projects & client work 2020"
-												textLength="900"
-											>
-												I can't believe it weighs less
-												than 1 Mo!
-											</textPath>
-										</text>
-									</svg>
-									<svg
-										aria-hidden="true"
-										class="eye"
-										width="70"
-										height="70"
-										viewBox="0 0 70 70"
-										xmlns="http://www.w3.org/2000/svg"
-									>
-										<path
-											class="eye__outer"
-											d="M10.5 35.308c5.227-7.98 14.248-13.252 24.5-13.252s19.273 5.271 24.5 13.252c-5.227 7.98-14.248 13.253-24.5 13.253s-19.273-5.272-24.5-13.253z"
-										/>
-										<path
-											class="eye__lashes-up"
-											d="M35 8.802v8.836M49.537 11.383l-3.31 8.192M20.522 11.684l3.31 8.192"
-										/>
-										<path
-											class="eye__lashes-down"
-											d="M35 61.818v-8.836 8.836zM49.537 59.237l-3.31-8.193 3.31 8.193zM20.522 58.936l3.31-8.193-3.31 8.193z"
-										/>
-										<circle
-											class="eye__iris"
-											cx="35"
-											cy="35.31"
-											r="5.221"
-										/>
-										<circle
-											class="eye__inner"
-											cx="35"
-											cy="35.31"
-											r="10.041"
-										/>
-									</svg>
-								</div>
-								<a class="resume" href="#">
-									<span
-										class="resume__top"
-										data-animation="link"
-										>Download my resume</span
-									>
-									<span class="resume__bottom"
-										>Download my resume</span
-									>
-								</a>
+			<img class="star" src="img/star.svg" alt="" draggable="false" />
+
+			<div class="scroll__stage" data-lg-smooth>
+				<main>
+					<section class="landing">
+						<h1 class="landing__title">
+							<div
+								class="title__first__el"
+								data-animation="title"
+								data-animation-delay="3.5"
+							>
+								Interactive
 							</div>
-
-							<p
-								class="me__infos"
-								data-animation="paragraph"
-								data-animation-delay="0.5"
+							<div
+								class="title__second__el"
+								data-animation="title"
+								data-animation-delay="3.8"
 							>
-								When I'm not building or exploring new web
-								experiences, I'm probably playing games or
-								watching films.
-							</p>
-						</section>
+								front—end
+							</div>
+							<div
+								class="title__third__el"
+								data-animation="title"
+								data-animation-delay="4.1"
+							>
+								developer
+							</div>
+						</h1>
+						<h2 class="landing__subtitle">
+							Welcome to <span>my</span> 2022
+							<span>portfolio</span>.
+						</h2>
+						<canvas class="webgl"></canvas>
+					</section>
 
-						<!-- <section class="skills">
+					<section class="me">
+						<h2 class="me__title" data-animation="sectionTitle">
+							<span>Who's talking?</span>
+							<div class="title__border"></div>
+						</h2>
+						<p
+							class="me__infos me__infos-me"
+							data-animation="paragraph"
+							data-me="true"
+							data-animation-delay="0.5"
+						>
+							Hi I'm <span>Ulysse</span>, a twenty-year-old
+							interactive front-end developer based in Paris. I
+							love working at the intersection of creativity and
+							user friendly interfaces. I'm looking for an
+							apprenticeship for 2022-2024 for my Master degree at
+							@Gobelins!
+						</p>
+
+						<div class="me__cta">
+							<div class="cta cta--surtur">
+								<svg class="textcircle" viewBox="0 0 500 500">
+									<defs>
+										<path
+											id="textcircle"
+											d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+										/>
+									</defs>
+									<text>
+										<textPath
+											xlink:href="#textcircle"
+											aria-label="Projects & client work 2020"
+											textLength="900"
+										>
+											I can't believe it weighs less than
+											1 Mo!
+										</textPath>
+									</text>
+								</svg>
+								<svg
+									aria-hidden="true"
+									class="eye"
+									width="70"
+									height="70"
+									viewBox="0 0 70 70"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										class="eye__outer"
+										d="M10.5 35.308c5.227-7.98 14.248-13.252 24.5-13.252s19.273 5.271 24.5 13.252c-5.227 7.98-14.248 13.253-24.5 13.253s-19.273-5.272-24.5-13.253z"
+									/>
+									<path
+										class="eye__lashes-up"
+										d="M35 8.802v8.836M49.537 11.383l-3.31 8.192M20.522 11.684l3.31 8.192"
+									/>
+									<path
+										class="eye__lashes-down"
+										d="M35 61.818v-8.836 8.836zM49.537 59.237l-3.31-8.193 3.31 8.193zM20.522 58.936l3.31-8.193-3.31 8.193z"
+									/>
+									<circle
+										class="eye__iris"
+										cx="35"
+										cy="35.31"
+										r="5.221"
+									/>
+									<circle
+										class="eye__inner"
+										cx="35"
+										cy="35.31"
+										r="10.041"
+									/>
+								</svg>
+							</div>
+							<a class="resume" href="#">
+								<span class="resume__top" data-animation="link"
+									>Download my resume</span
+								>
+								<span class="resume__bottom"
+									>Download my resume</span
+								>
+							</a>
+						</div>
+
+						<p
+							class="me__infos"
+							data-animation="paragraph"
+							data-animation-delay="0.5"
+						>
+							When I'm not building or exploring new web
+							experiences, I'm probably playing games or watching
+							films.
+						</p>
+					</section>
+
+					<!-- <section class="skills">
 							<span data-head-locomotive>React*Vue*Three.js</span>
 							<span data-tail-locomotive
 								>INTERACTION*PERFORMANCE*TEAMWORK*CREATIVITYa</span
 							>
 						</section> -->
 
-						<section id="projects" class="works">
-							<h2
-								class="works__title"
-								data-animation="sectionTitle"
-							>
-								<span>Recent works</span>
-								<div class="title__border"></div>
-							</h2>
-
-							<p
-								class="works__infos"
-								data-animation="paragraph"
-								data-animation-delay="0.5"
-							>
-								The selected works are the result of my activity
-								during the last 10 months or so. It's a mix
-								between projects and experiments (lab), and
-								their level of achievement is not equal; however
-								I found it interesting to expose them as a
-								sample of what I can produce and what drives me.
-							</p>
-
-							<div class="works__content">
-								<article
-									class="works__item"
-									data-animation="worksItem"
-									data-animation-delay="0.5"
-								>
-									<a href="#" target="_blank">
-										<div class="works__heading">
-											<h3>01 Spectrum analyser</h3>
-										</div>
-										<div class="works__description">
-											<p>
-												Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Sed, sit cupiditate voluptate
-												soluta fugit asperiores aliquam,
-												eveniet, dignissimos rerum
-												voluptatum consectetur eos
-												fugiat! Dolorum omnis recusandae
-												culpa animi, velit vero quidem
-												earum perferendis at est!
-											</p>
-										</div>
-									</a>
-								</article>
-
-								<article
-									class="works__item"
-									data-animation="worksItem"
-									data-animation-delay="0.5"
-								>
-									<a href="#" target="_blank">
-										<div class="works__heading">
-											<h3>
-												02 La formidable aventure
-												d'Orsay
-											</h3>
-										</div>
-										<div class="works__description">
-											<p>
-												Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Sed, sit cupiditate voluptate
-												soluta fugit asperiores aliquam,
-												eveniet, dignissimos rerum
-												voluptatum consectetur eos
-												fugiat! Dolorum omnis recusandae
-												culpa animi, velit vero quidem
-												earum perferendis at est!
-											</p>
-										</div>
-									</a>
-								</article>
-
-								<article
-									class="works__item"
-									data-animation="worksItem"
-									data-animation-delay="0.5"
-								>
-									<a href="#" target="_blank">
-										<div class="works__heading">
-											<h3>03 Metamorph</h3>
-										</div>
-										<div class="works__description">
-											<p>
-												Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Sed, sit cupiditate voluptate
-												soluta fugit asperiores aliquam,
-												eveniet, dignissimos rerum
-												voluptatum consectetur eos
-												fugiat! Dolorum omnis recusandae
-												culpa animi, velit vero quidem
-												earum perferendis at est!
-											</p>
-										</div>
-									</a>
-								</article>
-
-								<article
-									class="works__item"
-									data-animation="worksItem"
-									data-animation-delay="0.5"
-								>
-									<a href="#" target="_blank">
-										<div class="works__heading">
-											<h3>
-												04 Mesh: a new fashion narrative
-											</h3>
-										</div>
-										<div class="works__description">
-											<p>
-												Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Sed, sit cupiditate voluptate
-												soluta fugit asperiores aliquam,
-												eveniet, dignissimos rerum
-												voluptatum consectetur eos
-												fugiat! Dolorum omnis recusandae
-												culpa animi, velit vero quidem
-												earum perferendis at est!
-											</p>
-										</div>
-									</a>
-								</article>
-
-								<article
-									class="works__item"
-									data-animation="worksItem"
-									data-animation-delay="0.5"
-								>
-									<a href="#" target="_blank">
-										<div class="works__heading">
-											<h3>05 Portfolio</h3>
-										</div>
-										<div class="works__description">
-											<p>
-												Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Sed, sit cupiditate voluptate
-												soluta fugit asperiores aliquam,
-												eveniet, dignissimos rerum
-												voluptatum consectetur eos
-												fugiat! Dolorum omnis recusandae
-												culpa animi, velit vero quidem
-												earum perferendis at est!
-											</p>
-										</div>
-									</a>
-								</article>
-							</div>
-
-							<span class="works__sub">
-								Projects <span>&</span> Labs
-							</span>
-						</section>
-
-						<section class="passions">
-							<h2
-								class="passions__title"
-								data-animation="sectionTitle"
-							>
-								<span>My passions</span>
-								<div class="title__border"></div>
-							</h2>
-
-							<div class="passions__wrapper">
-								<ul class="passions__list">
-									<li class="passions__item">
-										<span class="passions__item-text"
-											><span
-												class="passions__item-textinner"
-												data-animation="listItem"
-												data-animation-delay="0.2"
-												>Films</span
-											></span
-										>
-										<span class="passions__item-sub"
-											>Theatres are my second home</span
-										>
-									</li>
-									<li class="passions__item">
-										<span class="passions__item-text"
-											><span
-												class="passions__item-textinner"
-												data-animation="listItem"
-												data-animation-delay="0.2"
-												>Music</span
-											></span
-										>
-										<span class="passions__item-sub"
-											>All kinds, especially hip-hop and
-											rock</span
-										>
-									</li>
-									<li class="passions__item">
-										<span class="passions__item-text"
-											><span
-												class="passions__item-textinner"
-												data-animation="listItem"
-												data-animation-delay="0.2"
-												>Photography</span
-											></span
-										>
-										<span class="passions__item-sub"
-											>Cinematographically speaking</span
-										>
-									</li>
-									<li class="passions__item">
-										<span class="passions__item-text"
-											><span
-												class="passions__item-textinner"
-												data-animation="listItem"
-												data-animation-delay="0.2"
-												>Museum exhibit</span
-											></span
-										>
-										<span class="passions__item-sub"
-											>Any time you want for a date
-											:)</span
-										>
-									</li>
-									<li class="passions__item">
-										<span class="passions__item-text"
-											><span
-												class="passions__item-textinner"
-												data-animation="listItem"
-												data-animation-delay="0.2"
-												>Video games</span
-											></span
-										>
-										<span class="passions__item-sub"
-											>Especially when I win</span
-										>
-									</li>
-								</ul>
-							</div>
-						</section>
-					</main>
-
-					<footer id="contact" class="footer">
-						<h2 class="footer__title" data-animation="sectionTitle">
-							<span>Drop me an email</span>
+					<section id="projects" class="works">
+						<h2 class="works__title" data-animation="sectionTitle">
+							<span>Recent works</span>
 							<div class="title__border"></div>
 						</h2>
-						<div class="footer__contact">
-							<!-- <span>Drop me an email</span> -->
-							<div class="footer__contact__item">
-								<a href="mailto:gravier.ulysse@gmail.com"
-									>ulysse.gravier@gmail.com</a
-								>
-							</div>
+
+						<p
+							class="works__infos"
+							data-animation="paragraph"
+							data-animation-delay="0.5"
+						>
+							The selected works are the result of my activity
+							during the last 10 months or so. It's a mix between
+							projects and experiments (lab), and their level of
+							achievement is not equal; however I found it
+							interesting to expose them as a sample of what I can
+							produce and what drives me.
+						</p>
+
+						<div class="works__content">
+							<article
+								class="works__item explorable"
+								data-lg-parallax
+								data-animation="worksItem"
+								data-animation-delay="0.5"
+							>
+								<a href="#" target="_blank">
+									<div class="works__heading">
+										<h3>01 Spectrum analyser</h3>
+									</div>
+									<div class="works__description">
+										<p>
+											Lorem ipsum dolor sit amet
+											consectetur adipisicing elit. Sed,
+											sit cupiditate voluptate soluta
+											fugit asperiores aliquam, eveniet,
+											dignissimos rerum voluptatum
+											consectetur eos fugiat! Dolorum
+											omnis recusandae culpa animi, velit
+											vero quidem earum perferendis at
+											est!
+										</p>
+									</div>
+								</a>
+							</article>
+
+							<article
+								class="works__item explorable"
+								data-lg-parallax
+								data-animation="worksItem"
+								data-animation-delay="0.5"
+							>
+								<a href="#" target="_blank">
+									<div class="works__heading">
+										<h3>
+											02 La formidable aventure d'Orsay
+										</h3>
+									</div>
+									<div class="works__description">
+										<p>
+											Lorem ipsum dolor sit amet
+											consectetur adipisicing elit. Sed,
+											sit cupiditate voluptate soluta
+											fugit asperiores aliquam, eveniet,
+											dignissimos rerum voluptatum
+											consectetur eos fugiat! Dolorum
+											omnis recusandae culpa animi, velit
+											vero quidem earum perferendis at
+											est!
+										</p>
+									</div>
+								</a>
+							</article>
+
+							<article
+								class="works__item explorable"
+								data-lg-parallax
+								data-animation="worksItem"
+								data-animation-delay="0.5"
+							>
+								<a href="#" target="_blank">
+									<div class="works__heading">
+										<h3>03 Metamorph</h3>
+									</div>
+									<div class="works__description">
+										<p>
+											Lorem ipsum dolor sit amet
+											consectetur adipisicing elit. Sed,
+											sit cupiditate voluptate soluta
+											fugit asperiores aliquam, eveniet,
+											dignissimos rerum voluptatum
+											consectetur eos fugiat! Dolorum
+											omnis recusandae culpa animi, velit
+											vero quidem earum perferendis at
+											est!
+										</p>
+									</div>
+								</a>
+							</article>
+
+							<article
+								class="works__item"
+								data-lg-parallax
+								data-animation="worksItem"
+								data-animation-delay="0.5"
+							>
+								<div class="works__heading">
+									<h3>04 Mesh: a new fashion narrative</h3>
+									<div class="works__soon">
+										<div>
+											Coming soon Coming soon Coming soon
+											Coming soon Coming soon Coming soon
+										</div>
+									</div>
+								</div>
+								<div class="works__description">
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Sed, sit cupiditate
+										voluptate soluta fugit asperiores
+										aliquam, eveniet, dignissimos rerum
+										voluptatum consectetur eos fugiat!
+										Dolorum omnis recusandae culpa animi,
+										velit vero quidem earum perferendis at
+										est!
+									</p>
+								</div>
+							</article>
+
+							<article
+								class="works__item"
+								data-lg-parallax
+								data-animation="worksItem"
+								data-animation-delay="0.5"
+							>
+								<div class="works__heading">
+									<h3>05 Portfolio</h3>
+								</div>
+								<div class="works__description">
+									<p>
+										Lorem ipsum dolor sit amet consectetur
+										adipisicing elit. Sed, sit cupiditate
+										voluptate soluta fugit asperiores
+										aliquam, eveniet, dignissimos rerum
+										voluptatum consectetur eos fugiat!
+										Dolorum omnis recusandae culpa animi,
+										velit vero quidem earum perferendis at
+										est!
+									</p>
+								</div>
+							</article>
 						</div>
 
-						<div class="footer__copyrighhts">
-							<div class="footer__copyrighhts__item">
-								Paris, 2022 © Ulysse Gravier
-							</div>
-							<div class="footer__copyrighhts__item">
-								<ul>
-									<li>
-										<a
-											href="https://twitter.com/ulyssedev"
-											target="_blank"
-											>Twitter</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://github.com/ulysseee/"
-											target="_blank"
-											>Github</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://www.linkedin.com/in/ulysse-gravier/"
-											target="_blank"
-											>LinkedIn</a
-										>
-									</li>
-								</ul>
-							</div>
-							<div class="footer__copyrighhts__item">
-								<button id="toTop">Back to top ↑</button>
-							</div>
+						<span class="works__sub">
+							Projects <span>&</span> Labs
+						</span>
+					</section>
+
+					<section class="passions">
+						<h2
+							class="passions__title"
+							data-animation="sectionTitle"
+						>
+							<span>My passions</span>
+							<div class="title__border"></div>
+						</h2>
+
+						<div class="passions__wrapper">
+							<ul class="passions__list">
+								<li class="passions__item">
+									<span class="passions__item-text"
+										><span
+											class="passions__item-textinner"
+											data-animation="listItem"
+											data-animation-delay="0.2"
+											>Films</span
+										></span
+									>
+									<span class="passions__item-sub"
+										>Theatres are my second home</span
+									>
+								</li>
+								<li class="passions__item">
+									<span class="passions__item-text"
+										><span
+											class="passions__item-textinner"
+											data-animation="listItem"
+											data-animation-delay="0.2"
+											>Music</span
+										></span
+									>
+									<span class="passions__item-sub"
+										>All kinds, especially hip-hop and
+										rock</span
+									>
+								</li>
+								<li class="passions__item">
+									<span class="passions__item-text"
+										><span
+											class="passions__item-textinner"
+											data-animation="listItem"
+											data-animation-delay="0.2"
+											>Photography</span
+										></span
+									>
+									<span class="passions__item-sub"
+										>Cinematographically speaking</span
+									>
+								</li>
+								<li class="passions__item">
+									<span class="passions__item-text"
+										><span
+											class="passions__item-textinner"
+											data-animation="listItem"
+											data-animation-delay="0.2"
+											>Museum exhibit</span
+										></span
+									>
+									<span class="passions__item-sub"
+										>Any time you want for a date :)</span
+									>
+								</li>
+								<li class="passions__item">
+									<span class="passions__item-text"
+										><span
+											class="passions__item-textinner"
+											data-animation="listItem"
+											data-animation-delay="0.2"
+											>Video games</span
+										></span
+									>
+									<span class="passions__item-sub"
+										>Especially when I win</span
+									>
+								</li>
+							</ul>
 						</div>
-					</footer>
-				</div>
+					</section>
+				</main>
+
+				<footer id="contact" class="footer">
+					<h2 class="footer__title" data-animation="sectionTitle">
+						<span>Drop me an email</span>
+						<div class="title__border"></div>
+					</h2>
+					<div class="footer__contact">
+						<!-- <span>Drop me an email</span> -->
+						<div class="footer__contact__item">
+							<a href="mailto:gravier.ulysse@gmail.com"
+								>ulysse.gravier@gmail.com</a
+							>
+						</div>
+					</div>
+
+					<div class="footer__copyrighhts">
+						<div class="footer__copyrighhts__item">
+							Paris, 2022 © Ulysse Gravier
+						</div>
+						<div class="footer__copyrighhts__item">
+							<ul>
+								<li>
+									<a
+										href="https://twitter.com/ulyssedev"
+										target="_blank"
+										>Twitter</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://github.com/ulysseee/"
+										target="_blank"
+										>Github</a
+									>
+								</li>
+								<li>
+									<a
+										href="https://www.linkedin.com/in/ulysse-gravier/"
+										target="_blank"
+										>LinkedIn</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__copyrighhts__item">
+							<button id="toTop">Back to top ↑</button>
+						</div>
+					</div>
+				</footer>
 			</div>
 
 			<svg
