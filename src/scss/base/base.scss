@@ -6,13 +6,7 @@ body {
 	width: 100%;
 	height: 100vh;
 
-	section:first-child {
-		background: none;
-	}
-	section,
-	footer {
-		background: #f7efe3;
-	}
+	background: #f7efe3;
 
 	.scroll__stage {
 		position: fixed;
@@ -38,7 +32,7 @@ body {
 	.star {
 		width: 1.5rem;
 		position: fixed;
-		bottom: 0.4rem;
+		bottom: 0.5rem;
 		left: 2vw;
 		z-index: 1;
 		transform: translateY(-50%);
@@ -55,13 +49,5 @@ body {
 		font-size: 1rem;
 		color: #000;
 		font-weight: 300;
-	}
-
-	.webgl {
-		position: fixed;
-		top: 0;
-		left: 0;
-		outline: none;
-		z-index: 0;
 	}
 }

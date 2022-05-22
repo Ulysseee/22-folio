@@ -16,8 +16,6 @@ export default class extends Animation {
 		)
 	}
 
-	animateIn() {}
-
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
 			types: 'chars',
@@ -30,8 +28,18 @@ export default class extends Animation {
 				tagName: 'span'
 			}
 		)
-		gsap.set(this.spliteClonedElement.chars, {
+		gsap.set([this.splitedElement.chars, this.spliteClonedElement.chars], {
 			y: '100%'
+		})
+	}
+
+	animateIn() {
+		gsap.to(this.splitedElement.chars, {
+			y: '0',
+			stagger: {
+				amount: 0.6
+			},
+			ease: Power3.easeOut
 		})
 	}
 
@@ -39,13 +47,13 @@ export default class extends Animation {
 		gsap.timeline({ overwite: false })
 			.to(this.splitedElement.chars, {
 				y: '-100%',
-				stagger: 0.02,
+				stagger: 0.015,
 				ease: Power3.easeInOut
 			})
 			.to(this.spliteClonedElement.chars, {
 				y: 0,
-				stagger: 0.02,
-				delay: -0.8,
+				stagger: 0.015,
+				delay: -0.7,
 				ease: Power3.easeInOut
 			})
 	}
@@ -55,7 +63,7 @@ export default class extends Animation {
 			.to(this.splitedElement.chars, {
 				y: 0,
 				stagger: {
-					each: 0.02,
+					each: 0.015,
 					from: 'end'
 				},
 				ease: Power3.easeInOut
@@ -63,7 +71,7 @@ export default class extends Animation {
 			.to(this.spliteClonedElement.chars, {
 				y: '100%',
 				stagger: {
-					each: 0.02,
+					each: 0.015,
 					from: 'end'
 				},
 				delay: -0.8,

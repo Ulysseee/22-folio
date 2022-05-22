@@ -14,10 +14,6 @@ export default class extends Animation {
 			types: 'words',
 			tagName: 'span'
 		})
-
-		gsap.set(this.splitedElement.words, {
-			y: '150%'
-		})
 		gsap.set(this.splitedElement.words, {
 			y: '150%'
 		})

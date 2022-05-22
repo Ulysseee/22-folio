@@ -1,3 +1,5 @@
+import '@scss/main.scss'
+
 import MainScene from '@js/MainScene'
 
 import Loader from '@js/animations/semantic/Loader'
@@ -6,13 +8,10 @@ import MenuItem from '@js/animations/semantic/MenuItem'
 import Paragraph from '@js/animations/semantic/Paragraph'
 import Links from '@js/animations/semantic/Links'
 import SectionTitle from '@js/animations/semantic/SectionTitle'
+import Works from '@js/animations/semantic/Works'
 import ListItem from '@js/animations/semantic/ListItem'
-import StackItem from '@js/animations/semantic/StackItem'
 
 import Passions from '@js/animations/Passions'
-import { Slideshow } from '@js/animations/SlideShow'
-
-import '@scss/main.scss'
 
 window.addEventListener('DOMContentLoaded', () => {
 	const app = new App()
@@ -32,7 +31,7 @@ class App {
 			sectionTitle: document.querySelectorAll(
 				'[data-animation="sectionTitle"]'
 			),
-			stackItem: document.querySelectorAll('[data-animation="stackItem'),
+			works: document.querySelectorAll('[data-animation="worksItem"]'),
 			listItem: document.querySelectorAll('[data-animation="listItem"]')
 		}
 	}
@@ -55,10 +54,9 @@ class App {
 			this.dom.sectionTitle.forEach(
 				(element) => new SectionTitle({ element })
 			),
-			this.dom.stackItem.forEach((element) => new StackItem({ element }))
+			this.dom.works.forEach((element) => new Works({ element }))
 		this.dom.listItem.forEach((element) => new ListItem({ element }))
 
 		const passions = new Passions()
-		const slideshow = new Slideshow(document.querySelector('.stack'))
 	}
 }

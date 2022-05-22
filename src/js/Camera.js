@@ -22,8 +22,6 @@ export default class Camera {
 			(180 * (2 * Math.atan(this.sizes.height / 2 / perspective))) /
 			Math.PI
 
-		console.log(fov)
-
 		this.instance = new PerspectiveCamera(
 			fov,
 			this.sizes.width / this.sizes.height,

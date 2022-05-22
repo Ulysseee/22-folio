@@ -23,7 +23,9 @@
 		stroke-width: 1px;
 	}
 
-	.no-js .cursor {
-		display: none;
+	.live {
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		transform: scale(0);
 	}
 }

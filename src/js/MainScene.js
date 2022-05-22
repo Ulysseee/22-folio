@@ -38,7 +38,7 @@ export default class MainScene {
 
 		this.cursor = new Cursor(document.querySelectorAll('.cursor'), [
 			'a',
-			'.stack__item'
+			'.works__heading'
 		])
 
 		this.scroll = {
@@ -127,6 +127,7 @@ export default class MainScene {
 		if (this.scroll.running) this.scrollUpdate()
 
 		// WEBGL
+		this.mouse.update()
 		if (this.camera) this.camera.update()
 		if (this.world) this.world.update()
 		if (this.renderer) this.renderer.update()

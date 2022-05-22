@@ -14,7 +14,6 @@ export default class extends Animation {
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
 			types: 'words'
-			// tagName: 'span'
 		})
 
 		if (this.me) this.wrapp(this.splitedElement.words[2])

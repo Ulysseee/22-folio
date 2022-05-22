@@ -1,34 +1,4 @@
 @include font-face(
-	'Roslindale',
-	fonts/Roslindale-DisplayCondensedLight-Edu,
-	300,
-	null,
-	woff
-);
-@include font-face(
-	'Roslindale',
-	fonts/Roslindale-DisplayCondensedLight-Edu,
-	300,
-	null,
-	woff2
-);
-
-@include font-face(
-	'Roslindale',
-	fonts/Roslindale-DisplayCondensedLightItalic-Edu,
-	300,
-	italic,
-	woff
-);
-@include font-face(
-	'Roslindale',
-	fonts/Roslindale-DisplayCondensedLightItalic-Edu,
-	300,
-	italic,
-	woff2
-);
-
-@include font-face(
 	'Orelo',
 	fonts/Orelo-SemiCondensedDemiBold,
 	null,
@@ -42,7 +12,6 @@
 	null,
 	woff2
 );
-
 @include font-face('Neue Montreal', fonts/NeueMontreal, 300, null, woff);
 @include font-face('Neue Montreal', fonts/NeueMontreal, 300, null, woff2);
 @include font-face('Neue Montreal', fonts/NeueMontreal-Medium, 400, null, woff);
@@ -51,5 +20,19 @@
 	fonts/NeueMontreal-Medium,
 	400,
 	null,
+	woff2
+);
+@include font-face(
+	'Neue Montreal',
+	fonts/NeueMontreal-Italic,
+	400,
+	italic,
+	woff
+);
+@include font-face(
+	'Neue Montreal',
+	fonts/NeueMontreal-Italic,
+	400,
+	italic,
 	woff2
 );

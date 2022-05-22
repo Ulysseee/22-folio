@@ -1,0 +1,170 @@
+.works {
+	width: 100%;
+	height: auto;
+	padding: 0 2vw;
+
+	position: relative;
+
+	// transform: translate(0, 0);
+
+	&__title {
+		@extend %sectionTitle;
+	}
+
+	&__infos {
+		width: 60%;
+		line-height: 1.2;
+		font-size: 2rem;
+		font-weight: 300;
+		color: #000;
+		margin: 5rem 2rem 5rem;
+
+		div {
+			overflow: hidden;
+		}
+	}
+
+	&__content {
+		// display: flex;
+		// flex-direction: column;
+
+		// padding: 8rem 4vw;
+		padding: 8rem 12vw;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		margin: 10rem 0;
+		width: 70%;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:nth-child(even) {
+			margin-left: auto;
+
+			// flex-direction: row-reverse;
+
+			// .works__heading {
+			// 	transform: translateX(7rem);
+			// }
+		}
+		// &:nth-child(odd) {
+		// 	flex-direction: row;
+
+		// 	.works__heading {
+		// 		transform: translateX(-5rem);
+		// 	}
+		// }
+
+		// aside {
+		// 	width: 38vw;
+		// 	padding: 8rem 2rem;
+		// }
+	}
+
+	// &__thumbnail {
+	// 	width: 25vw;
+	// 	height: 73vh;
+
+	// 	img {
+	// 		width: inherit;
+	// 		height: inherit;
+	// 		object-fit: cover;
+	// 		border: 8px solid white;
+	// 	}
+	// }
+
+	&__heading {
+		h3 {
+			font-family: 'Orelo';
+			font-size: 6vw;
+
+			text-align: left;
+			text-transform: uppercase;
+			color: #fe3301;
+			font-weight: 300;
+			overflow: hidden;
+		}
+
+		span:first-child {
+			font-family: 'Neue Montreal';
+			font-weight: 300;
+			font-size: 3vw;
+			font-style: italic;
+			// transform: translateY(-68%);
+			// position: absolute;
+			top: 0;
+		}
+	}
+
+	&__description {
+		line-height: 1.4;
+		font-size: 1.25rem;
+		font-weight: 300;
+		color: #000;
+		padding: 1rem 0;
+	}
+
+	// &__link {
+	// 	font-size: 1.5rem;
+	// 	font-weight: 300;
+	// 	color: #000;
+	// 	font-family: 'Orelo';
+	// 	text-transform: uppercase;
+	// 	text-decoration: none;
+	// 	position: relative;
+	// 	display: inline;
+
+	// 	&::before {
+	// 		content: '';
+	// 		position: absolute;
+	// 		top: 100%;
+	// 		left: 0;
+	// 		width: 100%;
+	// 		height: 1.25px;
+	// 		transform-origin: right;
+	// 		z-index: 2;
+	// 		transform: scaleX(0);
+	// 		background-color: #000;
+	// 		transition: transform 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+	// 	}
+
+	// 	&:hover::before {
+	// 		transform: scaleX(1);
+	// 		transform-origin: left;
+	// 	}
+	// }
+
+	&__sub {
+		position: absolute;
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size: 5vw;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+
+		-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+		-webkit-text-stroke-width: 2px;
+		-webkit-text-stroke-color: #000;
+
+		bottom: 0;
+		right: 2vw;
+		transform: rotate(180deg);
+
+		span {
+			-webkit-text-stroke-color: #fe3301;
+		}
+	}
+}

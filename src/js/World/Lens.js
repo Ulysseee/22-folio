@@ -12,6 +12,7 @@ export default class Lens {
 		this.renderer = this.MainScene.renderer
 		this.debug = this.MainScene.debug
 		this.camera = this.MainScene.camera.instance
+		this.mouse = this.MainScene.mouse
 
 		this.settings = {
 			mRefractionRatio: 1.02,
@@ -50,7 +51,7 @@ export default class Lens {
 
 		this.scene.add(this.lens)
 
-		// this.camera.lookAt(this.lens.position)
+		this.camera.lookAt(this.lens.position)
 
 		if (this.debug) this.setDebug()
 	}
@@ -102,5 +103,8 @@ export default class Lens {
 
 		this.material.uniforms.tCube.value = this.cubeRenderTarget.texture
 		this.material.uniforms.uTime.value = this.time.elapsed / 4000
+
+		this.lens.position.x = -this.mouse.delayedMousePos.x * 0.08
+		this.lens.position.y = this.mouse.delayedMousePos.y * 0.08
 	}
 }
