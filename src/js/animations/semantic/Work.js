@@ -6,9 +6,10 @@ export default class extends Animation {
 	constructor({ element }) {
 		super({ element })
 
-		this.title = element.querySelector('.works__heading > h3')
-		this.description = element.querySelector('.works__description')
-		this.soon = element.querySelector('.works__soon')
+		this.title = element.querySelector('.works__heading-textinner')
+		this.date = element.querySelector('.works__description > span')
+		this.description = element.querySelector('.works__description > p')
+		this.soon = element.querySelector('.works__banner')
 
 		this.splitText()
 	}

@@ -5,8 +5,6 @@ import glslify from 'vite-plugin-glslify'
 export default ({ mode }) => {
 	process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
 
-	console.log(`Currently in ${process.env.NODE_ENV} environment!`)
-
 	return defineConfig({
 		server: {
 			port: process.env.VITE_PORT,

@@ -40,19 +40,15 @@ export default class Cursor {
 	 * @param {String} triggerSelector - Trigger the cursor enter/leave method on the this selector returned elements. Default is all <a>.
 	 */
 	constructor(Dom_elems, triggerSelector = 'a') {
-		const [linkSelector, ...allSelector] = triggerSelector
+		// const [linkSelector, ...allSelector] = triggerSelector
 
 		this.DOM.elements = Dom_elems
 		;[...this.DOM.elements].forEach((el) =>
 			this.cursorElements.push(new CursorElement(el))
 		)
-		;[...document.querySelectorAll(linkSelector)].forEach((link) => {
-			link.addEventListener('mouseenter', () => this.enter())
-			link.addEventListener('mouseleave', () => this.leave())
-		})
-		;[...document.querySelectorAll(allSelector)].forEach((work) => {
-			work.addEventListener('mouseenter', () => this.workEnter())
-			work.addEventListener('mouseleave', () => this.workLeave())
+		;[...document.querySelectorAll(triggerSelector)].forEach((trigger) => {
+			trigger.addEventListener('mouseenter', () => this.enter())
+			trigger.addEventListener('mouseleave', () => this.leave())
 		})
 	}
 	/**
@@ -60,7 +56,7 @@ export default class Cursor {
 	 */
 	enter() {
 		for (const el of this.cursorElements) {
-			el.enter()
+			el.enter(false)
 		}
 	}
 	workEnter() {
@@ -75,7 +71,7 @@ export default class Cursor {
 	 */
 	leave() {
 		for (const el of this.cursorElements) {
-			el.leave()
+			el.leave(false)
 		}
 	}
 	workLeave() {
@@ -142,6 +138,8 @@ class CursorElement {
 		for (const key in this.renderedStyles) {
 			this.renderedStyles[key].amt =
 				this.DOM.el.dataset.amt || this.renderedStyles[key].amt
+			this.renderedStyles[key].current =
+				this.DOM.el.dataset.scale || this.renderedStyles[key].scale
 		}
 
 		// Show the element and start tracking its position as soon as the user moves the cursor.
@@ -163,30 +161,18 @@ class CursorElement {
 	 * Mouseenter event
 	 * Scale up and fade out.
 	 */
-	enter(isWork) {
-		if (isWork && !this.DOM.inner) {
-			console.log('HERE', this)
-
-			this.renderedStyles['scale'].current = 2
-			this.renderedStyles['opacity'].current = this.opacityOnEnter
-		} else {
-			this.renderedStyles['scale'].current = this.scaleOnEnter
-			this.renderedStyles['opacity'].current = this.opacityOnEnter
-		}
+	enter() {
+		this.renderedStyles['scale'].current = this.scaleOnEnter
+		this.renderedStyles['opacity'].current = this.opacityOnEnter
 	}
 
 	/**
 	 * Mouseleave event
 	 * Reset scale and opacity.
 	 */
-	leave(isWork) {
-		if (isWork) {
-			this.renderedStyles['scale'].current = 1
-			this.renderedStyles['opacity'].current = 1
-		} else {
-			this.renderedStyles['scale'].current = 1
-			this.renderedStyles['opacity'].current = 1
-		}
+	leave() {
+		this.renderedStyles['scale'].current = 1
+		this.renderedStyles['opacity'].current = 1
 	}
 
 	/**

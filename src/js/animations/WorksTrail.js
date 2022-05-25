@@ -1,7 +1,6 @@
-import { gsap, Power2, Sine } from 'gsap'
+import { gsap, Power2, Power3, Sine } from 'gsap'
 import { map, lerp, clamp, getMousePos } from '@utils/Maths'
-
-import image from '/img/IMG_4645.jpg'
+import images from '@utils/Images.js'
 
 // track the mouse position
 let mousepos = { x: 0, y: 0 }
@@ -23,8 +22,6 @@ export default class MotionTrail {
 		this.inMenuPosition = inMenuPosition
 		// menu item properties that will animate as we move the mouse around the menu
 		this.animatableProperties = animatableProperties
-		// the item text
-		this.DOM.textInner = this.DOM.el.querySelector('.menu__item-textinner')
 		// create the image structure
 		this.layout()
 		// initialize some events
@@ -48,7 +45,9 @@ export default class MotionTrail {
 		this.DOM.revealInner.className = 'hover-reveal__inner'
 		this.DOM.revealImage = document.createElement('div')
 		this.DOM.revealImage.className = 'hover-reveal__img'
-		this.DOM.revealImage.style.backgroundImage = `url(${image})`
+		this.DOM.revealImage.style.backgroundImage = `url(${
+			images[this.inMenuPosition]
+		})`
 
 		this.DOM.revealInner.appendChild(this.DOM.revealImage)
 		this.DOM.reveal.appendChild(this.DOM.revealInner)
@@ -95,23 +94,13 @@ export default class MotionTrail {
 					gsap.set(this.DOM.el, { zIndex: 10 })
 				}
 			})
-			// animate the image wrap
-			.to(this.DOM.revealInner, {
-				duration: 0.2,
-				ease: Sine.easeOut,
-				// ease: Power2.easeOut,
-				startAt: { x: direction.x < 0 ? '-100%' : '100%' },
-				x: '0%'
-			})
-			// animate the image element
 			.to(
 				this.DOM.revealImage,
 				{
-					duration: 0.2,
-					ease: Sine.easeOut,
-					// ease: Power2.easeOut,
-					startAt: { x: direction.x < 0 ? '100%' : '-100%' },
-					x: '0%'
+					duration: 0.4,
+					opacity: 1,
+					scale: 1,
+					ease: Power3.easeOut
 				},
 				0
 			)
@@ -131,17 +120,13 @@ export default class MotionTrail {
 					gsap.set(this.DOM.reveal, { opacity: 0 })
 				}
 			})
-			.to(this.DOM.revealInner, {
-				duration: 0.2,
-				ease: 'Sine.easeOut',
-				x: direction.x < 0 ? '100%' : '-100%'
-			})
 			.to(
 				this.DOM.revealImage,
 				{
-					duration: 0.2,
-					ease: 'Sine.easeOut',
-					x: direction.x < 0 ? '-100%' : '100%'
+					duration: 0.4,
+					opacity: 0,
+					scale: 0,
+					ease: Power3.easeOut
 				},
 				0
 			)

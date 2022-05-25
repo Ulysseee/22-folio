@@ -8,12 +8,13 @@ import Loader from '@js/animations/semantic/Loader'
 import Title from '@js/animations/semantic/Title'
 import MenuItem from '@js/animations/semantic/MenuItem'
 import Paragraph from '@js/animations/semantic/Paragraph'
-import Links from '@js/animations/semantic/Links'
+import Link from '@js/animations/semantic/Link'
 import SectionTitle from '@js/animations/semantic/SectionTitle'
-import Works from '@js/animations/semantic/Works'
+import Work from '@js/animations/semantic/Work'
 import ListItem from '@js/animations/semantic/ListItem'
 
 import Passions from '@js/animations/Passions'
+import Works from '@js/animations/Works'
 
 window.addEventListener('DOMContentLoaded', () => {
 	const app = new App()
@@ -45,6 +46,8 @@ class App {
 		)
 
 		new MainScene(document.querySelector('canvas.webgl'))
+		// luge.emitter.emit('update')
+		// luge.lifecycle.refresh()
 		this.setAnimations()
 	}
 
@@ -53,13 +56,14 @@ class App {
 		this.dom.title.forEach((element) => new Title({ element }))
 		this.dom.menuItem.forEach((element) => new MenuItem({ element }))
 		this.dom.paragraph.forEach((element) => new Paragraph({ element }))
-		this.dom.links.forEach((element) => new Links({ element })),
+		this.dom.links.forEach((element) => new Link({ element })),
 			this.dom.sectionTitle.forEach(
 				(element) => new SectionTitle({ element })
 			),
-			this.dom.works.forEach((element) => new Works({ element }))
+			this.dom.works.forEach((element) => new Work({ element }))
 		this.dom.listItem.forEach((element) => new ListItem({ element }))
 
+		const works = new Works()
 		const passions = new Passions()
 	}
 }

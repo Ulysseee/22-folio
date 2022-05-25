@@ -51,7 +51,7 @@ export default class MainScene {
 		this.sizes.on('resize', () => {
 			this.resize()
 		})
-		window.addEventListener('mousewheel', () => {
+		window.addEventListener('scroll', () => {
 			this.scrollUpdate()
 		})
 		this.scrollEl.toTop.addEventListener('click', () => {
