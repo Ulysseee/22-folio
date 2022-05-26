@@ -2,7 +2,7 @@ import MainScene from '@js/MainScene'
 
 import { gsap, Power2, Power3, Sine } from 'gsap'
 import { map, lerp, clamp } from '@utils/Maths'
-import images from '@utils/Images.js'
+import { works } from '@utils/Images.js'
 
 export default class MotionTrail {
 	constructor(el, inMenuPosition, animatableProperties) {
@@ -45,7 +45,7 @@ export default class MotionTrail {
 		this.DOM.revealImage = document.createElement('div')
 		this.DOM.revealImage.className = 'hover-reveal__img'
 		this.DOM.revealImage.style.backgroundImage = `url(${
-			images[this.inMenuPosition]
+			works[this.inMenuPosition]
 		})`
 
 		this.DOM.revealInner.appendChild(this.DOM.revealImage)

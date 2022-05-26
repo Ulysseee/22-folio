@@ -2,7 +2,7 @@ import MainScene from '@js/MainScene'
 
 import { gsap, Power2, Sine } from 'gsap'
 import { map, lerp, clamp } from '@utils/Maths'
-import images from '@utils/Images.js'
+import { passions } from '@utils/Images.js'
 
 export default class PassionsTrail {
 	constructor(el, inMenuPosition, animatableProperties) {
@@ -49,7 +49,7 @@ export default class PassionsTrail {
 		this.DOM.revealImage = document.createElement('div')
 		this.DOM.revealImage.className = 'hover-reveal__img'
 		this.DOM.revealImage.style.backgroundImage = `url(${
-			images[this.inMenuPosition]
+			passions[this.inMenuPosition]
 		})`
 
 		this.DOM.revealInner.appendChild(this.DOM.revealImage)
