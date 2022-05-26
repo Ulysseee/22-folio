@@ -2,17 +2,17 @@ import '@scss/main.scss'
 
 import MainScene from '@js/MainScene'
 
-import Loader from '@js/animations/semantic/Loader'
-import Title from '@js/animations/semantic/Title'
-import MenuItem from '@js/animations/semantic/MenuItem'
-import Paragraph from '@js/animations/semantic/Paragraph'
-import Link from '@js/animations/semantic/Link'
-import SectionTitle from '@js/animations/semantic/SectionTitle'
-import Work from '@js/animations/semantic/Work'
-import ListItem from '@js/animations/semantic/ListItem'
+import Loader from '@js/Animations/semantic/Loader'
+import Title from '@js/Animations/semantic/Title'
+import MenuItem from '@js/Animations/semantic/MenuItem'
+import Paragraph from '@js/Animations/semantic/Paragraph'
+import Link from '@js/Animations/semantic/Link'
+import SectionTitle from '@js/Animations/semantic/SectionTitle'
+import Work from '@js/Animations/semantic/Work'
+import ListItem from '@js/Animations/semantic/ListItem'
 
-import Passions from '@js/animations/Passions'
-import Works from '@js/animations/Works'
+import Passions from '@js/Animations/Passions'
+import Works from '@js/Animations/Works'
 
 import luge from '@waaark/luge'
 
