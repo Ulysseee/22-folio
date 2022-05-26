@@ -47,35 +47,39 @@ export default class extends Animation {
 		gsap.timeline({ overwite: false })
 			.to(this.splitedElement.chars, {
 				y: '-100%',
-				stagger: 0.015,
-				ease: Power3.easeInOut
+				stagger: {
+					amount: 0.2
+				},
+				ease: Power3.easeIn
 			})
 			.to(this.spliteClonedElement.chars, {
 				y: 0,
-				stagger: 0.015,
-				delay: -0.7,
-				ease: Power3.easeInOut
+				stagger: {
+					amount: 0.2
+				},
+				delay: -0.4,
+				ease: Power3.easeOut
 			})
 	}
 
 	leave() {
 		gsap.timeline({ overwite: false })
-			.to(this.splitedElement.chars, {
-				y: 0,
-				stagger: {
-					each: 0.015,
-					from: 'end'
-				},
-				ease: Power3.easeInOut
-			})
 			.to(this.spliteClonedElement.chars, {
 				y: '100%',
 				stagger: {
-					each: 0.015,
+					amount: 0.2,
 					from: 'end'
 				},
-				delay: -0.8,
-				ease: Power3.easeInOut
+				ease: Power3.easeIn
+			})
+			.to(this.splitedElement.chars, {
+				y: 0,
+				stagger: {
+					amount: 0.2,
+					from: 'end'
+				},
+				delay: -0.4,
+				ease: Power3.easeOut
 			})
 	}
 }

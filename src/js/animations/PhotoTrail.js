@@ -1,22 +1,19 @@
+import MainScene from '@js/MainScene'
+
 import { gsap, Power2, Sine } from 'gsap'
-import { map, lerp, clamp, getMousePos } from '@utils/Maths'
-
+import { map, lerp, clamp } from '@utils/Maths'
 import image from '/img/IMG_4645.jpg'
-
-// track the mouse position
-let mousepos = { x: 0, y: 0 }
-// cache the mouse position
-let mousePosCache = mousepos
-let direction = {
-	x: mousePosCache.x - mousepos.x,
-	y: mousePosCache.y - mousepos.y
-}
-
-// update mouse position when moving the mouse
-window.addEventListener('mousemove', (ev) => (mousepos = getMousePos(ev)))
 
 export default class MotionTrail {
 	constructor(el, inMenuPosition, animatableProperties) {
+		this.MainScene = new MainScene()
+		this.mouse = this.MainScene.mouse.clientMousePos
+
+		this.mousePosCache = this.mouse
+		this.direction = {
+			x: this.mousePosCache.x - this.mouse.x,
+			y: this.mousePosCache.y - this.mouse.y
+		}
 		// el is the <a> with class "menu__item"
 		this.DOM = { el: el }
 		// position in the Menu
@@ -100,7 +97,7 @@ export default class MotionTrail {
 				duration: 0.2,
 				ease: Sine.easeOut,
 				// ease: Power2.easeOut,
-				startAt: { x: direction.x < 0 ? '-100%' : '100%' },
+				startAt: { x: this.direction.x < 0 ? '-100%' : '100%' },
 				x: '0%'
 			})
 			// animate the image element
@@ -110,7 +107,7 @@ export default class MotionTrail {
 					duration: 0.2,
 					ease: Sine.easeOut,
 					// ease: Power2.easeOut,
-					startAt: { x: direction.x < 0 ? '100%' : '-100%' },
+					startAt: { x: this.direction.x < 0 ? '100%' : '-100%' },
 					x: '0%'
 				},
 				0
@@ -134,14 +131,14 @@ export default class MotionTrail {
 			.to(this.DOM.revealInner, {
 				duration: 0.2,
 				ease: 'Sine.easeOut',
-				x: direction.x < 0 ? '100%' : '-100%'
+				x: this.direction.x < 0 ? '100%' : '-100%'
 			})
 			.to(
 				this.DOM.revealImage,
 				{
 					duration: 0.2,
 					ease: 'Sine.easeOut',
-					x: direction.x < 0 ? '-100%' : '100%'
+					x: this.direction.x < 0 ? '-100%' : '100%'
 				},
 				0
 			)
@@ -169,30 +166,30 @@ export default class MotionTrail {
 
 		// calculate the mouse distance (current vs previous cycle)
 		const mouseDistanceX = clamp(
-			Math.abs(mousePosCache.x - mousepos.x),
+			Math.abs(this.mousePosCache.x - this.mouse.x),
 			0,
 			100
 		)
 		// direction where the mouse is moving
-		direction = {
-			x: mousePosCache.x - mousepos.x,
-			y: mousePosCache.y - mousepos.y
+		this.direction = {
+			x: this.mousePosCache.x - this.mouse.x,
+			y: this.mousePosCache.y - this.mouse.y
 		}
 		// updated cache values
-		mousePosCache = { x: mousepos.x, y: mousepos.y }
+		this.mousePosCache = { x: this.mouse.x, y: this.mouse.y }
 
 		// new translation values
 		// the center of the image element is positioned where the mouse is
 		this.animatableProperties.tx.current =
-			Math.abs(mousepos.x - this.bounds.el.left) -
+			Math.abs(this.mouse.x - this.bounds.el.left) -
 			this.bounds.reveal.width / 2
 		this.animatableProperties.ty.current =
-			Math.abs(mousepos.y - this.bounds.el.top) -
+			Math.abs(this.mouse.y - this.bounds.el.top) -
 			this.bounds.reveal.height / 2
 		// new rotation value
 		this.animatableProperties.rotation.current = this.firstRAFCycle
 			? 0
-			: map(mouseDistanceX, 0, 100, 0, direction.x < 0 ? 60 : -60)
+			: map(mouseDistanceX, 0, 100, 0, this.direction.x < 0 ? 60 : -60)
 		// new filter value
 		this.animatableProperties.brightness.current = this.firstRAFCycle
 			? 1

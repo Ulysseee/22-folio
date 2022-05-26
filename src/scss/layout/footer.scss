@@ -4,12 +4,12 @@
 
 	&__title {
 		@extend %sectionTitle;
-
-		margin-bottom: 5rem;
 	}
 
 	&__contact {
-		padding-bottom: 1rem;
+		padding: 1rem 0;
+		margin: 5rem 0;
+
 		// display: flex;
 		// justify-content: center;
 		// align-items: center;
@@ -33,7 +33,6 @@
 			// text-transform: uppercase;
 			text-align: center;
 			color: #000;
-			margin-bottom: 5rem;
 
 			a {
 				text-decoration: none;

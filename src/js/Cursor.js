@@ -1,25 +1,5 @@
-/**
- * Linear interpolation
- * @param {Number} a - first value to interpolate
- * @param {Number} b - second value to interpolate
- * @param {Number} n - amount to interpolate
- */
-const lerp = (a, b, n) => (1 - n) * a + n * b
-
-/**
- * Gets the cursor position
- * @param {Event} ev - mousemove event
- */
-const getCursorPos = (ev) => {
-	return {
-		x: ev.clientX,
-		y: ev.clientY
-	}
-}
-
-// Track the cursor position
-let cursor = { x: 0, y: 0 }
-window.addEventListener('mousemove', (ev) => (cursor = getCursorPos(ev)))
+import MainScene from '@js/MainScene'
+import { lerp } from '@utils/Maths'
 
 /**
  * Class representing a custom cursor.
@@ -40,8 +20,6 @@ export default class Cursor {
 	 * @param {String} triggerSelector - Trigger the cursor enter/leave method on the this selector returned elements. Default is all <a>.
 	 */
 	constructor(Dom_elems, triggerSelector = 'a') {
-		// const [linkSelector, ...allSelector] = triggerSelector
-
 		this.DOM.elements = Dom_elems
 		;[...this.DOM.elements].forEach((el) =>
 			this.cursorElements.push(new CursorElement(el))
@@ -122,6 +100,9 @@ class CursorElement {
 	 * Constructor.
 	 */
 	constructor(DOM_el) {
+		this.MainScene = new MainScene()
+		this.mouse = this.MainScene.mouse.clientMousePos
+
 		this.DOM.el = DOM_el
 		this.DOM.inner = this.DOM.el.querySelector('.cursor__inner')
 
@@ -146,9 +127,9 @@ class CursorElement {
 		const onMouseMoveEv = () => {
 			// Set up the initial values to be the same
 			this.renderedStyles.tx.previous = this.renderedStyles.tx.current =
-				cursor.x - this.bounds.width / 2
+				this.mouse.x - this.bounds.width / 2
 			this.renderedStyles.ty.previous = this.renderedStyles.ty.previous =
-				cursor.y - this.bounds.height / 2
+				this.mouse.y - this.bounds.height / 2
 			// Show it
 			this.DOM.el.style.opacity = 1
 			// Remove the initial mousemove event
@@ -180,8 +161,9 @@ class CursorElement {
 	 */
 	render() {
 		// New cursor positions
-		this.renderedStyles['tx'].current = cursor.x - this.bounds.width / 2
-		this.renderedStyles['ty'].current = cursor.y - this.bounds.height / 2
+		this.renderedStyles['tx'].current = this.mouse.x - this.bounds.width / 2
+		this.renderedStyles['ty'].current =
+			this.mouse.y - this.bounds.height / 2
 
 		// Interpolation
 		for (const key in this.renderedStyles) {

@@ -48,13 +48,17 @@ export default class extends Animation {
 			.to(this.splitedElement.chars, {
 				y: '-100%',
 				rotationX: -90,
-				stagger: 0.02,
-				ease: Power2.easeOut
+				stagger: {
+					amount: 0.2
+				},
+				ease: Power2.easeIn
 			})
 			.to(this.spliteClonedElement.chars, {
 				y: 0,
-				stagger: 0.02,
-				delay: -0.6,
+				stagger: {
+					amount: 0.2
+				},
+				delay: -0.4,
 				ease: Power2.easeOut
 			})
 	}
@@ -64,20 +68,20 @@ export default class extends Animation {
 			.to(this.spliteClonedElement.chars, {
 				y: '100%',
 				stagger: {
-					each: 0.02,
+					amount: 0.2,
 					from: 'end'
 				},
-				ease: Power2.easeOut
+				ease: Power2.easeIn
 			})
 			.to(this.splitedElement.chars, {
 				y: 0,
 				rotationX: 0,
 				stagger: {
-					each: 0.02,
+					amount: 0.2,
 					from: 'end'
 				},
-				delay: -0.6,
-				ease: Power2.easeOut
+				delay: -0.4,
+				ease: Power3.easeOut
 			})
 	}
 }

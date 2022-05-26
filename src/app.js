@@ -1,7 +1,5 @@
 import '@scss/main.scss'
 
-import luge from '@waaark/luge'
-
 import MainScene from '@js/MainScene'
 
 import Loader from '@js/animations/semantic/Loader'
@@ -16,14 +14,31 @@ import ListItem from '@js/animations/semantic/ListItem'
 import Passions from '@js/animations/Passions'
 import Works from '@js/animations/Works'
 
-window.addEventListener('DOMContentLoaded', () => {
-	const app = new App()
-	app.start()
-})
+import luge from '@waaark/luge'
+
+luge.emitter.on('afterPageLoad', () => luge.emitter.emit('update'))
+
+luge.lifecycle.add(
+	'siteLoad',
+	(done) => {
+		luge.emitter.emit('update')
+
+		const app = new App()
+		app.start()
+
+		luge.emitter.emit('update')
+
+		done()
+	},
+	'load'
+)
 
 class App {
 	constructor() {
 		this.dom = {
+			app: document.querySelector('#app'),
+			canvas: document.querySelector('canvas.webgl'),
+			header: document.querySelector('header'),
 			loader: document.querySelectorAll('[data-animation="loader"]'),
 			title: document.querySelectorAll('[data-animation="title"]'),
 			menuItem: document.querySelectorAll('[data-animation="menuItem"]'),
@@ -35,7 +50,11 @@ class App {
 				'[data-animation="sectionTitle"]'
 			),
 			works: document.querySelectorAll('[data-animation="worksItem"]'),
-			listItem: document.querySelectorAll('[data-animation="listItem"]')
+			listItem: document.querySelectorAll('[data-animation="listItem"]'),
+			line: document.querySelector('.nav-w__state-on'),
+			star: document.querySelector('.star'),
+			textcircle: document.querySelector('.textcircle'),
+			toTop: document.querySelector('#toTop')
 		}
 	}
 
@@ -44,10 +63,13 @@ class App {
 			'%c Proudly enhanced with Vite!',
 			'background: #f7efe3; color: #000; padding: 5px 2px;'
 		)
+		this.dom.app.style.visibility = 'visible'
 
-		new MainScene(document.querySelector('canvas.webgl'))
-		// luge.emitter.emit('update')
-		// luge.lifecycle.refresh()
+		new MainScene(this.dom.canvas, this.dom)
+
+		const canvasHeight = this.dom.canvas.offsetHeight
+		if (window.scrollTop - canvasHeight >= 0) this.updateDelay()
+
 		this.setAnimations()
 	}
 
@@ -65,5 +87,11 @@ class App {
 
 		const works = new Works()
 		const passions = new Passions()
+	}
+
+	updateDelay() {
+		this.dom.title.forEach((el, i) => {
+			el.setAttribute('data-animation-delay', 0.5 + i / 5)
+		})
 	}
 }

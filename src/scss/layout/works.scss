@@ -71,17 +71,6 @@
 	}
 
 	&__heading-text {
-		position: relative;
-
-		span:first-child {
-			font-family: 'Neue Montreal';
-			font-weight: 300;
-			font-size: 3vw;
-			font-style: italic;
-		}
-	}
-
-	&__heading-textinner {
 		font-family: 'Orelo';
 		font-size: 6vw;
 
@@ -90,6 +79,25 @@
 		color: #fe3301;
 		font-weight: 300;
 		overflow: hidden;
+		mix-blend-mode: multiply;
+
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__heading-top,
+	&__heading-bottom {
+		span:first-child {
+			font-family: 'Neue Montreal';
+			font-weight: 300;
+			font-size: 3vw;
+			font-style: italic;
+		}
+	}
+
+	&__heading-bottom {
+		position: absolute;
+		top: 0;
 	}
 
 	&__banner {

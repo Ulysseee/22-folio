@@ -6,7 +6,7 @@ export default class extends Animation {
 	constructor({ element }) {
 		super({ element })
 
-		this.title = element.querySelector('.works__heading-textinner')
+		this.title = element.querySelector('.works__heading-top')
 		this.date = element.querySelector('.works__description > span')
 		this.description = element.querySelector('.works__description > p')
 		this.soon = element.querySelector('.works__banner')
@@ -19,12 +19,19 @@ export default class extends Animation {
 			types: 'words',
 			tagName: 'span'
 		})
+		this.splitedClonedTitle = new SplitType(this.title.nextElementSibling, {
+			types: 'words',
+			tagName: 'span'
+		})
 		this.splitedDescription = new SplitType(this.description, {
 			types: 'words'
 		})
 		gsap.set(this.splitedTitle.words, {
 			y: '150%',
 			opacity: 0
+		})
+		gsap.set(this.splitedClonedTitle.words, {
+			y: 180
 		})
 		gsap.set(this.splitedDescription.words, {
 			y: '105%',
@@ -37,21 +44,28 @@ export default class extends Animation {
 			})
 	}
 
-	animateIn() {
+	initEvents() {
+		this.title.parentNode.addEventListener('mouseenter', () => this.enter())
+		this.title.parentNode.addEventListener('mouseleave', () => this.leave())
+	}
+
+	async animateIn() {
 		let timeline = gsap.timeline({ delay: this.delay ? this.delay : 0 })
-		timeline
-			.to(this.splitedTitle.words, {
-				y: 0,
-				opacity: 1,
-				stagger: 0.1,
-				ease: Power3.inOut
-			})
-			.to(this.splitedDescription.words, {
-				y: 0,
-				opacity: 1,
-				stagger: 0.015,
-				ease: Power3.inOut
-			})
+		await timeline.to(this.splitedTitle.words, {
+			y: 0,
+			opacity: 1,
+			stagger: 0.1,
+			ease: Power3.inOut
+		})
+
+		this.initEvents()
+
+		timeline.to(this.splitedDescription.words, {
+			y: 0,
+			opacity: 1,
+			stagger: 0.015,
+			ease: Power3.inOut
+		})
 
 		if (this.soon)
 			timeline.to(this.soon, {
@@ -59,7 +73,43 @@ export default class extends Animation {
 				scale: 1,
 				duration: 0.4,
 				ease: Power3.inOut,
-				delay: -1.3
+				delay: -1
+			})
+	}
+
+	enter() {
+		gsap.timeline({ overwite: false })
+			.to(this.splitedTitle.words, {
+				y: -170,
+				stagger: 0.035,
+				ease: Power3.easeIn
+			})
+			.to(this.splitedClonedTitle.words, {
+				y: 0,
+				stagger: 0.035,
+				delay: -0.175,
+				ease: Power3.easeOut
+			})
+	}
+
+	leave() {
+		gsap.timeline({ overwite: false })
+			.to(this.splitedClonedTitle.words, {
+				y: 180,
+				stagger: {
+					each: 0.035,
+					from: 'end'
+				},
+				ease: Power3.easeIn
+			})
+			.to(this.splitedTitle.words, {
+				y: 0,
+				stagger: {
+					each: 0.035,
+					from: 'end'
+				},
+				delay: -0.175,
+				ease: Power3.easeOut
 			})
 	}
 }

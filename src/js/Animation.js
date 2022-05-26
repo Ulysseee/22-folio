@@ -15,10 +15,10 @@ export default class {
 		this.observer.observe(this.element)
 	}
 
-	onIntersection = (entries) => {
+	onIntersection = async (entries) => {
 		for (const entry of entries) {
 			if (entry.isIntersecting) {
-				this.animateIn()
+				await this.animateIn()
 				this.observer.unobserve(this.element)
 			}
 		}

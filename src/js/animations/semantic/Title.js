@@ -16,7 +16,6 @@ export default class extends Animation {
 		})
 		gsap.set(this.splitedElement.words, {
 			y: '100%'
-			// rotateX: 90
 		})
 	}
 

@@ -12,6 +12,7 @@ export default class Mouse extends EventEmitter {
 		this.debugObject = {
 			lerpIntensity: 0.025
 		}
+		this.clientMousePos = { x: 0, y: 0 }
 		this.mousePos = { x: 0, y: 0 }
 		this.delayedMousePos = { x: 0, y: 0 }
 		this.mouseRotation = { x: 0, y: 0 }
@@ -27,9 +28,10 @@ export default class Mouse extends EventEmitter {
 	}
 
 	setMouse(e) {
+		this.clientMousePos.x = e.clientX
+		this.clientMousePos.y = e.clientY
 		this.mousePos.x = e.clientX / (this.sizes.width / 2) - 1
 		this.mousePos.y = e.clientY / (this.sizes.height / 2) - 1
-		// console.log(this.mousePos.x)
 	}
 
 	update() {
@@ -43,7 +45,6 @@ export default class Mouse extends EventEmitter {
 			this.mousePos.y,
 			this.debugObject.lerpIntensity
 		)
-		// console.log(this.delayedMousePos)
 		this.mouseRotation.x = this.delayedMousePos.y * -1 * 0.35
 		this.mouseRotation.y = this.delayedMousePos.x * -1 * 0.35
 	}
