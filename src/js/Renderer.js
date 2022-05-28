@@ -1,5 +1,5 @@
 import { WebGLRenderer } from 'three'
-import MainScene from './MainScene'
+import MainScene from './MainScene.js'
 
 import { DotScreenShader } from './customShader'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'

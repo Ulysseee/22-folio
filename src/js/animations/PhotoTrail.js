@@ -1,7 +1,8 @@
-import MainScene from '@js/MainScene'
-
 import { gsap, Power2, Sine } from 'gsap'
-import { map, lerp, clamp } from '@utils/Maths'
+
+import MainScene from '@js/MainScene.js'
+import { map, lerp, clamp } from '@utils/Maths.js'
+
 import image from '/img/ulysse.jpg'
 
 export default class MotionTrail {

@@ -1,7 +1,7 @@
-import MainScene from '../MainScene'
+import MainScene from '../MainScene.js'
+import Shades from './Shades.js'
+import Lens from './Lens.js'
 
-import Shades from './Shades'
-import Lens from './Lens'
 export default class World {
 	constructor() {
 		this.MainScene = new MainScene()

@@ -1,8 +1,8 @@
-import Animation from '@js/Animation'
-import MainScene from '@js/MainScene'
-
 import gsap, { Power3, Power2 } from 'gsap'
 import SplitType from 'split-type'
+
+import Animation from '@js/Animation.js'
+import MainScene from '@js/MainScene.js'
 
 export default class extends Animation {
 	constructor({ element }) {

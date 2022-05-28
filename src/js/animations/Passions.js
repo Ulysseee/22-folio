@@ -1,4 +1,4 @@
-import PassionsTrail from './PassionsTrail'
+import PassionsTrail from './PassionsTrail.js'
 
 export default class Passions {
 	constructor(el) {

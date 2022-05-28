@@ -1,7 +1,7 @@
-import MainScene from '@js/MainScene'
+import MainScene from '@js/MainScene.js'
 
 import { gsap, Power2, Sine } from 'gsap'
-import { map, lerp, clamp } from '@utils/Maths'
+import { map, lerp, clamp } from '@utils/Maths.js'
 import { passions } from '@utils/Images.js'
 
 export default class PassionsTrail {

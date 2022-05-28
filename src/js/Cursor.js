@@ -1,5 +1,5 @@
-import MainScene from '@js/MainScene'
-import { lerp } from '@utils/Maths'
+import MainScene from '@js/MainScene.js'
+import { lerp } from '@utils/Maths.js'
 
 /**
  * Class representing a custom cursor.

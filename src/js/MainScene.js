@@ -3,17 +3,17 @@ import gsap, { Power3 } from 'gsap'
 import { Scene } from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import config from '@utils/config'
-import Debug from '@utils/Debug'
-import Sizes from '@utils/Sizes'
-import Time from '@utils/Time'
-import Camera from '@js/Camera'
-import Renderer from '@js/Renderer'
-import World from '@js/World/World'
+import config from '@utils/config.js'
+import Debug from '@utils/Debug.js'
+import Sizes from '@utils/Sizes.js'
+import Time from '@utils/Time.js'
+import Camera from '@js/Camera.js'
+import Renderer from '@js/Renderer.js'
+import World from '@js/World/World.js'
 
-import Cursor from '@js/Cursor'
+import Cursor from '@js/Cursor.js'
 
-import Mouse from '@utils/Mouse'
+import Mouse from '@utils/Mouse.js'
 
 export default class MainScene {
 	constructor(_canvas, dom) {

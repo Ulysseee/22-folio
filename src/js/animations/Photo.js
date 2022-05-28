@@ -1,4 +1,4 @@
-import PhotoTrail from './PhotoTrail'
+import PhotoTrail from './PhotoTrail.js'
 
 export default class Photo {
 	constructor(el) {

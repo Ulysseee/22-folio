@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+
 import MainScene from '../MainScene.js'
 
 import shadesFrag from '@shaders/shades.frag'

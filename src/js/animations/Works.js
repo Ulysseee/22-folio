@@ -1,4 +1,4 @@
-import WorksTrail from './WorksTrail'
+import WorksTrail from './WorksTrail.js'
 
 export default class Works {
 	constructor(el) {
