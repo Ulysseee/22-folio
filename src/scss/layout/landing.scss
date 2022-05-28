@@ -70,14 +70,14 @@
 	}
 
 	&__subtitle {
+		width: 100%;
 		z-index: 1;
 		position: absolute;
 		bottom: 1rem;
-		right: 50%;
-		transform: translateX(50%);
 		font-size: 0.75rem;
 		color: #fff;
 		text-transform: uppercase;
+		text-align: center;
 
 		span {
 			font-family: 'Orelo';
