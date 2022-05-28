@@ -37,6 +37,10 @@
 			color: #000;
 			overflow: hidden;
 
+			@include media('<phone') {
+				font-size: 7.5vw;
+			}
+
 			a {
 				text-decoration: none;
 				color: #fe3301;

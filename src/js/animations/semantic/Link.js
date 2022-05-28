@@ -7,13 +7,6 @@ export default class extends Animation {
 		super({ element })
 
 		this.splitText()
-
-		this.element.parentNode.addEventListener('mouseenter', () =>
-			this.enter()
-		)
-		this.element.parentNode.addEventListener('mouseleave', () =>
-			this.leave()
-		)
 	}
 
 	splitText() {
@@ -33,18 +26,29 @@ export default class extends Animation {
 		})
 	}
 
-	animateIn() {
-		gsap.to(this.splitedElement.chars, {
+	initEvents() {
+		this.element.parentNode.addEventListener('mouseenter', () =>
+			this.enter()
+		)
+		this.element.parentNode.addEventListener('mouseleave', () =>
+			this.leave()
+		)
+	}
+
+	async animateIn() {
+		await gsap.to(this.splitedElement.chars, {
 			y: '0',
 			stagger: {
 				amount: 0.6
 			},
 			ease: Power3.easeOut
 		})
+
+		this.initEvents()
 	}
 
 	enter() {
-		gsap.killTweensOf(this.splitedElement.char)
+		gsap.killTweensOf(this.splitedElement.chars)
 		gsap.killTweensOf(this.spliteClonedElement.chars)
 
 		gsap.timeline()

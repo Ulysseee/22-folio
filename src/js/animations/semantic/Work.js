@@ -1,10 +1,17 @@
 import Animation from '@js/Animation'
+import MainScene from '@js/MainScene'
+
 import gsap, { Power3, Power2 } from 'gsap'
 import SplitType from 'split-type'
 
 export default class extends Animation {
 	constructor({ element }) {
 		super({ element })
+
+		this.MainScene = new MainScene()
+		this.sizes = this.MainScene.sizes
+
+		console.log(this.sizes)
 
 		this.title = element.querySelector('.works__heading-top')
 		this.date = element.querySelector('.works__description > span')
@@ -31,7 +38,7 @@ export default class extends Animation {
 			opacity: 0
 		})
 		gsap.set(this.splitedClonedTitle.words, {
-			y: 190
+			y: this.sizes.width > 768 ? 190 : 300
 		})
 		gsap.set(this.splitedDescription.words, {
 			y: '105%',
@@ -83,7 +90,7 @@ export default class extends Animation {
 
 		gsap.timeline()
 			.to(this.splitedTitle.words, {
-				y: -170,
+				y: this.sizes.width > 768 ? -190 : -300,
 				stagger: 0.035,
 				ease: Power3.easeIn
 			})
@@ -101,7 +108,7 @@ export default class extends Animation {
 
 		gsap.timeline()
 			.to(this.splitedClonedTitle.words, {
-				y: 190,
+				y: this.sizes.width > 768 ? 190 : 300,
 				stagger: {
 					each: 0.035,
 					from: 'end'

@@ -29,6 +29,10 @@
 		.char:nth-child(5) {
 			padding-right: 2rem;
 		}
+
+		@include media('<phone') {
+			font-size: 13vw;
+		}
 	}
 
 	&__overlay {
