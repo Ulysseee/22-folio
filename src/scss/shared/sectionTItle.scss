@@ -6,9 +6,11 @@
 	color: #fe3301;
 	font-weight: 300;
 	overflow: hidden;
-
-	// border-bottom: solid 1px #fe3301;
 	position: relative;
+
+	@include media('<phone') {
+		font-size: 1rem;
+	}
 
 	div {
 		position: absolute;

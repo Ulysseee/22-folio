@@ -2,7 +2,7 @@ import MainScene from '@js/MainScene'
 
 import { gsap, Power2, Sine } from 'gsap'
 import { map, lerp, clamp } from '@utils/Maths'
-import image from '/img/IMG_4645.jpg'
+import image from '/img/ulysse.jpg'
 
 export default class MotionTrail {
 	constructor(el, inMenuPosition, animatableProperties) {

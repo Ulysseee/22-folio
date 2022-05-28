@@ -20,6 +20,7 @@
 		"glsl-rotate": "^1.1.0",
 		"glslify": "^7.1.1",
 		"gsap": "^3.9.1",
+		"include-media": "^1.4.10",
 		"split-type": "^0.2.5",
 		"stats.js": "^0.17.0",
 		"three": "^0.138.0",

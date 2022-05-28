@@ -31,7 +31,7 @@ export default class extends Animation {
 			opacity: 0
 		})
 		gsap.set(this.splitedClonedTitle.words, {
-			y: 180
+			y: 190
 		})
 		gsap.set(this.splitedDescription.words, {
 			y: '105%',
@@ -78,7 +78,10 @@ export default class extends Animation {
 	}
 
 	enter() {
-		gsap.timeline({ overwite: false })
+		gsap.killTweensOf(this.splitedTitle.words)
+		gsap.killTweensOf(this.splitedClonedTitle.words)
+
+		gsap.timeline()
 			.to(this.splitedTitle.words, {
 				y: -170,
 				stagger: 0.035,
@@ -93,9 +96,12 @@ export default class extends Animation {
 	}
 
 	leave() {
-		gsap.timeline({ overwite: false })
+		gsap.killTweensOf(this.splitedTitle.words)
+		gsap.killTweensOf(this.splitedClonedTitle.words)
+
+		gsap.timeline()
 			.to(this.splitedClonedTitle.words, {
-				y: 180,
+				y: 190,
 				stagger: {
 					each: 0.035,
 					from: 'end'

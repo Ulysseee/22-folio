@@ -44,7 +44,10 @@ export default class extends Animation {
 	}
 
 	enter() {
-		gsap.timeline({ overwite: false })
+		gsap.killTweensOf(this.splitedElement.char)
+		gsap.killTweensOf(this.spliteClonedElement.chars)
+
+		gsap.timeline()
 			.to(this.splitedElement.chars, {
 				y: '-100%',
 				stagger: {
@@ -63,7 +66,10 @@ export default class extends Animation {
 	}
 
 	leave() {
-		gsap.timeline({ overwite: false })
+		gsap.killTweensOf(this.splitedElement.char)
+		gsap.killTweensOf(this.spliteClonedElement.chars)
+
+		gsap.timeline()
 			.to(this.spliteClonedElement.chars, {
 				y: '100%',
 				stagger: {

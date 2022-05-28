@@ -32,12 +32,6 @@
 		font-family: 'Orelo';
 		font-weight: 300;
 		z-index: 1;
-		// position: absolute;
-		// transform: translate(-50%, -50%);
-		// top: 50%;
-		// left: 50%;
-		// mix-blend-mode: exclusion;
-		// color: #f7efe3;
 
 		width: 80%;
 		font-size: 12vw;
@@ -48,24 +42,50 @@
 		display: flex;
 		flex-direction: column;
 
+		@include media('<phone') {
+			width: 100%;
+			font-size: 18vw;
+			line-height: 1.1;
+		}
+
 		div {
 			overflow: hidden;
 		}
 
 		div:first-child {
 			transform: translateX(80px);
+
+			@include media('<tablet') {
+				transform: translateX(40px);
+			}
+
+			@include media('<phone') {
+				transform: translateX(0px);
+			}
 		}
 
 		div:nth-child(2n) {
-			// color: #f7fa01;
-			// font-style: italic;
-			transform: translateX(-215px);
+			transform: translateX(-180px);
+
+			@include media('<tablet') {
+				transform: translateX(-150px);
+			}
+
+			@include media('<phone') {
+				transform: translateX(0px);
+			}
 		}
 
 		div:last-child {
-			// color: #f7fa01;
-			// font-style: italic;
-			transform: translateX(150px);
+			transform: translateX(170px);
+
+			@include media('<tablet') {
+				transform: translateX(100px);
+			}
+
+			@include media('<phone') {
+				transform: translateX(0px);
+			}
 		}
 	}
 
@@ -84,6 +104,10 @@
 			font-weight: 300;
 			text-transform: none;
 			font-size: 1rem;
+		}
+
+		@include media('<phone') {
+			bottom: 1.25vh;
 		}
 	}
 

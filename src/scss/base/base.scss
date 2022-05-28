@@ -17,22 +17,16 @@ body {
 	.star {
 		width: 1.5rem;
 		position: fixed;
-		bottom: 0.5rem;
+		bottom: 1vh;
 		left: 2vw;
 		z-index: 1;
 		transform: translateY(-50%);
 		will-change: transform;
-	}
 
-	.scroll {
-		width: 40px;
-		position: fixed;
-		bottom: 1.5em;
-		right: 2vw;
-		z-index: 1;
-		will-change: transform;
-		font-size: 1rem;
-		color: #000;
-		font-weight: 300;
+		@include media('<phone') {
+			width: 1.25rem;
+			left: 3.5vw;
+			bottom: 0.25vh;
+		}
 	}
 }

@@ -9,6 +9,7 @@ export default class Lens {
 		this.MainScene = new MainScene()
 		this.scene = this.MainScene.scene
 		this.time = this.MainScene.time
+		this.sizes = this.MainScene.sizes
 		this.renderer = this.MainScene.renderer
 		this.debug = this.MainScene.debug
 		this.camera = this.MainScene.camera.instance
@@ -104,7 +105,11 @@ export default class Lens {
 		this.material.uniforms.tCube.value = this.cubeRenderTarget.texture
 		this.material.uniforms.uTime.value = this.time.elapsed / 4000
 
-		this.lens.position.x = -this.mouse.delayedMousePos.x * 0.08
-		this.lens.position.y = this.mouse.delayedMousePos.y * 0.08
+		if (this.sizes.width > 768) {
+			this.lens.position.x = -this.mouse.delayedMousePos.x * 0.08
+			this.lens.position.y = this.mouse.delayedMousePos.y * 0.08
+		} else {
+			this.lens.position.x = this.lens.position.y = 0
+		}
 	}
 }

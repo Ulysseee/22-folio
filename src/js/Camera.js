@@ -48,7 +48,11 @@ export default class Camera {
 	update() {
 		this.controls.update()
 
-		this.instance.position.x = this.mouse.delayedMousePos.x * 0.25
-		this.instance.position.y = -this.mouse.delayedMousePos.y * 0.25
+		if (this.sizes.width > 768) {
+			this.instance.position.x = this.mouse.delayedMousePos.x * 0.25
+			this.instance.position.y = -this.mouse.delayedMousePos.y * 0.25
+		} else {
+			this.instance.position.x = this.instance.position.y = 0
+		}
 	}
 }

@@ -59,10 +59,7 @@ class App {
 	}
 
 	start() {
-		console.log(
-			'%c Proudly enhanced with Vite!',
-			'background: #f7efe3; color: #000; padding: 5px 2px;'
-		)
+		this.hello()
 		this.dom.app.style.visibility = 'visible'
 
 		new MainScene(this.dom.canvas, this.dom)
@@ -93,5 +90,24 @@ class App {
 		this.dom.title.forEach((el, i) => {
 			el.setAttribute('data-animation-delay', 0.5 + i / 5)
 		})
+	}
+
+	hello() {
+		let ua = navigator.userAgent.toLowerCase()
+		if (ua.indexOf('chrome') > -1 || ua.indexOf('firefox') > -1) {
+			let args = [
+				'%c %c  Site by Ulysse Gravier  %c %c  https://ulyssegravier.fr/  %c ',
+				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;',
+				'background: #ffffff; border: 1px solid #fe3301; color: #fe3301; padding:5px 0; margin:3px 0 10px 0;',
+				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;',
+				'background: #ffffff; border: 1px solid #fe3301; color: #fe3301; padding:5px 0; margin:3px 0 10px 0;',
+				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;'
+			]
+
+			window.console.log.apply(console, args)
+		} else
+			window.console.log(
+				'Site by Ulysse Gravier - https://ulyssegravier.fr/'
+			)
 	}
 }

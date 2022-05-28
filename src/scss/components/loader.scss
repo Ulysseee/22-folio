@@ -1,11 +1,16 @@
 .loader {
 	position: fixed;
-	z-index: 100;
+	z-index: 999;
 	top: 0;
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	pointer-events: none;
+
+	@include media('<phone') {
+		display: flex;
+		justify-content: center;
+	}
 
 	&__title {
 		font-family: 'Neue Montreal';

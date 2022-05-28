@@ -2,6 +2,10 @@
 	width: auto;
 	padding: 0 2vw;
 
+	@include media('<phone') {
+		padding: 0 4vw;
+	}
+
 	&__title {
 		@extend %sectionTitle;
 	}
@@ -10,12 +14,11 @@
 		padding: 1rem 0;
 		margin: 5rem 0;
 
-		// display: flex;
-		// justify-content: center;
-		// align-items: center;
-		// flex-direction: column;
+		@include media('<phone') {
+			margin: 2rem 0;
+		}
 
-		span {
+		> span {
 			display: block;
 			font-size: 2rem;
 			font-family: 'Orelo';
@@ -30,13 +33,20 @@
 			font-size: 8.25vw;
 			font-family: 'Neue Montreal';
 			font-weight: 500;
-			// text-transform: uppercase;
 			text-align: center;
 			color: #000;
+			overflow: hidden;
 
 			a {
 				text-decoration: none;
 				color: #fe3301;
+				position: relative;
+				line-height: 1.2;
+			}
+
+			&-bottom {
+				position: absolute;
+				left: 0;
 			}
 		}
 	}
@@ -50,17 +60,36 @@
 		overflow: hidden;
 		color: #fe3301;
 
+		@include media('<phone') {
+			padding: 2vh 0;
+			flex-direction: column;
+			justify-content: center;
+		}
+
 		&__item {
 			width: 240px;
 			text-align: center;
+
+			@include media('<phone') {
+				margin: 0.5rem 0;
+			}
 
 			&:first-child {
 				// width: 250px;
 				text-align: left;
 				padding-left: 2rem;
+
+				@include media('<phone') {
+					text-align: center;
+					padding-left: 0;
+				}
 			}
 			&:last-child {
 				text-align: right;
+
+				@include media('<phone') {
+					text-align: center;
+				}
 			}
 
 			ul {

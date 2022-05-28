@@ -44,6 +44,9 @@ export default class extends Animation {
 	}
 
 	enter() {
+		gsap.killTweensOf(this.splitedElement.char)
+		gsap.killTweensOf(this.spliteClonedElement.chars)
+
 		gsap.timeline()
 			.to(this.splitedElement.chars, {
 				y: '-100%',
@@ -64,6 +67,9 @@ export default class extends Animation {
 	}
 
 	leave() {
+		gsap.killTweensOf(this.splitedElement.char)
+		gsap.killTweensOf(this.spliteClonedElement.chars)
+
 		gsap.timeline()
 			.to(this.spliteClonedElement.chars, {
 				y: '100%',

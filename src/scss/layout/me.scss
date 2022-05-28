@@ -3,6 +3,10 @@
 	height: auto;
 	padding: 4rem 2vw;
 
+	@include media('<phone') {
+		padding: 6rem 4vw;
+	}
+
 	&__title {
 		@extend %sectionTitle;
 	}
@@ -19,6 +23,11 @@
 		div {
 			overflow: hidden;
 		}
+
+		@include media('<phone') {
+			width: 100%;
+			font-size: 2.5rem;
+		}
 	}
 
 	&__infos-me {
@@ -28,6 +37,10 @@
 			overflow: visible;
 			top: -12px;
 			z-index: 100;
+
+			@include media('<phone') {
+				top: -8px;
+			}
 		}
 	}
 
@@ -52,6 +65,10 @@
 			-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
 			-webkit-text-stroke-width: 2px;
 			-webkit-text-stroke-color: #000;
+
+			@include media('<phone') {
+				-webkit-text-stroke-width: 1px;
+			}
 		}
 
 		&-textinner {
@@ -93,6 +110,10 @@
 
 		display: flex;
 		align-items: center;
+
+		@include media('<phone') {
+			width: 100%;
+		}
 
 		.cta {
 			pointer-events: auto;
@@ -138,6 +159,10 @@
 				position: relative;
 				display: block;
 				width: 160px;
+
+				@include media('<phone') {
+					width: 102px;
+				}
 			}
 
 			.textcircle text {
@@ -157,6 +182,13 @@
 				height: 60px;
 				top: calc(50% - 30px);
 				left: calc(50% - 30px);
+
+				@include media('<phone') {
+					width: 40px;
+					height: 40px;
+					top: calc(50% - 20px);
+					left: calc(50% - 20px);
+				}
 
 				&__outer,
 				&__inner,
@@ -190,6 +222,10 @@
 			&__bottom {
 				position: absolute;
 				left: 0;
+			}
+
+			@include media('<phone') {
+				font-size: 1.5rem;
 			}
 		}
 	}
