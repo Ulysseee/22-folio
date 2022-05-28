@@ -11,8 +11,6 @@ export default class extends Animation {
 		this.MainScene = new MainScene()
 		this.sizes = this.MainScene.sizes
 
-		console.log(this.sizes)
-
 		this.title = element.querySelector('.works__heading-top')
 		this.date = element.querySelector('.works__description > span')
 		this.description = element.querySelector('.works__description > p')

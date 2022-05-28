@@ -38,7 +38,6 @@ export default class Cursor {
 		}
 	}
 	workEnter() {
-		// console.log('WORK ENTER')
 		for (const el of this.cursorElements) {
 			el.enter(true)
 		}
@@ -53,7 +52,6 @@ export default class Cursor {
 		}
 	}
 	workLeave() {
-		// console.log('WORK LEAVE')
 		for (const el of this.cursorElements) {
 			el.leave(true)
 		}
