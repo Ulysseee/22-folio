@@ -72,6 +72,11 @@
 
 		&:last-child {
 			margin-bottom: 0;
+
+			.hover-reveal {
+				width: 23vw;
+				height: 55vh;
+			}
 		}
 
 		&:nth-child(even) {
