@@ -36,7 +36,8 @@ export default class extends Animation {
 			opacity: 0
 		})
 		gsap.set(this.splitedClonedTitle.words, {
-			y: this.sizes.width > 768 ? 190 : 300
+			// y: this.sizes.width > 768 ? 190 : 300
+			y: this.responsiveOffset(this.sizes.width)
 		})
 		gsap.set(this.splitedDescription.words, {
 			y: '105%',
@@ -52,6 +53,20 @@ export default class extends Animation {
 	initEvents() {
 		this.title.parentNode.addEventListener('mouseenter', () => this.enter())
 		this.title.parentNode.addEventListener('mouseleave', () => this.leave())
+	}
+
+	responsiveOffset(width) {
+		console.log(width)
+		switch (width) {
+			case width > 1920:
+				return 400
+			case width > 1024:
+				return 300
+			case width > 768:
+				return 190
+			default:
+				return 300
+		}
 	}
 
 	async animateIn() {
@@ -88,7 +103,8 @@ export default class extends Animation {
 
 		gsap.timeline()
 			.to(this.splitedTitle.words, {
-				y: this.sizes.width > 768 ? -190 : -300,
+				// y: this.sizes.width > 768 ? -190 : -300,
+				y: -this.responsiveOffset(this.sizes.width),
 				stagger: 0.035,
 				ease: Power3.easeIn
 			})
@@ -106,7 +122,8 @@ export default class extends Animation {
 
 		gsap.timeline()
 			.to(this.splitedClonedTitle.words, {
-				y: this.sizes.width > 768 ? 190 : 300,
+				// y: this.sizes.width > 768 ? 190 : 300,
+				y: this.responsiveOffset(this.sizes.width),
 				stagger: {
 					each: 0.035,
 					from: 'end'

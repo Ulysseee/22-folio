@@ -77,6 +77,13 @@
 				width: 23vw;
 				height: 55vh;
 			}
+
+			@include media('<phone') {
+				.hover-reveal {
+					width: 36vw;
+					height: 32vh;
+				}
+			}
 		}
 
 		&:nth-child(even) {
