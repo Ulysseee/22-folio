@@ -22,7 +22,8 @@ export default ({ mode }) => {
 				{ find: '@scss', replacement: '/src/scss' },
 				{ find: '@shaders', replacement: '/src/shaders' },
 				{ find: '@utils', replacement: '/src/utils' }
-			]
+			],
+			extensions: ['.cjs', '.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
 		},
 		preprocessorOptions: {
 			scss: {
