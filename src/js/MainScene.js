@@ -1,7 +1,6 @@
 import gsap, { Power3 } from 'gsap'
 
 import { Scene } from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 import config from '@utils/config.js'
 import Debug from '@utils/Debug.js'
@@ -16,7 +15,7 @@ import Cursor from '@js/Cursor.js'
 import Mouse from '@utils/Mouse.js'
 
 export default class MainScene {
-	constructor(_canvas, dom) {
+	constructor(_canvas, ui) {
 		if (MainScene._instance) {
 			return MainScene._instance
 		}
@@ -24,7 +23,7 @@ export default class MainScene {
 		MainScene._instance = this
 
 		this.canvas = _canvas
-		this.dom = dom
+		this.ui = ui
 
 		this.sizes = new Sizes()
 		this.time = new Time()
@@ -48,7 +47,7 @@ export default class MainScene {
 		window.addEventListener('scroll', () => {
 			this.scrollUpdate()
 		})
-		this.dom.toTop.addEventListener('click', () => {
+		this.ui.toTop.addEventListener('click', () => {
 			window.scrollTo({
 				top: 0,
 				behavior: 'smooth'
@@ -64,16 +63,16 @@ export default class MainScene {
 	}
 
 	scrollUpdate() {
-		if (window.scrollTop !== 0) this.dom.header.classList.add('hide')
-		else this.dom.header.classList.remove('hide')
+		if (window.scrollTop !== 0) this.ui.header.classList.add('hide')
+		else this.ui.header.classList.remove('hide')
 
-		gsap.to(this.dom.line, {
+		gsap.to(this.ui.line, {
 			scaleX: window.scrollProgress,
 			transformOrigin: 'left',
 			duration: 0.85,
 			ease: Power3.ease
 		})
-		gsap.to([this.dom.star, this.dom.textcircle], {
+		gsap.to([this.ui.star, this.ui.textcircle], {
 			rotate: window.smoothScrollTop * 0.5,
 			duration: 0.85,
 			ease: Power3.ease
@@ -90,7 +89,7 @@ export default class MainScene {
 		// TIME
 		this.time.tick()
 
-		// DOM
+		// ui
 		this.cursor.cursorElements.forEach((el) => el.render())
 
 		// WEBGL

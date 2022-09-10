@@ -1,5 +1,6 @@
 import '@scss/main.scss'
 
+import config from '@utils/config.js'
 import MainScene from '@js/MainScene.js'
 
 import Loader from '@js/Animations/semantic/Loader.js'
@@ -16,26 +17,19 @@ import Works from '@js/Animations/Works.js'
 
 import luge from '@waaark/luge'
 
-luge.emitter.on('afterPageLoad', () => luge.emitter.emit('update'))
+luge.lifecycle.add('siteIn', (done) => {
+	luge.emitter.emit('update')
 
-luge.lifecycle.add(
-	'siteLoad',
-	(done) => {
-		luge.emitter.emit('update')
+	const app = new App()
+	app.start()
 
-		const app = new App()
-		app.start()
-
-		luge.emitter.emit('update')
-
-		done()
-	},
-	'load'
-)
+	luge.emitter.emit('update')
+	done()
+}, 10, 'load')
 
 class App {
 	constructor() {
-		this.dom = {
+		this.ui = {
 			app: document.querySelector('#app'),
 			canvas: document.querySelector('canvas.webgl'),
 			header: document.querySelector('header'),
@@ -59,55 +53,40 @@ class App {
 	}
 
 	start() {
-		this.hello()
-		this.dom.app.style.visibility = 'visible'
+		this.helloThere()
+		this.ui.app.style.visibility = 'visible'
 
-		new MainScene(this.dom.canvas, this.dom)
-
-		const canvasHeight = this.dom.canvas.offsetHeight
-		if (window.scrollTop - canvasHeight >= 0) this.updateDelay()
-
+		new MainScene(this.ui.canvas, this.ui)
 		this.setAnimations()
 	}
 
 	setAnimations = () => {
-		this.dom.loader.forEach((element) => new Loader({ element }))
-		this.dom.title.forEach((element) => new Title({ element }))
-		this.dom.menuItem.forEach((element) => new MenuItem({ element }))
-		this.dom.paragraph.forEach((element) => new Paragraph({ element }))
-		this.dom.links.forEach((element) => new Link({ element })),
-			this.dom.sectionTitle.forEach(
+		this.ui.loader.forEach((element) => new Loader({ element }))
+		this.ui.title.forEach((element) => new Title({ element }))
+		this.ui.menuItem.forEach((element) => new MenuItem({ element }))
+		this.ui.paragraph.forEach((element) => new Paragraph({ element }))
+		this.ui.links.forEach((element) => new Link({ element })),
+			this.ui.sectionTitle.forEach(
 				(element) => new SectionTitle({ element })
 			),
-			this.dom.works.forEach((element) => new Work({ element }))
-		this.dom.listItem.forEach((element) => new ListItem({ element }))
+			this.ui.works.forEach((element) => new Work({ element }))
+		this.ui.listItem.forEach((element) => new ListItem({ element }))
 
-		const works = new Works()
-		const passions = new Passions()
+		new Works()
+		new Passions()
 	}
 
 	updateDelay() {
-		this.dom.title.forEach((el, i) => {
+		this.ui.title.forEach((el, i) => {
 			el.setAttribute('data-animation-delay', 0.5 + i / 5)
 		})
 	}
 
-	hello() {
+	helloThere() {
 		let ua = navigator.userAgent.toLowerCase()
 		if (ua.indexOf('chrome') > -1 || ua.indexOf('firefox') > -1) {
-			let args = [
-				'%c %c  Site by Ulysse Gravier  %c %c  https://ulyssegravier.fr/  %c ',
-				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;',
-				'background: #ffffff; border: 1px solid #fe3301; color: #fe3301; padding:5px 0; margin:3px 0 10px 0;',
-				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;',
-				'background: #ffffff; border: 1px solid #fe3301; color: #fe3301; padding:5px 0; margin:3px 0 10px 0;',
-				'background: #fe3301; border: 1px solid #fe3301; padding:5px 0; margin:3px 0 10px 0;'
-			]
-
-			window.console.log.apply(console, args)
+			window.console.log.apply(console, config.credit)
 		} else
-			window.console.log(
-				'Site by Ulysse Gravier - https://ulyssegravier.fr/'
-			)
+			window.console.log('Site by Ulysse Gravier - https://ulyssegravier.fr/')
 	}
 }

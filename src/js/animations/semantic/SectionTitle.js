@@ -16,10 +16,11 @@ export default class extends Animation {
 			tagName: 'span'
 		})
 		gsap.set(this.splitedElement.words, {
-			y: '150%'
+			y: '180%',
+			rotate: 15
 		})
 		gsap.set(this.element.lastElementChild, {
-			scaleX: 0
+			scaleX: 0,
 		})
 	}
 
@@ -33,6 +34,7 @@ export default class extends Animation {
 			})
 			.to(this.splitedElement.words, {
 				y: 0,
+				rotate: 0,
 				stagger: 0.1,
 				delay: this.delay ? this.delay : -0.5,
 				ease: Power3.inOut

@@ -37,7 +37,7 @@ export default class extends Animation {
 		gsap.to(this.splitedElement.words, {
 			y: 0,
 			opacity: 1,
-			duration: 0.8,
+			duration: 0.6,
 			stagger: 0.02,
 			delay: this.delay ? this.delay : 0,
 			ease: Power3.inOut

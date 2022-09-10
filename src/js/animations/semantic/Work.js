@@ -1,4 +1,4 @@
-import gsap, { Power3, Power2 } from 'gsap'
+import gsap, { Power3 } from 'gsap'
 import SplitType from 'split-type'
 
 import Animation from '@js/Animation.js'
@@ -33,10 +33,10 @@ export default class extends Animation {
 		})
 		gsap.set(this.splitedTitle.words, {
 			y: '150%',
+			rotate: 10,
 			opacity: 0
 		})
 		gsap.set(this.splitedClonedTitle.words, {
-			// y: this.sizes.width > 768 ? 190 : 300
 			y: this.responsiveOffset(this.sizes.width)
 		})
 		gsap.set(this.splitedDescription.words, {
@@ -56,7 +56,6 @@ export default class extends Animation {
 	}
 
 	responsiveOffset(width) {
-		console.log(width)
 		switch (width) {
 			case width > 1920:
 				return 400
@@ -73,6 +72,7 @@ export default class extends Animation {
 		let timeline = gsap.timeline({ delay: this.delay ? this.delay : 0 })
 		await timeline.to(this.splitedTitle.words, {
 			y: 0,
+			rotate: 0,
 			opacity: 1,
 			stagger: 0.1,
 			ease: Power3.inOut

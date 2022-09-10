@@ -1,4 +1,4 @@
-import gsap, { Power3, Power2 } from 'gsap'
+import gsap, { Power3, Circ } from 'gsap'
 import SplitType from 'split-type'
 
 import Animation from '@js/Animation.js'
@@ -16,18 +16,19 @@ export default class extends Animation {
 			tagName: 'span'
 		})
 		gsap.set(this.splitedElement.words, {
-			y: '100%'
+			y: '180%',
+			rotate: 15
 		})
 	}
 
 	animateIn() {
 		gsap.to(this.splitedElement.words, {
 			y: 0,
-			// rotateX: 0,
-			duration: 0.8,
+			rotate: 0,
+			duration: 0.7,
 			stagger: 0.08,
 			delay: this.delay ? this.delay : 0,
-			ease: Power3.inOut
+			ease: Circ.easeOut
 		})
 	}
 }

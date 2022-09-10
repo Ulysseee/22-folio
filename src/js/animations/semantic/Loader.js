@@ -59,9 +59,9 @@ export default class extends Animation {
 				ease: Power2.easeOut,
 				attr: { d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z' }
 			})
-		gsap.timeline({ delay: 3.9 }).to('.nav-w__state-off', {
+		gsap.timeline({ delay: 3.7 }).to('.nav-w__state-off', {
 			scaleX: 1,
-			duration: 1,
+			duration: 0.8,
 			ease: Power3.easeInOut
 		})
 	}
