@@ -1,8 +1,8 @@
-import MainScene from '@js/MainScene.js'
+import MainScene from '../MainScene.js'
 
-import { gsap, Power2, Sine } from 'gsap'
-import { map, lerp, clamp } from '@utils/Maths.js'
-import { passions } from '@utils/Images.js'
+import { gsap, Sine } from 'gsap'
+import { map, lerp, clamp } from '../../utils/Maths.js'
+import { passions } from '../../utils/Images.js'
 
 export default class PassionsTrail {
 	constructor(el, inMenuPosition, animatableProperties) {

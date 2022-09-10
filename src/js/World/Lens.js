@@ -2,8 +2,8 @@ import * as THREE from 'three'
 
 import MainScene from '../MainScene.js'
 
-import lensFrag from '@shaders/lens.frag'
-import lensVert from '@shaders/lens.vert'
+import lensFrag from '../../shaders/lens.frag'
+import lensVert from '../../shaders/lens.vert'
 
 export default class Lens {
 	constructor() {

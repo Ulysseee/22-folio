@@ -1,6 +1,6 @@
 import { Pane } from 'tweakpane'
 
-import Stats from '@utils/Stats'
+import Stats from '../utils/Stats'
 
 export default class Debug {
 	constructor() {

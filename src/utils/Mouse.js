@@ -1,6 +1,6 @@
-import MainScene from '@js/MainScene'
-import EventEmitter from '@utils/EventEmitter'
-import { lerp } from '@utils/Maths'
+import MainScene from '../js/MainScene'
+import EventEmitter from './EventEmitter'
+import { lerp } from './Maths'
 
 export default class Mouse extends EventEmitter {
 	constructor() {

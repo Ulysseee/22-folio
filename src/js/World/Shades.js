@@ -2,8 +2,8 @@ import * as THREE from 'three'
 
 import MainScene from '../MainScene.js'
 
-import shadesFrag from '@shaders/shades.frag'
-import shadesVert from '@shaders/shades.vert'
+import shadesFrag from '../../shaders/shades.frag'
+import shadesVert from '../../shaders/shades.vert'
 
 export default class Shades {
 	constructor() {

@@ -1,7 +1,7 @@
 import gsap, { Power3, Circ } from 'gsap'
 import SplitType from 'split-type'
 
-import Animation from '@js/Animation.js'
+import Animation from '../../Animation.js'
 
 export default class extends Animation {
 	constructor({ element }) {

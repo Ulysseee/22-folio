@@ -1,9 +1,9 @@
-import { gsap, Power2, Power3, Sine } from 'gsap'
+import { gsap, Power3 } from 'gsap'
 
-import MainScene from '@js/MainScene.js'
+import MainScene from '../MainScene.js'
 
-import { map, lerp, clamp } from '@utils/Maths.js'
-import { works } from '@utils/Images.js'
+import { map, lerp, clamp } from '../../utils/Maths.js'
+import { works } from '../../utils/Images.js'
 
 export default class MotionTrail {
 	constructor(el, inMenuPosition, animatableProperties) {

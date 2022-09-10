@@ -2,17 +2,16 @@ import gsap, { Power3 } from 'gsap'
 
 import { Scene } from 'three'
 
-import config from '@utils/config.js'
-import Debug from '@utils/Debug.js'
-import Sizes from '@utils/Sizes.js'
-import Time from '@utils/Time.js'
-import Camera from '@js/Camera.js'
-import Renderer from '@js/Renderer.js'
-import World from '@js/World/World.js'
+import config from '../utils/config.js'
+import Debug from '../utils/Debug.js'
+import Sizes from '../utils/Sizes.js'
+import Time from '../utils/Time.js'
+import Mouse from '../utils/Mouse.js'
 
-import Cursor from '@js/Cursor.js'
-
-import Mouse from '@utils/Mouse.js'
+import Camera from '../js/Camera.js'
+import Renderer from '../js/Renderer.js'
+import World from '../js/World/World.js'
+import Cursor from '../js/Cursor.js'
 
 export default class MainScene {
 	constructor(_canvas, ui) {
