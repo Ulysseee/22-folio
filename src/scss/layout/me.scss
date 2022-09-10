@@ -50,11 +50,14 @@
 		justify-content: flex-end;
 		position: relative;
 
-		&:hover {
-			.menu__item-text {
-				-webkit-text-stroke-color: #fe3301;
+		@include media('>tablet') {
+			&:hover {
+				.menu__item-text {
+					-webkit-text-stroke-color: #fe3301;
+				}
 			}
 		}
+
 
 		&-text {
 			position: relative;
@@ -140,18 +143,16 @@
 				-webkit-clip-path: circle(40% at 50% 50%);
 				clip-path: circle(40% at 50% 50%);
 
-				// &:hover .textcircle {
-				// 	animation: rotateIt 7s linear infinite;
-				// }
+				@include media('>tablet') {
+					&:hover .eye__lashes-up,
+					&:hover .eye__inner,
+					&:hover .eye__iris {
+						animation: blinkHide 2s step-end infinite;
+					}
 
-				&:hover .eye__lashes-up,
-				&:hover .eye__inner,
-				&:hover .eye__iris {
-					animation: blinkHide 2s step-end infinite;
-				}
-
-				&:hover .eye__lashes-down {
-					animation: blinkShow 2s step-end infinite;
+					&:hover .eye__lashes-down {
+						animation: blinkShow 2s step-end infinite;
+					}
 				}
 			}
 

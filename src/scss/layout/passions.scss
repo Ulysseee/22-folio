@@ -40,13 +40,17 @@
 			border: none;
 		}
 
-		&:hover .passions__item-sub {
-			opacity: 1;
-			transform: translateX(0);
+		@include media('>tablet') {
+			&:hover .passions__item-sub {
+				opacity: 1;
+				transform: translateX(0);
+			}
 		}
 
-		&:hover .passions__item-sub::before {
-			transform: rotate(22.5deg) scale3d(1, 1, 1);
+		@include media('>tablet') {
+			&:hover .passions__item-sub::before {
+				transform: rotate(22.5deg) scale3d(1, 1, 1);
+			}
 		}
 
 		&-text {
