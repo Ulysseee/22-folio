@@ -1,6 +1,7 @@
 import '@scss/main.scss'
 
 import config from '@utils/config.js'
+import device from '@utils/device'
 import MainScene from '@js/MainScene.js'
 
 import Loader from '@js/Animations/semantic/Loader.js'
@@ -20,6 +21,7 @@ import luge from '@waaark/luge'
 luge.lifecycle.add('siteIn', (done) => {
 	luge.emitter.emit('update')
 
+	window.scrollTo({ top: 0 })
 	const app = new App()
 	app.start()
 
@@ -72,14 +74,10 @@ class App {
 			this.ui.works.forEach((element) => new Work({ element }))
 		this.ui.listItem.forEach((element) => new ListItem({ element }))
 
-		new Works()
-		new Passions()
-	}
-
-	updateDelay() {
-		this.ui.title.forEach((el, i) => {
-			el.setAttribute('data-animation-delay', 0.5 + i / 5)
-		})
+		if(!device.isTouch()) {
+			new Works()
+			new Passions()
+		}
 	}
 
 	helloThere() {
