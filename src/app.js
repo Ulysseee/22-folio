@@ -1,4 +1,4 @@
-import './styles/main.scss'
+import './scss/main.scss'
 
 import config from './utils/config.js'
 import device from './utils/device'
