@@ -20,7 +20,7 @@
 		padding: 4rem 0 8rem;
 		margin-left: auto;
 
-		div {
+		.word {
 			overflow: hidden;
 		}
 
@@ -44,7 +44,7 @@
 		}
 	}
 
-	.menu__item {
+	.me__pp {
 		flex: none;
 		display: flex;
 		justify-content: flex-end;
@@ -52,7 +52,7 @@
 
 		@include media('>tablet') {
 			&:hover {
-				.menu__item-text {
+				.me__pp-text {
 					-webkit-text-stroke-color: #fe3301;
 				}
 			}

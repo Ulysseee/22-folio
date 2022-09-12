@@ -22,7 +22,7 @@ export default class MotionTrail {
 		// menu item properties that will animate as we move the mouse around the menu
 		this.animatableProperties = animatableProperties
 		// the item text
-		this.DOM.textInner = this.DOM.el.querySelector('.menu__item-textinner')
+		this.DOM.textInner = this.DOM.el.querySelector('.me__pp-textinner')
 		// create the image structure
 		this.layout()
 		// initialize some events

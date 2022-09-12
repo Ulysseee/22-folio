@@ -26,9 +26,9 @@ export default class extends Animation {
 
 	wrapp(el) {
 		el.innerHTML = `
-			<a class="menu__item" data-img="img/1.jpg">
-				<span class="menu__item-text"><span class="menu__item-textinner">Ulysse,</span></span>
-			</a>
+			<div class="me__pp" data-img="img/1.jpg">
+				<span class="me__pp-text"><span class="me__pp-textinner">Ulysse,</span></span>
+			</div>
 		`
 		new Photo()
 	}

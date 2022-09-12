@@ -2,7 +2,7 @@ import PhotoTrail from './PhotoTrail.js'
 
 export default class Photo {
 	constructor(el) {
-		this.menuItemsList = document.querySelectorAll('.menu__item')
+		this.menuItemsList = document.querySelectorAll('.me__pp')
 		this.animatableProperties = {
 			// translationX
 			tx: { previous: 0, current: 0, amt: 0.08 },
