@@ -1,7 +1,7 @@
 import { gsap, Sine } from 'gsap'
 
-import MainScene from '../MainScene.js'
-import { map, lerp, clamp } from '../../utils/Maths.js'
+import { map, lerp, clamp } from '@utils/Maths.js'
+import MainScene from '@js/MainScene.js'
 
 import image from '/img/ulysse.jpg'
 

@@ -1,7 +1,7 @@
 import { WebGLRenderer } from 'three'
-import MainScene from './MainScene.js'
+import MainScene from '@js/MainScene.js'
 
-import { DotScreenShader } from './customShader'
+import { DotScreenShader } from '@shaders/customShader'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js'
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
@@ -45,7 +45,6 @@ export default class Renderer {
 	}
 
 	update() {
-		this.instance.render(this.scene, this.camera.instance)
 		this.composer.render(this.scene, this.camera.instance)
 	}
 }

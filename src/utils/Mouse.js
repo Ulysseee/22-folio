@@ -1,4 +1,4 @@
-import MainScene from '../js/MainScene'
+import MainScene from '@js/MainScene'
 import EventEmitter from './EventEmitter'
 import { lerp } from './Maths'
 

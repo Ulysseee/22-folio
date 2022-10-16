@@ -1,8 +1,8 @@
 import gsap, { Power3 } from 'gsap'
 import SplitType from 'split-type'
 
-import Animation from '../../Animation'
-import Photo from '../Photo.js'
+import Animation from '@js/Animation.js'
+import Photo from '@js/Animations/Photo.js'
 
 export default class extends Animation {
 	constructor({ element }) {

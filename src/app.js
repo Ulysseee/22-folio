@@ -1,20 +1,20 @@
 import './scss/main.scss'
 
-import config from './utils/config.js'
-import device from './utils/device'
-import MainScene from './js/MainScene.js'
+import config from '@utils/config.js'
+import device from '@utils/device'
 
-import Loader from './js/Animations/semantic/Loader.js'
-import Title from './js/Animations/semantic/Title.js'
-import MenuItem from './js/Animations/semantic/MenuItem.js'
-import Paragraph from './js/Animations/semantic/Paragraph.js'
-import Link from './js/Animations/semantic/Link.js'
-import SectionTitle from './js/Animations/semantic/SectionTitle.js'
-import Work from './js/Animations/semantic/Work.js'
-import ListItem from './js/Animations/semantic/ListItem.js'
+import MainScene from '@js/MainScene.js'
+import Title from '@js/Animations/semantic/Title.js'
+import MenuItem from '@js/Animations/semantic/MenuItem.js'
+import Paragraph from '@js/Animations/semantic/Paragraph.js'
+import Link from '@js/Animations/semantic/Link.js'
+import SectionTitle from '@js/Animations/semantic/SectionTitle.js'
+import Work from '@js/Animations/semantic/Work.js'
+import ListItem from '@js/Animations/semantic/ListItem.js'
 
-import Passions from './js/Animations/Passions.js'
-import Works from './js/Animations/Works.js'
+import Loader from '@js/Animations/semantic/Loader.js'
+import Passions from '@js/Animations/Passions.js'
+import Works from '@js/Animations/Works.js'
 
 import luge from '@waaark/luge'
 

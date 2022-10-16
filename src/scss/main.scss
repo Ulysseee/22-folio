@@ -1,20 +1,20 @@
-@import './utils/mixins';
-@import './utils/var';
-@import './utils/responsive';
+@import '@scss/utils/mixins';
+@import '@scss/utils/var';
+@import '@scss/utils/responsive';
 
-@import './shared/sectionTitle';
+@import '@scss/shared/sectionTitle';
 
-@import './base/fonts';
-@import './base/reset';
-@import './base/base';
+@import '@scss/base/fonts';
+@import '@scss/base/reset';
+@import '@scss/base/base';
 
-@import './layout/cursor';
-@import './layout/nav';
-@import './layout/landing';
-@import './layout/me';
-@import './layout/skills';
-@import './layout/works';
-@import './layout/passions';
-@import './layout/footer';
+@import '@scss/layout/cursor';
+@import '@scss/layout/nav';
+@import '@scss/layout/landing';
+@import '@scss/layout/me';
+@import '@scss/layout/skills';
+@import '@scss/layout/works';
+@import '@scss/layout/passions';
+@import '@scss/layout/footer';
 
-@import './components/loader';
+@import '@scss/components/loader';
