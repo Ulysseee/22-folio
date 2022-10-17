@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"sass": "^1.49.8",
-		"vite": "^3.1.8"
+		"vite": "^2.6.3"
 	},
 	"dependencies": {
 		"@waaark/luge": "^0.6.9-beta",
