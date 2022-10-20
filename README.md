@@ -1,6 +1,6 @@
-# Basic Vite starter
+# 22' folio
 
-The following is a basic Vite starter with Three
+Vite + Three 🏄🏼‍♂️
 
 ## Setup
 
