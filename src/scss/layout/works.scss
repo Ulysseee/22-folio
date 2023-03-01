@@ -106,7 +106,7 @@
 
 		text-align: left;
 		text-transform: uppercase;
-		color: #fe3301;
+		color: $orange;
 		font-weight: 300;
 		overflow: hidden;
 		mix-blend-mode: multiply;
@@ -214,7 +214,7 @@
 		transform: rotate(180deg);
 
 		span {
-			-webkit-text-stroke-color: #fe3301;
+			-webkit-text-stroke-color: $orange;
 		}
 
 		@include media('<tablet') {

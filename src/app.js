@@ -2,17 +2,18 @@ import './scss/main.scss'
 
 import config from '@utils/config.js'
 import device from '@utils/device'
+import { disableScroll, enableScroll } from '@utils/Dom'
 
 import MainScene from '@js/MainScene.js'
-import Title from '@js/Animations/semantic/Title.js'
-import MenuItem from '@js/Animations/semantic/MenuItem.js'
-import Paragraph from '@js/Animations/semantic/Paragraph.js'
-import Link from '@js/Animations/semantic/Link.js'
-import SectionTitle from '@js/Animations/semantic/SectionTitle.js'
-import Work from '@js/Animations/semantic/Work.js'
-import ListItem from '@js/Animations/semantic/ListItem.js'
+import Title from './js/animations/semantic/Title.js'
+import MenuItem from './js/animations/semantic/MenuItem.js'
+import Paragraph from './js/animations/semantic/Paragraph.js'
+import Link from './js/animations/semantic/Link.js'
+import SectionTitle from './js/animations/semantic/SectionTitle.js'
+import Work from './js/animations/semantic/Work.js'
+import ListItem from './js/animations/semantic/ListItem.js'
 
-import Loader from '@js/Animations/semantic/Loader.js'
+import Loader from './js/animations/semantic/Loader.js'
 import Passions from '@js/Animations/Passions.js'
 import Works from '@js/Animations/Works.js'
 
@@ -22,6 +23,8 @@ luge.lifecycle.add('siteIn', (done) => {
 	luge.emitter.emit('update')
 
 	window.scrollTo({ top: 0 })
+	disableScroll()
+
 	const app = new App()
 	app.start()
 

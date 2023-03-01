@@ -13,22 +13,22 @@
 	}
 
 	&__title {
-		font-family: 'Neue Montreal';
-		font-weight: 500;
+		font-family: 'Orelo';
+		font-weight: 400;
 		text-transform: uppercase;
+		display: inline-block;
+		width: fit-content;
+		height: fit-content;
 		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
 		z-index: 2;
 		color: #000;
-		font-size: 15vw;
-		width: 100%;
-		text-align: center;
+		font-size: 3rem;
 		overflow: hidden;
-		display: flex;
-		justify-content: center;
-
-		.char:nth-child(5) {
-			padding-right: 2rem;
-		}
 
 		@include media('<phone') {
 			font-size: 13vw;

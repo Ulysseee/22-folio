@@ -13,14 +13,14 @@ export default class extends Animation {
 
 	splitText() {
 		this.splitedElement = new SplitType(this.element, {
-			types: 'words'
+			types: 'words',
 		})
 
 		if (this.me) this.wrapp(this.splitedElement.words[2])
 
 		gsap.set(this.splitedElement.words, {
-			y: '105%',
-			opacity: 0
+			// y: '105%',
+			opacity: 0,
 		})
 	}
 
@@ -35,7 +35,7 @@ export default class extends Animation {
 
 	animateIn() {
 		gsap.to(this.splitedElement.words, {
-			y: 0,
+			// y: 0,
 			opacity: 1,
 			duration: 0.6,
 			stagger: 0.02,

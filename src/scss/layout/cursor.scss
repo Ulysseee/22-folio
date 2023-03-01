@@ -14,12 +14,12 @@
 	}
 
 	.cursor--1 .cursor__inner {
-		fill: #fe3301;
+		fill: $orange;
 	}
 
 	.cursor--2 .cursor__inner {
 		fill: none;
-		stroke: #000;
+		stroke: $orange;
 		stroke-width: 1px;
 	}
 }

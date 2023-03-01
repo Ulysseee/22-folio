@@ -14,7 +14,7 @@ header {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		font-size: 1rem;
+		font-size: 1.125rem;
 		margin: 0 2vw;
 		padding: 0 0.635vw;
 		height: 7vh;
@@ -28,6 +28,7 @@ header {
 		&__logo {
 			color: white;
 			text-decoration: none;
+			line-height: 1.2;
 
 			overflow: hidden;
 			position: relative;
@@ -38,6 +39,7 @@ header {
 			flex-direction: row;
 			align-items: center;
 			margin-left: auto;
+			line-height: 1.2;
 
 			a {
 				position: relative;
@@ -76,6 +78,9 @@ header {
 			position: absolute;
 			// top: 100%;
 			left: 0;
+			font-family: 'Orelo';
+			text-transform: uppercase;
+			font-size: 90%;
 		}
 
 		&__state {
@@ -106,7 +111,7 @@ header {
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: #fe3301;
+				background: $orange;
 				transform: scaleX(0);
 				transform-origin: left;
 			}

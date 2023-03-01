@@ -37,7 +37,6 @@ export default class extends Animation {
 	animateIn() {
 		gsap.to(this.splitedElement.words, {
 			y: '0',
-			duration: 0.4,
 			stagger: 0.08,
 			delay: this.delay ? this.delay : 0,
 			ease: Power3.easeInOut
@@ -48,47 +47,39 @@ export default class extends Animation {
 		gsap.killTweensOf(this.splitedElement.char)
 		gsap.killTweensOf(this.spliteClonedElement.chars)
 
-		gsap.timeline()
-			.to(this.splitedElement.chars, {
+		gsap.to(this.splitedElement.chars, {
 				y: '-100%',
-				rotationX: -90,
-				stagger: {
-					amount: 0.2
-				},
-				ease: Power2.easeIn
+				stagger: 0.015,
+				ease: Power3.easeIn
 			})
-			.to(this.spliteClonedElement.chars, {
-				y: 0,
-				stagger: {
-					amount: 0.2
-				},
-				delay: -0.4,
-				ease: Power2.easeOut
-			})
+		gsap.to(this.spliteClonedElement.chars, {
+			y: 0,
+			stagger: 0.015,
+			delay: 0.35,
+			ease: Power3.easeOut
+		})
 	}
 
 	leave() {
 		gsap.killTweensOf(this.splitedElement.char)
 		gsap.killTweensOf(this.spliteClonedElement.chars)
 
-		gsap.timeline()
-			.to(this.spliteClonedElement.chars, {
+		gsap.to(this.spliteClonedElement.chars, {
 				y: '100%',
 				stagger: {
-					amount: 0.2,
+					each: 0.015,
 					from: 'end'
 				},
-				ease: Power2.easeIn
+				ease: Power3.easeIn
 			})
-			.to(this.splitedElement.chars, {
-				y: 0,
-				rotationX: 0,
-				stagger: {
-					amount: 0.2,
-					from: 'end'
-				},
-				delay: -0.4,
-				ease: Power3.easeOut
-			})
+		gsap.to(this.splitedElement.chars, {
+			y: 0,
+			stagger: {
+				each: 0.015,
+				from: 'end'
+			},
+			delay: 0.35,
+			ease: Power3.easeOut
+		})
 	}
 }

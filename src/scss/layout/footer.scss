@@ -43,7 +43,7 @@
 
 			a {
 				text-decoration: none;
-				color: #fe3301;
+				color: $orange;
 				position: relative;
 				line-height: 1.2;
 			}
@@ -62,7 +62,7 @@
 		justify-content: space-between;
 		padding: 3vh 0;
 		overflow: hidden;
-		color: #fe3301;
+		color: $orange;
 
 		@include media('<phone') {
 			padding: 2vh 0;
@@ -125,7 +125,7 @@
 						transform-origin: right;
 						z-index: 2;
 						transform: scaleX(0);
-						background-color: #fe3301;
+						background-color: $orange;
 						transition: transform 0.5s
 							cubic-bezier(0.694, 0.048, 0.335, 1);
 					}

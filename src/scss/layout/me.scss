@@ -53,7 +53,7 @@
 		@include media('>tablet') {
 			&:hover {
 				.me__pp-text {
-					-webkit-text-stroke-color: #fe3301;
+					-webkit-text-stroke-color: $orange;
 				}
 			}
 		}
